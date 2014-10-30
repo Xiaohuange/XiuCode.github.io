@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>《objective-c程序设计》笔记——C语言相关篇 | 语亮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Terminal编译OC代码的指令：
+123456mkdir test01cd test01vi main.mclang -fobjc-arc -framework Foundation main.m -o test01./test01
+
+
+
+123@autoreleasepool{ NSLog(@'Program is running!');}
+
+@autoreleasepool:应用创建新对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《objective-c程序设计》笔记——C语言相关篇">
+<meta property="og:url" content="http://yoursite.com/2014/10/31/《objective-c程序设计》笔记——语法篇/">
+<meta property="og:site_name" content="语亮">
+<meta property="og:description" content="Terminal编译OC代码的指令：
+123456mkdir test01cd test01vi main.mclang -fobjc-arc -framework Foundation main.m -o test01./test01
+
+
+
+123@autoreleasepool{ NSLog(@'Program is running!');}
+
+@autoreleasepool:应用创建新对">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《objective-c程序设计》笔记——C语言相关篇">
+<meta name="twitter:description" content="Terminal编译OC代码的指令：
+123456mkdir test01cd test01vi main.mclang -fobjc-arc -framework Foundation main.m -o test01./test01
+
+
+
+123@autoreleasepool{ NSLog(@'Program is running!');}
+
+@autoreleasepool:应用创建新对">
+
+  
+    <link rel="alternative" href="/atom.xml" title="语亮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">语亮</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">他一直致力于成为一个有人文情怀的科技从业者</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">存档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+          <a class="main-nav-link" href="/todolist">ToDo</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-《objective-c程序设计》笔记——语法篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/31/《objective-c程序设计》笔记——语法篇/" class="article-date">
+  <time datetime="2014-10-30T17:21:26.000Z" itemprop="datePublished">10月 31 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程学习/">编程学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      《objective-c程序设计》笔记——C语言相关篇
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h4 id="Terminal编译OC代码的指令：">Terminal编译OC代码的指令：</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">mkdir</span> test01</div><div class="line"><span class="keyword">cd</span> test01</div><div class="line"><span class="keyword">vi</span> main.<span class="keyword">m</span></div><div class="line">clang -fobjc-arc -framework Foundation main.<span class="keyword">m</span> -<span class="keyword">o</span> test01</div><div class="line">./test01</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="at_rule">@<span class="keyword">autoreleasepool{</span> </span></div><div class="line"><span class="function">NSLog</span>(@<span class="string">"Program is running!"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>@autoreleasepool:应用创建新对象时，系统能够有效的管理应用使用的内存<br>NSLog：</p>
+<ol>
+<li>后面参数中的@”….”成为常量NSString对象,如果不加@，就是常量C类型的字符串</li>
+<li>NSLog函数会输出函数的执行日期与实践、程序名、以及其他一些数值</li>
+</ol>
+<h4 id="创建类和对象的方式：（分数程序-分子/分母）">创建类和对象的方式：（分数程序-分子/分母）</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  main.m</span></div><div class="line"><span class="comment">//  OC-Test01</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  Created by 修宇亮 on 14-7-22.</span></div><div class="line"><span class="comment">//  Copyright (c) 2014年 修宇亮. All rights reserved.</span></div><div class="line"><span class="comment">//</span></div><div class="line"></div><div class="line"><span class="preprocessor">#import <span class="title">&lt;Foundation/Foundation.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Fraction</span> : <span class="title">NSObject</span></span></div><div class="line"></div><div class="line">-(<span class="keyword">void</span>) setNumeration : (<span class="keyword">int</span>) n;</div><div class="line">-(<span class="keyword">void</span>) setDenomination : (<span class="keyword">int</span>) d;</div><div class="line">-(<span class="keyword">int</span>) numeration;</div><div class="line">-(<span class="keyword">int</span>) denomination;</div><div class="line">-(<span class="keyword">void</span>) print ;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Fraction</span></span></div><div class="line"></div><div class="line">{   <span class="keyword">int</span> Numeration;</div><div class="line"><span class="keyword">int</span> Denomination;</div><div class="line">}</div><div class="line"><span class="comment">//声明变量最好在@implementaion，这样可以保证数据的封装性</span></div><div class="line"><span class="comment">//如果只声明一行数据，可以不用大括号</span></div><div class="line"></div><div class="line">-(<span class="keyword">void</span>) setNumeration:(<span class="keyword">int</span>)n</div><div class="line">{</div><div class="line">Numeration = n;</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>) setDenomination:(<span class="keyword">int</span>)d</div><div class="line">{</div><div class="line">Denomination = d;</div><div class="line">}</div><div class="line"></div><div class="line">-(<span class="keyword">int</span>) numeration{</div><div class="line"></div><div class="line"><span class="keyword">return</span> Numeration;</div><div class="line">}</div><div class="line"></div><div class="line">-(<span class="keyword">int</span>) denomination{</div><div class="line"></div><div class="line"><span class="keyword">return</span> Denomination;</div><div class="line">}</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)print</div><div class="line">{</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"The fraction is %i / %i"</span>,Numeration,Denomination);</div><div class="line">}</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</div><div class="line">{</div><div class="line"></div><div class="line"><span class="keyword">@autoreleasepool</span> {</div><div class="line"></div><div class="line">Fraction *frac1 = [[Fraction alloc]init];</div><div class="line">Fraction *frac2 = [[Fraction alloc]init];</div><div class="line"><span class="comment">//另一种写法：Fraction *frac1 = [Fraction new];</span></div><div class="line"><span class="comment">//但建议用第一种方法书写，因为这样可以更加容易的理解“先分配内存空间，再初始化对象”这个过程</span></div><div class="line"></div><div class="line">[frac1 setNumeration : <span class="number">2</span>];</div><div class="line">[frac1 setDenomination:<span class="number">3</span>];</div><div class="line"></div><div class="line"></div><div class="line">[frac2 setNumeration : <span class="number">2</span>];</div><div class="line">[frac2 setDenomination:<span class="number">7</span>];</div><div class="line"></div><div class="line">[frac1 print];</div><div class="line">[frac2 print];</div><div class="line"><span class="comment">//另一种写法：</span></div><div class="line"><span class="comment">//NSLog(@"The fraction is %i / %i",[frac1 numeration],[frac1 denomination]);</span></div><div class="line"><span class="comment">//体现了每个对象中数据的封装性，外界只有通过创建对象或者访问已有对象，才能获得该对象的数据</span></div><div class="line"></div><div class="line"></div><div class="line">}</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h4 id="数据类型和表达式">数据类型和表达式</h4>
+<h5 id="NSLog转换字符：">NSLog转换字符：</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">int</th>
+<th style="text-align:left">char</th>
+<th style="text-align:left">float</th>
+<th style="text-align:left">double</th>
+<th style="text-align:left">id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">%i</td>
+<td style="text-align:left">%c</td>
+<td style="text-align:left">%f,%e,%g,%a</td>
+<td style="text-align:left">%f,%e,%g,%a</td>
+<td style="text-align:left">%p</td>
+</tr>
+</tbody>
+</table>
+<p>%f是指用浮点数的形式输出，也就是用小数了<br>%e是用指数的形式输出<br>%g是选用%f%e中较短的一种形式输出</p>
+<h5 id="浮点数科学计数法：">浮点数科学计数法：</h5>
+<p>1.7e4 = 1.7*10^4</p>
+<h5 id="限定词：">限定词：</h5>
+<p>long:修饰int，double，float，以扩大值域，可以连续运用，如long long int<br>short：与long的效果相反，可以起到节约内存的作用<br>unsigned：只有正值，没有负值，从而扩大正值的值域<br>id：通用类型，id object，在多态和动态绑定中有重要作用</p>
+<h5 id="模运算符">模运算符</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function">NSLog</span>(<span class="at_rule">@<span class="string">"a%%b = %i"</span>,a%b);</span></div><div class="line"><span class="comment">//当需要在输出的字符串中加入%时，需要用%%，%相当于java中的\转义符</span></div><div class="line"><span class="comment">//%是取模运算，得到的结果是余数</span></div><div class="line"><span class="comment">//如果数据类型是int，那么/运算的结果是整数，小数部分被砍掉了</span></div><div class="line"><span class="comment">//a/b+a%b = a</span></div></pre></td></tr></table></figure>
+
+<h5 id="类型强制转换">类型强制转换</h5>
+<p>15/10 = 1<br>(float)15/10 = 1.5000<br>(float)15/(float)10 = 1.5000</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">id <span class="keyword">object</span>;</div><div class="line">Fraction *myfraction;</div><div class="line">myfraction = (Fraction *) <span class="keyword">object</span>;<span class="comment">//将id强制类型转换为Fraction *</span></div></pre></td></tr></table></figure>
+
+<h5 id="键盘输入">键盘输入</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scan(<span class="string">"%i"</span>,&<span class="built_in">number</span>)<span class="comment">;//这里不需要@，这里是C语法，不是NSString类型参量</span></div><div class="line">scan(<span class="string">" %c"</span>,<span class="keyword">char</span>)<span class="comment">;//注意，这里%c之前有一个空格，功能是自动跳过空白字符（空格，回车，换                 //行符，制表符），需要从键盘输入单个字符的时候要尤其注意这一点</span></div></pre></td></tr></table></figure>
+
+<h5 id="break_&amp;_continue">break &amp; continue</h5>
+<p>break:跳出循环，从循环后面的语句执行<br>continue：跳出正在执行的本次循环，从下一次循环开始执行，但仍旧在循环之内运行</p>
+<h4 id="关于类：">关于类：</h4>
+<h5 id="工程中文件的分布：">工程中文件的分布：</h5>
+<p>一般在写项目的时候<br>interface和implementation是分开在两个文件里面写的<br>class.h和class.m<br>其中class.m需要导入class.h<br>而main.m也需要导入class.h，但不需要导入class.m<br>这种文件分配，很有利于大量代码的管理</p>
+<h5 id="自动生成取值、设值方法">自动生成取值、设值方法</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@interface</div><div class="line">@property int a,b;</div><div class="line"><span class="header">@end</span></div><div class="line">-----------------</div><div class="line">@implementation</div><div class="line">@synthesize a,b;</div><div class="line">@end</div></pre></td></tr></table></figure>
+
+<h5 id="使用点运算符访问属性">使用点运算符访问属性</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">object</span>.<span class="keyword">property</span> == [<span class="keyword">object</span> <span class="keyword">property</span>]</div><div class="line"><span class="comment">//点运算符多用于取值设值的时候，如果是单纯调用方法，还是推荐用[]</span></div></pre></td></tr></table></figure>
+
+<h5 id="具有多个参数的方法">具有多个参数的方法</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@interface</div><div class="line">-(void) setTo : (int) n over : (int) m</div><div class="line"><span class="header">@end</span></div><div class="line">---------------------</div><div class="line">@implementation</div><div class="line">-(void) setTo : (int) n over : (int) m</div><div class="line">{</div><div class="line">numeration = n;</div><div class="line">denomination = m;</div><div class="line">}</div><div class="line"><span class="header">@end</span></div><div class="line">----------------------</div><div class="line">main.m</div><div class="line">[object setTo :1 over :3];</div><div class="line">----------------------</div></pre></td></tr></table></figure>
+
+<h5 id="求最大公约数">求最大公约数</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>) reduce : (Fraction *) f </div><div class="line">{</div><div class="line"><span class="keyword">int</span> u = f.numeration;</div><div class="line"><span class="keyword">int</span> v = f.denomination;</div><div class="line"><span class="keyword">int</span> temp;</div><div class="line"></div><div class="line"><span class="keyword">while</span>(temp!=<span class="number">0</span>)</div><div class="line">{</div><div class="line">temp = u%v;</div><div class="line">u = v;</div><div class="line">v= temp</div><div class="line">}</div><div class="line"></div><div class="line">f.numeration \= u;</div><div class="line">f.denomination \= u;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h5 id="关键字">关键字</h5>
+<p>static:<br>累加器，在方法中修饰局部变量可以使得局部变量可以实现累加功能，不会因为每次重新初始化而使得局部变量“归零”</p>
+<p>self:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">-(void) add : (Fraction <span class="keyword">*</span>) f</div><div class="line">{</div><div class="line">//a/b+c/d = (a<span class="keyword">*</span>d+c<span class="keyword">*</span>b)/b<span class="keyword">*</span>d</div><div class="line"></div><div class="line">numeration = f.numeration<span class="keyword">*</span>denomination+f.denomination<span class="keyword">*</span>numeration;</div><div class="line">denomination = denomination<span class="keyword">*</span>f.denomination;</div><div class="line"></div><div class="line">[self reduce];//直接对得到的结果进行约简，相当于java的this</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h5 id="关于继承">关于继承</h5>
+<p>详情见代码包——Rectangle<br>main.m(import “XYPoint.h”&amp;&amp;”Rectangle.h”)<br>XYPoint.h<br>XYPoint.m(import “XYPoint.h”)<br>Rectangle.h<br>Rectangle.m(import “Rectangle.h”)</p>
+<h6 id="@class">@class</h6>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#import <span class="title">&lt;Foundation/Foundation.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@class</span> <span class="title">XYPoint</span>;</span></div><div class="line"><span class="comment">//声明，如果下面出现XYPoint字样，说明要使用XYPoint类，相当于一个类名称标记</span></div><div class="line"><span class="comment">//也可以换成#import "XYPoint.h"，但这个样子需要导入和处理整个XYPoint文件，</span></div><div class="line"><span class="comment">//但如果需要调用XYPoint类的方法和参数，则需要导入完整的XXPoint.h文件</span></div><div class="line"><span class="comment">//需要放在@interface之前声明，不能放在之后</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Rectangle</span> : <span class="title">NSObject</span></span></div><div class="line"><span class="keyword">@property</span> <span class="keyword">int</span> width,height;</div><div class="line"></div><div class="line">-(<span class="keyword">int</span>) area;</div><div class="line">-(<span class="keyword">int</span>) perimeter;</div><div class="line">-(XYPoint *) origin;</div><div class="line">-(<span class="keyword">void</span>) setWidth : (<span class="keyword">int</span>) w andHeight : (<span class="keyword">int</span>) h;</div><div class="line">-(<span class="keyword">void</span>) setOrigin : (XYPoint *) pt;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+
+<h5 id="有关类的问题">有关类的问题</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ([com1 isMemberOfClass :[Complex class]] == <span class="literal">YES</span>) ;<span class="comment">//对象是不是该类的成员</span></div><div class="line"><span class="keyword">if</span> ([com1 isKindOfClass :[<span class="built_in">NSObject</span> class]] == <span class="literal">YES</span>) ;<span class="comment">//对象是不是该类或者该类子类的成员</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> ([com1 respendsToSelector :<span class="keyword">@selector</span> (setReal:andIma:)] == <span class="literal">YES</span>) ;<span class="comment">//对象能不能响应这个方法</span></div><div class="line"><span class="keyword">if</span> ([Complex instancesRespendToSelector :<span class="keyword">@selector</span> (setReal:)] == <span class="literal">YES</span>) ;<span class="comment">//该类能不能响应这个方法</span></div><div class="line"><span class="keyword">if</span> ([Complex isSubclassOfClass :[<span class="built_in">NSObject</span> class]] == <span class="literal">YES</span>) ;<span class="comment">//该类是不是后面类的子类</span></div></pre></td></tr></table></figure>
+
+<h5 id="有关异常处理">有关异常处理</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">@try</span> </div><div class="line">{</div><div class="line"><span class="keyword">int</span> b = <span class="number">0</span>; </div><div class="line"><span class="keyword">switch</span> (b)  </div><div class="line">{</div><div class="line"><span class="keyword">case</span> <span class="number">0</span>:</div><div class="line"><span class="keyword">@throw</span>(ex);<span class="comment">//b=0，则抛出异常；</span></div><div class="line"><span class="keyword">break</span>;</div><div class="line"><span class="keyword">default</span>:</div><div class="line"><span class="keyword">break</span>;</div><div class="line">}</div><div class="line">}</div><div class="line"><span class="keyword">@catch</span> (<span class="built_in">NSException</span> *exception)<span class="comment">//捕获抛出的异常 </span></div><div class="line">{</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"b==0 Exception!"</span>);</div><div class="line">}</div><div class="line"><span class="keyword">@finally</span> </div><div class="line">{</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"finally!"</span>);</div><div class="line">}</div><div class="line">[ex release];</div><div class="line">}</div><div class="line"><span class="comment">//运行的结果：</span></div><div class="line">b==<span class="number">0</span> Exception!</div><div class="line">finally!</div></pre></td></tr></table></figure>
+
+<h5 id="重写对象的初始函数">重写对象的初始函数</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">-(Fraction *) initWith :(<span class="keyword">int</span>) n over: (<span class="keyword">int</span>) d</div><div class="line">{</div><div class="line"><span class="keyword">self</span> = [<span class="keyword">super</span> init];</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="keyword">self</span>)</div><div class="line">{</div><div class="line">[<span class="keyword">self</span> setTo :n over :d];</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">}</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>) setTo :(<span class="keyword">int</span>) n1 over :(<span class="keyword">int</span>) d1</div><div class="line">{</div><div class="line"><span class="keyword">self</span><span class="variable">.Numeration</span> = n1;</div><div class="line"><span class="keyword">self</span><span class="variable">.Denomination</span> = d1;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">//这里之所以使用id的返回值，是为了给后续对init的继承做准备，因为后续需要对init继承的时候，子类的类名和父类是不相同的，因此用id可以规避掉因为类名改变而不断变化返回值类型的麻烦</span></div><div class="line"></div><div class="line">-(<span class="keyword">id</span>) init </div><div class="line">{</div><div class="line"><span class="keyword">return</span> [<span class="keyword">self</span> initWith :<span class="number">0</span> over:<span class="number">0</span>];</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>执行语句</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Fraction *frac1 </span>=<span class="string"> [[Fraction alloc]initWith :4 over :6];</span></div></pre></td></tr></table></figure>
+
+<h5 id="实例变量作用域">实例变量作用域</h5>
+<p>@protected : 可被本类及子类访问，interface中定义的变量默认为这种类型</p>
+<p>@private ： 仅能被本类的方法访问，implementation中定义的变量默认为是这种类型</p>
+<p>@public ： 哪都可以用</p>
+<p>@package ： 本类的映像的任何敌方都可以访问这个变量</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="at_rule">@synthesize<span class="preprocessor"> windown</span> =<span class="preprocessor"> _windown</span>;</span></div><div class="line"><span class="comment">//windown是类的属性，而_windown是具体的类属性的实例变量</span></div><div class="line"></div><div class="line"><span class="attr_selector">[windown makeKey]</span>;<span class="comment">//没法运行</span></div><div class="line"><span class="attr_selector">[_windown makeKey]</span>;<span class="comment">//可以运行</span></div><div class="line"><span class="attr_selector">[self.windown makeKey]</span>;<span class="comment">//可以运行</span></div></pre></td></tr></table></figure>
+
+<h5 id="extern">extern</h5>
+<ol>
+<li>如果class A的变量 x 需要被好多个class使用：</li>
+</ol>
+<p>那么在classA中把x定义成：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="keyword">int</span> x;</div><div class="line">x = <span class="number">100</span>;</div></pre></td></tr></table></figure>
+
+<p>使用该变量的类，可以直接：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> x;</div></pre></td></tr></table></figure>
+
+<ol>
+<li>如果class A中的变量虽然会被其他class用，但是用的不多：</li>
+</ol>
+<p>那么class A中把x定义成：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">int x </span>=<span class="string"> 100;</span></div></pre></td></tr></table></figure>
+
+<p>使用该变量的类，可以引用为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="keyword">int</span> x;</div><div class="line">x = <span class="number">200</span>;</div></pre></td></tr></table></figure>
+
+<h5 id="类函数和成员函数">类函数和成员函数</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//类函数：可以直接用类名调用,不能有成员变量</span></div><div class="line"><span class="comment">//前置加号（+）的方法为类方法，这类方法是可以直接用类名来调用的，它的作用主要是创建一个实例。有人把它称为创建实例的工厂方法。</span></div><div class="line"><span class="comment">//前置减号（-）的方法为实例方法，必须使用类的实例才可以调用的。</span></div><div class="line"></div><div class="line">Fraction *fraction = [[Fraction allocF]init];</div><div class="line"></div><div class="line">+(Fraction *) init;</div><div class="line">+(Fraction *) allocF;</div><div class="line"></div><div class="line"><span class="comment">//成员函数：必须通过对象调用</span></div><div class="line">Fraction *fraciton = [[Fraction allocF]init];</div><div class="line">fraction.<span class="keyword">count</span> = <span class="number">1</span>;</div><div class="line">[fraction add :<span class="number">3</span> over :<span class="number">4</span>];</div><div class="line"></div><div class="line">-(<span class="keyword">int</span>) <span class="keyword">count</span>;</div><div class="line">-(<span class="keyword">void</span>) add :(<span class="keyword">int</span>) n over(<span class="keyword">int</span>) m;</div><div class="line"></div><div class="line">-----------------------------------------</div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> counter;</div><div class="line"></div><div class="line">+(Fraction *) allocF</div><div class="line">{</div><div class="line">extern <span class="keyword">int</span> counter;</div><div class="line">counter++;</div><div class="line"></div><div class="line"><span class="keyword">return</span> [Fraction alloc];</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line">+(<span class="keyword">int</span>) <span class="keyword">count</span></div><div class="line">{</div><div class="line">extern <span class="keyword">int</span> counter;</div><div class="line"><span class="keyword">return</span> counter;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h5 id="枚举语法和typedef重命名">枚举语法和typedef重命名</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明enum</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Direction</span></span>{north=<span class="number">1</span>,south,east,west};<span class="comment">//1，2，3，4</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Direction</span></span>{north,south,east,west};<span class="comment">//0，1，2，3</span></div><div class="line"><span class="comment">//定义enum对象</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Direction</span> direction1;</span></div><div class="line">direction1 = (enum Direction) 3;</div><div class="line">//免enum名，定义enum对象</div><div class="line">enum{north,south,east,west} direction2;</div><div class="line"><span class="comment">//typedef重命名enum</span></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span> {</span>north,south,east,west} Direction;</div><div class="line">Direction direction3,direction4;</div><div class="line"></div><div class="line"><span class="comment">//typedef的作用主要是，为一些数据类型起一个“小名”，以方便程序的阅读，比如你写一个int定义x，大家不知道什么意思，但是你写Counter定义一个x，大家就知道，这个x其实是一个计数器</span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> int Counter;</div><div class="line"><span class="comment">//这两条定义语句功能相同</span></div><div class="line">int x = <span class="number">1</span>;</div><div class="line">Counter x =<span class="number">1</span>;</div></pre></td></tr></table></figure>
+
+<h5 id="分类与类的扩展">分类与类的扩展</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//Fraction.m</div><div class="line"><span class="comment">#import "Fraction.h"</span></div><div class="line"></div><div class="line">//分类MathOps，在Fraction.m里面一起实现</div><div class="line">//不必列出父类和实例变量，因为这些已经包括在Fraction.h</div><div class="line"></div><div class="line"><span class="comment">@interface Fraction(MathOps)</span></div><div class="line"></div><div class="line">-(Fraction <span class="keyword">*</span>) reduce :(Fraction <span class="keyword">*</span>) f; </div><div class="line">-(Fraction <span class="keyword">*</span>) multiple :(Fraction <span class="keyword">*</span>) f; </div><div class="line">-(Fraction <span class="keyword">*</span>) divide :(Fraction <span class="keyword">*</span>) f; </div><div class="line"></div><div class="line"><span class="comment">@end</span></div><div class="line"></div><div class="line"><span class="comment">@implementation Fraction(MathOps)</span></div><div class="line">-(Fraction <span class="keyword">*</span>) reduce :(Fraction <span class="keyword">*</span>) f</div><div class="line">{</div><div class="line">......</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">@end</span></div></pre></td></tr></table></figure>
+
+<h5 id="类的扩展/未命名分类">类的扩展/未命名分类</h5>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Fraction</span>()</span></div><div class="line"><span class="comment">//括号里面没有命名</span></div><div class="line"><span class="comment">//可以定义实例变量来扩展类，这个是相比于命名分类的一个优势，命名分类不能定义实例变量</span></div><div class="line"><span class="comment">//定义的扩展方法必须在主实现区域内实现，否则会编译报错</span></div><div class="line"><span class="keyword">@property</span> <span class="keyword">int</span> UniqueID;</div><div class="line">-(Fraction *) square :(Fraction *) f; </div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Fraction</span>(<span class="title">MathOps</span>)</span></div><div class="line"></div><div class="line">@syntheasize UniqueID;</div><div class="line">-(Fraction *) square :(Fraction *) f</div><div class="line">{</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+
+<h5 id="协议与代理(协议实现的过程代理给继承他的子类)">协议与代理(协议实现的过程代理给继承他的子类)</h5>
+<p>声明一组协议</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSObject</span><span class="variable">.h</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">NSCopying</span></span></div><div class="line"></div><div class="line">-(<span class="keyword">id</span>)copyWithZone :(NSZone *)zone;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+
+<p>实现一组协议</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@interface</span> <span class="constant">AddressBook</span> <span class="symbol">:NSObject&lt;NSCopying</span>,<span class="constant">NSCoding</span>&gt;</div><div class="line"><span class="regexp">//</span>虽然不需要定义协议包含的接口，但必须在下面进行实现</div></pre></td></tr></table></figure>
+
+<p>可选择协议与死规定协议</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//协议都是父类定义，子类实现</span></div><div class="line"><span class="annotation">@protocol</span> Drawing<span class="comment">//死规定协议，继承的子类必须实现</span></div><div class="line">-(<span class="keyword">void</span>) paint;</div><div class="line">-(<span class="keyword">void</span>) erase;</div><div class="line"><span class="annotation">@optional</span><span class="comment">//可选择协议，继承的子类可实现可不实现</span></div><div class="line">-(<span class="keyword">void</span>) outline;</div><div class="line"><span class="annotation">@end</span></div></pre></td></tr></table></figure>
+
+<p>检察一个对象是否遵循Drawing协议</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>([currentObject conformsToProtocol : <span class="class"><span class="keyword">@protocol</span> (<span class="title">Drawing</span>)] == <span class="title">YES</span>)</span></div><div class="line"><span class="comment">//同类概念——检查一个类是否实现了一个方法</span></div><div class="line"><span class="keyword">if</span> ([Complex instancesRespendToSelector :<span class="keyword">@selector</span> (setReal:)] == <span class="literal">YES</span>) ;</div></pre></td></tr></table></figure>
+
+<p>检察一个对象是否实现了Drawing 协议中的outline方法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>([currentObject respondsToSelector : <span class="keyword">@selector</span> (outline) == <span class="literal">YES</span>])</div></pre></td></tr></table></figure>
+
+<p>检察变量的协议一致性</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">id&lt;Drawing&gt;</span> currentObject;</span></div></pre></td></tr></table></figure>
+
+<p>扩展现有的协议</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="at_rule">@<span class="keyword">protocol</span> <span class="function">Drawing3D</span>(Drawing)</span></div></pre></td></tr></table></figure>
+
+<p>分类也可以实现一组协议</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Fraction</span> (<span class="title">stuff</span>)&lt;<span class="title">NSCopying</span>,<span class="title">NSCoding</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<h5 id="合成对象">合成对象</h5>
+<p>square是Rectangle类的子类，是父子继承关系，但是Rectangle里面的很多方法并不适用于square，如果只单纯继承，会继承很多无用的方法，因此用下面的代码可以直接新定义一个类，这个类有很多新定义的属于自己的方法，这个方法和分类、子类都是扩展类定义的一种方法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//@interface square:Rectangle 这是原来的方法</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">square</span> :<span class="title">NSObject</span></span></div><div class="line">{</div><div class="line">Rectangle *rect;</div><div class="line">}</div><div class="line"></div><div class="line">-(<span class="keyword">int</span>) size;</div><div class="line">-(<span class="keyword">int</span>) setsize: (<span class="keyword">int</span>) s;</div><div class="line">-(<span class="keyword">int</span>) area;</div><div class="line">-(<span class="keyword">int</span>) perimeter;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">square</span></span></div><div class="line">-(<span class="keyword">void</span>) area</div><div class="line">{</div><div class="line"><span class="keyword">return</span> [rect area];<span class="comment">//使用父类方法的方式</span></div><div class="line">}</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line">------------</div><div class="line"><span class="comment">//但是这种方法在初始化的时候需要为square和rectangle都预留一部分地方</span></div><div class="line"><span class="comment">//因此要重写init或者添加initWithSide之类的新方法来分配空间</span></div></pre></td></tr></table></figure>
+
+<h4 id="预处理">预处理</h4>
+<p>预处理语句可以放在任何位置，但是大多数程序员把定义放在头文件，以便在多个源文件中引用<br>定义的变量和方法一般都用大写</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">define</span>:名称置换（相当于word中的替换，所以不能加；这样分号也就替换进去了）+宏方法定义</span></div><div class="line"></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> TRUE 1</span></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> PI 3.1415926</span></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> TWO_PI 2.0*PI</span></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> AND &&</span></div><div class="line"><span class="keyword">if</span>(time AND place) ==<span class="keyword">if</span>(time && place)</div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> OR ||</span></div><div class="line"><span class="keyword">if</span>(time OR place) ==<span class="keyword">if</span>(time || place)</div><div class="line"></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> IS_LEAP_YEAR year%4 ==0&&year%100 !=0\</span></div><div class="line">||year%<span class="number">400</span> ==<span class="number">0</span>      \是为了提示编译器还有一个后续</div><div class="line"><span class="keyword">if</span>(IS_LEAP_YEAR).....</div><div class="line"></div><div class="line"><span class="comment">//这样就不局限与当前year变量，而是普遍适用于任意年</span></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> IS_LEAP_YEAR(y) y%4 ==0&&y%100 !=0||y%400 ==0    </span></div><div class="line"><span class="keyword">if</span>(IS_LEAP_YEAR(y)).....</div><div class="line"></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> SQUARE(X) ((X)*(X))</span></div><div class="line"><span class="comment">//如果不加括号，会导致v+1*v+1，加了括号就是（V+1）*(V+1)</span></div><div class="line"></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> MakeFraction(x,y) ([[Fraction alloc]initWith: x over :y])</span></div><div class="line">myFract = MakeFraction(<span class="number">1</span>,<span class="number">3</span>);</div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> MAX(a,b) ((a)&gt;(b)?(a):(b))</span></div><div class="line"><span class="comment">//用括号括起来，是为了避免运算错误</span></div><div class="line"><span class="comment">//1.MAX(x+1,y)*100  2.MAX(x&y,z)</span></div><div class="line"></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> IS_LOWER_CASE(x) (((x)&gt;('a'))&&(x)&lt;('z'))<span class="comment">//返回真值</span></span></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> TO_UPPER(x) (IS_LOWER_CASE(x)? ((x)-'a'+'A'):(x))<span class="comment">//返回字母</span></span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">define</span> IPAD 1</span></div><div class="line"></div><div class="line"><span class="preprocessor">#ifdef IPAD</span></div><div class="line"><span class="preprocessor">#   <span class="keyword">define</span> IMAGE @"ipad.jpg"<span class="comment">//别忘了空格</span></span></div><div class="line"><span class="preprocessor">#<span class="keyword">elif</span> IPHONE<span class="comment">//#else</span></span></div><div class="line"><span class="preprocessor">#   <span class="keyword">define</span> IMAGE @"iphone.jpg"<span class="comment">//别忘了空格</span></span></div><div class="line"><span class="preprocessor">#<span class="keyword">endif</span></span></div><div class="line"></div><div class="line">编译过程中，可以通过 -D IPAD 来声明IPAD,从而是所有出现<span class="preprocessor">#ifdef IPAD的地方都通过</span></div><div class="line">Xcode在Buildsetting中设定 IPAD DEBUG</div><div class="line">gcc -framework-Foundation -D IPAD main.m -</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#if defined(DEBUG)</span></div><div class="line">NSLog(@<span class="string">"usename = %s,userid = %i"</span>,Username,UserId);</div><div class="line"><span class="preprocessor">#elif......</span></div><div class="line"><span class="preprocessor">#endif</span></div><div class="line"><span class="comment">//功能等价于</span></div><div class="line"><span class="preprocessor">#ifdef DEBUG</span></div><div class="line">NSLog(@<span class="string">"usename = %s,userid = %i"</span>,Username,UserId);</div><div class="line"><span class="preprocessor">#elif......</span></div><div class="line"><span class="preprocessor">#endif</span></div><div class="line"></div><div class="line"><span class="comment">//要保证DEBUG不仅仅被定义而且值非零才能继续进行下一步</span></div><div class="line"><span class="preprocessor">#if defined(DEBUG)&&DEBUG</span></div><div class="line"><span class="preprocessor">#define.....</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//消除定义</span></div><div class="line"><span class="preprocessor">#<span class="keyword">undef</span> IPAD</span></div><div class="line">之后的<span class="preprocessor">#ifdef IPAD和#<span class="keyword">if</span> defined(IPAD)两句话的值都是false</span></div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/31/《objective-c程序设计》笔记——语法篇/" data-id="uvs9cf8uda3suwax" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C语言/">C语言</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objective-c/">objective-c</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/31/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/31/《objective-c程序设计》笔记——C语言相关篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">《objective-c程序设计》笔记——C语言相关篇</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/编程学习/">编程学习</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C语言/">C语言</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objective-c/">objective-c</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C语言/" style="font-size: NaNpx;">C语言</a><a href="/tags/objective-c/" style="font-size: NaNpx;">objective-c</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/10/31/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/31/《objective-c程序设计》笔记——语法篇/">《objective-c程序设计》笔记——C语言相关篇</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/31/《objective-c程序设计》笔记——C语言相关篇/">《objective-c程序设计》笔记——C语言相关篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 修宇亮<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">存档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+    <a href="/todolist" class="mobile-nav-link">ToDo</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
