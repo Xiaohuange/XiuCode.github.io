@@ -5,33 +5,15 @@
   
   <title>《objective-c程序设计》笔记——OC基础语法篇 | 语亮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Terminal编译OC代码的指令：123456mkdir test01cd test01vi main.mclang -fobjc-arc -framework Foundation main.m -o test01./test01
-
-
-
-123@autoreleasepool{ NSLog(@'Program is running!');}
-
-@autoreleasepool:应用创建新对象">
+  <meta name="description" content="本文举例讲解了objective-c语言的基本语法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《objective-c程序设计》笔记——OC基础语法篇">
-<meta property="og:url" content="http://yoursite.com/2014/10/31/《objective-c程序设计》笔记——语法篇/">
+<meta property="og:url" content="http://yuliang.github.io/2014/10/31/《objective-c程序设计》笔记——语法篇/">
 <meta property="og:site_name" content="语亮">
-<meta property="og:description" content="Terminal编译OC代码的指令：123456mkdir test01cd test01vi main.mclang -fobjc-arc -framework Foundation main.m -o test01./test01
-
-
-
-123@autoreleasepool{ NSLog(@'Program is running!');}
-
-@autoreleasepool:应用创建新对象">
+<meta property="og:description" content="本文举例讲解了objective-c语言的基本语法">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《objective-c程序设计》笔记——OC基础语法篇">
-<meta name="twitter:description" content="Terminal编译OC代码的指令：123456mkdir test01cd test01vi main.mclang -fobjc-arc -framework Foundation main.m -o test01./test01
-
-
-
-123@autoreleasepool{ NSLog(@'Program is running!');}
-
-@autoreleasepool:应用创建新对象">
+<meta name="twitter:description" content="本文举例讲解了objective-c语言的基本语法">
 
   
     <link rel="alternative" href="/atom.xml" title="语亮" type="application/atom+xml">
@@ -135,6 +117,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#terminal编译oc代码的指令："><span class="article-toc-text">Terminal编译OC代码的指令：</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#创建类和对象的方式：（分数程序-分子/分母）"><span class="article-toc-text">创建类和对象的方式：（分数程序-分子/分母）</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#数据类型和表达式"><span class="article-toc-text">数据类型和表达式</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#nslog转换字符："><span class="article-toc-text">NSLog转换字符：</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#浮点数科学计数法："><span class="article-toc-text">浮点数科学计数法：</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#限定词："><span class="article-toc-text">限定词：</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#模运算符"><span class="article-toc-text">模运算符</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#类型强制转换"><span class="article-toc-text">类型强制转换</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#键盘输入"><span class="article-toc-text">键盘输入</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#break-&-continue"><span class="article-toc-text">break & continue</span></a></li></ol></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#关于类："><span class="article-toc-text">关于类：</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#工程中文件的分布："><span class="article-toc-text">工程中文件的分布：</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#自动生成取值、设值方法"><span class="article-toc-text">自动生成取值、设值方法</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#使用点运算符访问属性"><span class="article-toc-text">使用点运算符访问属性</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#具有多个参数的方法"><span class="article-toc-text">具有多个参数的方法</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#求最大公约数"><span class="article-toc-text">求最大公约数</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#关键字"><span class="article-toc-text">关键字</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#关于继承"><span class="article-toc-text">关于继承</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-6"><a class="article-toc-link" href="#@class"><span class="article-toc-text">@class</span></a></li></ol></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#有关类的问题"><span class="article-toc-text">有关类的问题</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#有关异常处理"><span class="article-toc-text">有关异常处理</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#重写对象的初始函数"><span class="article-toc-text">重写对象的初始函数</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#实例变量作用域"><span class="article-toc-text">实例变量作用域</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#extern"><span class="article-toc-text">extern</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#类函数和成员函数"><span class="article-toc-text">类函数和成员函数</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#枚举语法和typedef重命名"><span class="article-toc-text">枚举语法和typedef重命名</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#分类与类的扩展"><span class="article-toc-text">分类与类的扩展</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#类的扩展/未命名分类"><span class="article-toc-text">类的扩展/未命名分类</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#协议与代理(协议实现的过程代理给继承他的子类)"><span class="article-toc-text">协议与代理(协议实现的过程代理给继承他的子类)</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#合成对象"><span class="article-toc-text">合成对象</span></a></li></ol></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#预处理"><span class="article-toc-text">预处理</span></a></li></ol></div><hr>
+<p>本文举例讲解了objective-c语言的基本语法
+<a id="more"></a></p>
 <h4 id="terminal编译oc代码的指令：">Terminal编译OC代码的指令：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">mkdir</span> test01</div><div class="line"><span class="keyword">cd</span> test01</div><div class="line"><span class="keyword">vi</span> main.<span class="keyword">m</span></div><div class="line">clang -fobjc-arc -framework Foundation main.<span class="keyword">m</span> -<span class="keyword">o</span> test01</div><div class="line">./test01</div></pre></td></tr></table></figure>
 
 
@@ -307,7 +291,7 @@ Rectangle.m(import &quot;Rectangle.h&quot;)</p>
 
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-《objective-c程序设计》笔记——语法篇" data-title="《objective-c程序设计》笔记——OC基础语法篇" data-url="http://yoursite.com/2014/10/31/《objective-c程序设计》笔记——语法篇/"></div>
+    <div class="ds-thread" data-thread-key="post-《objective-c程序设计》笔记——语法篇" data-title="《objective-c程序设计》笔记——OC基础语法篇" data-url="http://yuliang.github.io/2014/10/31/《objective-c程序设计》笔记——语法篇/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -324,6 +308,7 @@ Rectangle.m(import &quot;Rectangle.h&quot;)</p>
     <!-- 多说公共JS代码 end -->
   </section>
   
+  
 </section>
         
           
@@ -339,17 +324,15 @@ Rectangle.m(import &quot;Rectangle.h&quot;)</p>
       
     </li>
     <li>
-      <a data-url="http://yoursite.com/2014/10/31/《objective-c程序设计》笔记——语法篇/" data-id="gfymr23kuc7wkgrj" data_title="《objective-c程序设计》笔记——OC基础语法篇"
+      <a data-url="http://yuliang.github.io/2014/10/31/《objective-c程序设计》笔记——语法篇/" data-id="gfymr23kuc7wkgrj" data_title="《objective-c程序设计》笔记——OC基础语法篇"
         data_summary="
-Terminal编译OC代码的指令：123456mkdir test01cd test01vi main.mclang -fobjc-arc -framework Foundation main.m -o test01./test01
+本文举例讲解了objective-c语言的基本语法
 
-
-
-123@autoreleasepool{ NSLog(@"P..." class="article-share-link">Share</a>
+Terminal编译OC代码的指令：123456mkdir test01cd test01vi main.mclang -fobjc-arc -framework Foundation main.m -o test01...." class="article-share-link">Share</a>
     </li>
     <li>
       
-        <span class="nav-next disabled">Next</span>
+        <a href="/2014/08/09/暑假工作总结/" class="nav-next">Next</a>
       
     </li>
   </ul>
