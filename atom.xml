@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="www.xiuyuliang.com/"/>
-  <updated>2014-11-20T06:47:18.393Z</updated>
+  <updated>2014-11-20T16:29:04.276Z</updated>
   <id>www.xiuyuliang.com/</id>
   
   <author>
@@ -51,7 +51,7 @@
     <link href="www.xiuyuliang.com/2014/10/31/%E3%80%8Aobjective-c%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%8B%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95%E7%AF%87/"/>
     <id>www.xiuyuliang.com/2014/10/31/《objective-c程序设计》笔记——语法篇/</id>
     <published>2014-10-30T17:21:26.000Z</published>
-    <updated>2014-11-04T08:31:16.000Z</updated>
+    <updated>2014-11-20T12:07:04.000Z</updated>
     <content type="html"><![CDATA[<p>本文举例讲解了objective-c语言的基本语法
 <a id="more"></a></p>
 <h4 id="terminal编译oc代码的指令：">Terminal编译OC代码的指令：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">mkdir</span> test01</div><div class="line"><span class="keyword">cd</span> test01</div><div class="line"><span class="keyword">vi</span> main.<span class="keyword">m</span></div><div class="line">clang -fobjc-arc -framework Foundation main.<span class="keyword">m</span> -<span class="keyword">o</span> test01</div><div class="line">./test01</div></pre></td></tr></table></figure>
