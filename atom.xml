@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="www.xiuyuliang.com/"/>
-  <updated>2014-11-20T04:51:39.245Z</updated>
+  <updated>2014-11-20T04:54:01.847Z</updated>
   <id>www.xiuyuliang.com/</id>
   
   <author>
@@ -15,12 +15,14 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[]]></title>
+    <title><![CDATA[《objective-c程序设计》[Foundation框架篇]]]></title>
     <link href="www.xiuyuliang.com/2014/11/20/%E3%80%8Aobjective-c%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%8B%5Bfoundation%E6%A1%86%E6%9E%B6%E7%AF%87%5D/"/>
     <id>www.xiuyuliang.com/2014/11/20/《objective-c程序设计》[foundation框架篇]/</id>
-    <published>2014-11-20T04:51:01.000Z</published>
-    <updated>2014-11-20T04:51:01.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="《objective-c程序设计》[foundation框架篇]">《objective-c程序设计》[Foundation框架篇]</h1><h3 id="快速查看头文件、方法和类的文档：">快速查看头文件、方法和类的文档：</h3><p>鼠标移到文本上+option+点击鼠标
+    <published>2014-11-19T17:21:26.000Z</published>
+    <updated>2014-11-20T04:53:52.000Z</updated>
+    <content type="html"><![CDATA[<p>本文举例讲解了使用objective-c语言时，与Foundation框架有关系的一些语法规则。
+<a id="more"></a></p>
+<h3 id="快速查看头文件、方法和类的文档：">快速查看头文件、方法和类的文档：</h3><p>鼠标移到文本上+option+点击鼠标
 面板右上角有一个书本icon和一个h字母icon，前者用来查看有关文档，后者会显示包含选择项目的头文件</p>
 <h3 id="数字对象">数字对象</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#import<span class="title">&lt;Foundation/Foundation.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</div><div class="line">{</div><div class="line">	<span class="keyword">@autoreleasepool</span></div><div class="line">	{</div><div class="line">		<span class="built_in">NSNumber</span> *intNumber, *floatNumber, *charNumber,*intNumber2;</div><div class="line">		<span class="built_in">NSInteger</span> myInt;</div><div class="line"></div><div class="line">		intNumber = [<span class="built_in">NSNumber</span> numberWithInteger: <span class="number">100</span>];<span class="comment">//intNumber是一个值为100的integer对象</span></div><div class="line">		intNumber2 = [<span class="built_in">NSNumber</span> numberWithInt: <span class="number">200</span>];</div><div class="line">		<span class="built_in">NSString</span> *str = <span class="string">@"Programming is boring!"</span>;</div><div class="line">		myInt = [intNumber integerValue];<span class="comment">//myint不是对象，NSInteger是一个typedef，是64位的long或者是32位的int，NSUInteger是无符号整数</span></div><div class="line">		<span class="built_in">NSLog</span>(<span class="string">@"The int is %li"</span>,(<span class="keyword">long</span>)myInt);</div><div class="line">		<span class="built_in">NSLog</span>(<span class="string">@"This int2 is %i"</span>,[intNumber2 intValue]);</div><div class="line"></div><div class="line">		<span class="comment">//@可以所谓指向一个对象的通配符，这个对象可以使NSNumber或者NSString</span></div><div class="line">		<span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,str);</div><div class="line">		<span class="built_in">NSLog</span>(<span class="string">@"The int is %@"</span>,intNumber);</div><div class="line">		</div><div class="line"></div><div class="line">		<span class="comment">//NSLog(@"ThiS init is %li",(long)[intNumber integerValue]);报错，必须是格式一致的输出才有效</span></div><div class="line"></div><div class="line">		<span class="comment">//numberWithFloat,numberWithInt,numberWithChar都是创建加初始化，单独的初始化用initWithInit,initWithChar...</span></div><div class="line">		floatNumber = [<span class="built_in">NSNumber</span> numberWithFloat: <span class="number">100.0</span>];</div><div class="line">		<span class="built_in">NSLog</span>(<span class="string">@"This float is %g"</span>,[floatNumber floatValue]);</div><div class="line"></div><div class="line">		charNumber = [<span class="built_in">NSNumber</span> numberWithChar: <span class="string">'x'</span>];</div><div class="line">		<span class="built_in">NSLog</span>(<span class="string">@"This char is %c"</span>,[charNumber charValue]);</div><div class="line"></div><div class="line">		<span class="keyword">if</span>([floatNumber isEqualToNumber: intNumber] == <span class="literal">YES</span>)</div><div class="line">			<span class="built_in">NSLog</span>(<span class="string">@"Equal!"</span>);</div><div class="line"></div><div class="line">		<span class="comment">//A&gt;B返回NSOrderDescending,A=B返回NSOrderSame,A&lt;B返回NSOrerAscending</span></div><div class="line">		<span class="keyword">if</span>([intNumber compare: floatNumber] == NSOrderedAscending)</div><div class="line">			<span class="built_in">NSLog</span>(<span class="string">@"Init is less than float!"</span>);</div><div class="line"></div><div class="line">	}</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
 
@@ -31,8 +33,14 @@
 
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="《objective-c程序设计》[foundation框架篇]">《objective-c程序设计》[Foundation框架篇]</h1><h3 id="快速查看头文件、方法和类的文档：">快速查看头文件、方法和类的文档：</h3><p>鼠标移到文本上+opt]]>
+    <![CDATA[<p>本文举例讲解了使用objective-c语言时，与Foundation框架有关系的一些语法规则。
+]]>
+    
     </summary>
+    
+      <category term="objective-c，Foudation框架" scheme="www.xiuyuliang.com/tags/objective-c%EF%BC%8CFoudation%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="编程学习" scheme="www.xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
