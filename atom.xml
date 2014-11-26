@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="www.xiuyuliang.com/"/>
-  <updated>2014-11-24T08:49:55.453Z</updated>
+  <updated>2014-11-26T04:21:33.678Z</updated>
   <id>www.xiuyuliang.com/</id>
   
   <author>
@@ -15,11 +15,60 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Matlab学习笔记]]></title>
+    <link href="www.xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>www.xiuyuliang.com/2014/11/26/Matlab学习笔记/</id>
+    <published>2014-11-25T17:21:26.000Z</published>
+    <updated>2014-11-26T04:20:37.000Z</updated>
+    <content type="html"><![CDATA[<p>由于考虑在数学建模上有所精进，再加上大三课程需要通过Matlab进行数字图像处理，所以决定认真的熟悉一遍Matlab的基本操作，本文主要记录一些学习Matlab过程中的一些琐碎的易忘的知识点，以待日后翻阅查看。</p>
+<a id="more"></a>
+
+
+<h4 id="快捷键">快捷键</h4><ul>
+<li><code>cmd+k</code> 清除指令界面</li>
+<li><code>quit</code> 退出matlab</li>
+</ul>
+<h4 id="指令集合">指令集合</h4><ul>
+<li><code>whos</code> 可以查询迄今为止所有定义的变量的类型、内存空间、是否复数,<code>who</code>只查看变量名称</li>
+<li><code>clear</code> 清除全部变量，<code>clear x y z</code>清除制定变量</li>
+<li><code>...</code> 用来续行</li>
+<li><code>format short/long</code> 结果精确到4位小数或者16位小数，<code>format short e</code>用科学计数法计数，<code>format rat</code> 查找最近结果的比例式</li>
+<li><code>%</code> 注释标记</li>
+</ul>
+<h4 id="数学运算符">数学运算符</h4><ul>
+<li><code>pi</code> 相当于派</li>
+<li><code>exp(a)</code> 求解e的a次方</li>
+<li><code>sqrt(a)</code> 对a开根号</li>
+<li><code>log(a)</code> 求a的自然对数ln(a)，<code>log10(a)</code> 求10为底的a的对数</li>
+<li><code>sin</code> <code>cos</code> <code>tan</code> <code>atan</code> 三角函数随便用</li>
+<li><code>a/b</code>是右除，意思是a➗b</li>
+<li><code>a\b</code>是左除，意思是b➗a</li>
+<li>运算顺序：幂运算优于乘除，右除优于左除</li>
+<li>在赋值语句后面加 <code>;</code> 可以只起到赋值的效果，不输出 <code>x=20</code> 的赋值结果（不显示在命令窗口）</li>
+<li><code>2 +3i</code> 表示复数就可以用i</li>
+<li></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>由于考虑在数学建模上有所精进，再加上大三课程需要通过Matlab进行数字图像处理，所以决定认真的熟悉一遍Matlab的基本操作，本文主要记录一些学习Matlab过程中的一些琐碎的易忘的知识点，以待日后翻阅查看。</p>
+]]>
+    
+    </summary>
+    
+      <category term="Matlab" scheme="www.xiuyuliang.com/tags/Matlab/"/>
+    
+      <category term="数学建模" scheme="www.xiuyuliang.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+      <category term="编程学习" scheme="www.xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[许岑Keynote教学[知识点梳理]]]></title>
     <link href="www.xiuyuliang.com/2014/11/23/%E8%AE%B8%E5%B2%91Keynote%E6%95%99%E5%AD%A6%5B%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0%5D/"/>
     <id>www.xiuyuliang.com/2014/11/23/许岑Keynote教学[个人笔记]/</id>
     <published>2014-11-22T17:21:26.000Z</published>
-    <updated>2014-11-24T08:49:50.000Z</updated>
+    <updated>2014-11-24T09:05:54.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-11-24 16.42.08.png" alt="xucen"></p>
 <blockquote>
 <p>最近在学习美貌大王-许岑的《keynote教学视频》，许岑这个人有很多身份，他是电影学院电影录音艺术专业的学生，在英国留过学，后来成为托福雅思英语名师，曾经在罗永浩的“老罗英语培训”任教；同时他还是一个音乐人，他的专辑《在平坦的道路上曲折前行》，狂销一百多张（看来是玩票的）；现在他在罗永浩的锤子公司任职，负责一些App原型交互设计等美工方面的工作，当然，最让他引以为豪、也让他声名鹊起的，是这样一个身份——罗永浩大型公开演讲的御用幻灯片制作人。</p>
