@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="www.xiuyuliang.com/"/>
-  <updated>2014-11-26T04:21:33.678Z</updated>
+  <updated>2014-11-29T07:19:53.056Z</updated>
   <id>www.xiuyuliang.com/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[微软‘无境使者’开发培训营]]></title>
+    <link href="www.xiuyuliang.com/2014/11/29/%E5%BE%AE%E8%BD%AF%E5%BC%80%E5%8F%91%E8%80%85%E5%9F%B9%E8%AE%AD%E8%90%A5/"/>
+    <id>www.xiuyuliang.com/2014/11/29/微软开发者培训营/</id>
+    <published>2014-11-28T17:21:26.000Z</published>
+    <updated>2014-11-29T03:14:43.000Z</updated>
+    <content type="html"><![CDATA[<p>参加了为期两天的由微软举办的‘开发者培训营’，下面是课程笔记
+<a id="more"></a></p>
+<h3 id="开幕式讲解">开幕式讲解</h3><p>学生资源：dreamspark</p>
+<p>技术论坛：MSDN，点部落，TechNech</p>
+<p>APP竞赛：社群之星，Imagine Cup</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>参加了为期两天的由微软举办的‘开发者培训营’，下面是课程笔记
+]]>
+    
+    </summary>
+    
+      <category term="C" scheme="www.xiuyuliang.com/tags/C/"/>
+    
+      <category term="XAML" scheme="www.xiuyuliang.com/tags/XAML/"/>
+    
+      <category term="微软" scheme="www.xiuyuliang.com/tags/%E5%BE%AE%E8%BD%AF/"/>
+    
+      <category term="App开发" scheme="www.xiuyuliang.com/tags/App%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="编程学习" scheme="www.xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Matlab学习笔记]]></title>
