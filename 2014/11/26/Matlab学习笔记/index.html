@@ -168,16 +168,70 @@
 <li><code>inv(a)</code>求矩阵a的逆矩阵，<code>det(a) != 0</code>的矩阵a才有逆矩阵</li>
 </ul>
 <h4 id="绘制图像">绘制图像</h4><ul>
-<li><code>x=[0:0.1:10]; y=cos(x); plot(x,y),xlabel(&#39;x&#39;),ylabel(&#39;cos(x)&#39;),gird on,axis equal;</code>绘制图像+加坐标轴标签+网格+坐标轴间隔相同，当更新x的区间或者间隔的时候，需要重新调用y=cosx来更新y值，否则会报错</li>
+<li><code>x=[0:0.1:10]; y=cos(x); plot(x,y),xlabel(&#39;x&#39;),ylabel(&#39;cos(x)&#39;),gird on,axis equal,legend(&#39;cos(x)&#39;);</code>绘制图像+加坐标轴标签+网格+坐标轴间隔相同+图例，当更新x的区间或者间隔的时候，需要重新调用y=cosx来更新y值，否则会报错</li>
 <li><code>fplot(&#39;exp(-2*t)*sin(t)&#39;,[0, 4]), xlabel(&#39;t&#39;), ylabel(&#39;f(t)&#39;), title(&#39;阻尼弹力&#39;)</code>fplot自动计算间隔，画出平滑的曲线</li>
-<li><p><code>t = [0:0.02:4];f = exp(-2*t)*sin(t);
- ??? Error using ==&gt; mtimes
- Inner matrix dimensions must agree.</code></p>
-<p> 当一个函数是由二个或更多个函数相乘构成,别忘记在相乘时加上“.”以便告诉 MATLAB 我们是对两个矩阵进行相乘。应改为<code>t = [0:0.02:4];f = exp(-2*t).*sin(t);</code></p>
+<li><code>axis ( [xmin xmax ymin ymax] )</code>确定绘图的x轴和y轴的绘图范围</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">t = [<span class="number">0</span>:<span class="number">0.02</span>:<span class="number">4</span>];</div><div class="line">f = <span class="built_in">exp</span>(-<span class="number">2</span>*t)*<span class="built_in">sin</span>(t);</div><div class="line">??? Error using ==&gt; mtimes</div><div class="line">Inner <span class="keyword">matrix</span> dimensions must agree.</div></pre></td></tr></table></figure>
+
+<ul>
+<li><p>当一个函数是由二个或更多个函数相乘构成,别忘记在相乘时加上“.”以便告诉 MATLAB 我们是对两个矩阵进行相乘。应改为<code>t = [0:0.02:4];f = exp(-2*t).*sin(t);</code></p>
 </li>
 <li><p>同时画两条曲线，<code>plot(t,f,&#39;-&#39;,t,g,&#39;--&#39;)</code> </p>
 </li>
 <li>实线&#39;-&#39;虚线&#39;--&#39;虚点线&#39;-.&#39;点线 &#39;:&#39;`</li>
+<li>同时画两条实线，并且确定两条实现的颜色和虚实<code>plot(x,y,&#39;r&#39;,x,z,&#39;b--&#39;)</code></li>
+</ul>
+<p>MATLAB 颜色说明符</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">颜色</th>
+<th style="text-align:left">key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">黑色</td>
+<td style="text-align:left">k</td>
+</tr>
+<tr>
+<td style="text-align:left">白色</td>
+<td style="text-align:left">w</td>
+</tr>
+<tr>
+<td style="text-align:left">红色</td>
+<td style="text-align:left">r</td>
+</tr>
+<tr>
+<td style="text-align:left">黄色</td>
+<td style="text-align:left">y</td>
+</tr>
+<tr>
+<td style="text-align:left">绿色</td>
+<td style="text-align:left">g</td>
+</tr>
+<tr>
+<td style="text-align:left">蓝色</td>
+<td style="text-align:left">b</td>
+</tr>
+<tr>
+<td style="text-align:left">青色</td>
+<td style="text-align:left">c</td>
+</tr>
+<tr>
+<td style="text-align:left">洋红</td>
+<td style="text-align:left">m</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>绘制子图使用命令 subplot(m, n, p),这里 m 和 n 告诉 MATLAB 产生的产生的子图有 m 行和 n 列,p 用来告诉 MATLAB 我们所要贴上去的 某个已经绘制的图形窗口在第几个块中，记住，要先subplot开辟空白表，在plot画上图像</li>
+<li><code>x = linspace(a,b)</code>
+MATLAB 会在 a 到 b 间取出均匀分布的 100 个点(或行向量),如果写成
+ <code>x = linspace(a,b,n)</code>
+那么 MATLAB 会在 a、b 之间取出均匀分布的 n 个点。</li>
+<li>加<code>hold on</code>可以使得两个图像重叠，而不必清除原有重新绘制</li>
 <li></li>
 </ul>
 
