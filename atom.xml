@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="www.xiuyuliang.com/"/>
-  <updated>2014-11-29T07:19:53.056Z</updated>
+  <updated>2014-12-04T02:50:41.563Z</updated>
   <id>www.xiuyuliang.com/</id>
   
   <author>
@@ -15,41 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[微软‘无境使者’开发培训营]]></title>
-    <link href="www.xiuyuliang.com/2014/11/29/%E5%BE%AE%E8%BD%AF%E5%BC%80%E5%8F%91%E8%80%85%E5%9F%B9%E8%AE%AD%E8%90%A5/"/>
-    <id>www.xiuyuliang.com/2014/11/29/微软开发者培训营/</id>
-    <published>2014-11-28T17:21:26.000Z</published>
-    <updated>2014-11-29T03:14:43.000Z</updated>
-    <content type="html"><![CDATA[<p>参加了为期两天的由微软举办的‘开发者培训营’，下面是课程笔记
-<a id="more"></a></p>
-<h3 id="开幕式讲解">开幕式讲解</h3><p>学生资源：dreamspark</p>
-<p>技术论坛：MSDN，点部落，TechNech</p>
-<p>APP竞赛：社群之星，Imagine Cup</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>参加了为期两天的由微软举办的‘开发者培训营’，下面是课程笔记
-]]>
-    
-    </summary>
-    
-      <category term="C" scheme="www.xiuyuliang.com/tags/C/"/>
-    
-      <category term="XAML" scheme="www.xiuyuliang.com/tags/XAML/"/>
-    
-      <category term="微软" scheme="www.xiuyuliang.com/tags/%E5%BE%AE%E8%BD%AF/"/>
-    
-      <category term="App开发" scheme="www.xiuyuliang.com/tags/App%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="编程学习" scheme="www.xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Matlab学习笔记]]></title>
     <link href="www.xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>www.xiuyuliang.com/2014/11/26/Matlab学习笔记/</id>
     <published>2014-11-25T17:21:26.000Z</published>
-    <updated>2014-11-26T04:20:37.000Z</updated>
+    <updated>2014-12-03T05:41:07.000Z</updated>
     <content type="html"><![CDATA[<p>由于考虑在数学建模上有所精进，再加上大三课程需要通过Matlab进行数字图像处理，所以决定认真的熟悉一遍Matlab的基本操作，本文主要记录一些学习Matlab过程中的一些琐碎的易忘的知识点，以待日后翻阅查看。</p>
 <a id="more"></a>
 
@@ -67,6 +37,7 @@
 </ul>
 <h4 id="数学运算符">数学运算符</h4><ul>
 <li><code>pi</code> 相当于派</li>
+<li><code>abs</code>求绝对值</li>
 <li><code>exp(a)</code> 求解e的a次方</li>
 <li><code>sqrt(a)</code> 对a开根号</li>
 <li><code>log(a)</code> 求a的自然对数ln(a)，<code>log10(a)</code> 求10为底的a的对数</li>
@@ -76,6 +47,39 @@
 <li>运算顺序：幂运算优于乘除，右除优于左除</li>
 <li>在赋值语句后面加 <code>;</code> 可以只起到赋值的效果，不输出 <code>x=20</code> 的赋值结果（不显示在命令窗口）</li>
 <li><code>2 +3i</code> 表示复数就可以用i</li>
+<li><code>.^</code>幂次方运算需要在<code>^</code>之前加<code>.</code></li>
+</ul>
+<h4 id="线性代数">线性代数</h4><ul>
+<li>行向量 a=[1,2,3] a=[1 2 3], 列向量 b=[1;2;3]</li>
+<li>引用向量的个别“单行单列”元素<code>a(1),a(4:6),a(:)</code>第三个是显示a向量所有的元素</li>
+<li>引用向量的个别“多行多列”元素<code>a(2,3) a(:,2) a(:,2:3) a(1:2,2:3)</code>第二行第三列，第二列，第二列和第三列，一二行二三列，<code>a(1,:)=[]</code>,删除第一行</li>
+<li>复制行创建新矩阵<code>a([1,2,1],:)</code>，复制一行放在一行，复制二行放在二行，复制一行放在三行</li>
+<li>转置运算用 <code>&#39;</code> ，加减乘除直接算</li>
+<li>向量合并，行向量用<code>,</code>合并，列向量用<code>;</code>合并</li>
+<li><code>a=[0:2:10]</code>创建从0到10间隔2的等差行向量</li>
+<li><code>a=logspace(0,1,5)</code>创建从10^0到10^1之间含有5个等差元素的点，注意是圆括号（）</li>
+<li><code>length(a),max(a),min(a)</code>分别求解出- 矩阵的个数，最大值，最小值</li>
+<li>求模（繁琐版）对于实数 <code>sqrt(sum(a.*a))</code> 对于复数<code>sqrt(sum(a.*conj(a)))</code></li>
+<li><code>dot(a,b) cross(a,b)</code>点乘（对应元素相乘并求和）和叉乘</li>
+<li>当a是带有复数的矩阵，<code>&#39;</code>是转置加共轭，而<code>.&#39;</code>是单纯的转置</li>
+<li><code>.*</code>是对应位置元素相乘（行乘行），<code>*</code>是矩阵相乘（行乘列）</li>
+<li><code>./``.\``.^</code>分别是右除，左除和幂次方，换句话说只要是加<code>.</code>基本都是对应位置元素互相运算</li>
+<li><code>zeros(m),zeros(m,n) eye(m),eye(m,n)</code>分别是零矩阵和单位矩阵</li>
+<li><code>det(a)</code>求矩阵a的行列式，助力求解多元一次方程的解</li>
+<li><code>rank(a)</code>求矩阵a的秩</li>
+<li><code>inv(a)</code>求矩阵a的逆矩阵，<code>det(a) != 0</code>的矩阵a才有逆矩阵</li>
+</ul>
+<h4 id="绘制图像">绘制图像</h4><ul>
+<li><code>x=[0:0.1:10]; y=cos(x); plot(x,y),xlabel(&#39;x&#39;),ylabel(&#39;cos(x)&#39;),gird on,axis equal;</code>绘制图像+加坐标轴标签+网格+坐标轴间隔相同，当更新x的区间或者间隔的时候，需要重新调用y=cosx来更新y值，否则会报错</li>
+<li><code>fplot(&#39;exp(-2*t)*sin(t)&#39;,[0, 4]), xlabel(&#39;t&#39;), ylabel(&#39;f(t)&#39;), title(&#39;阻尼弹力&#39;)</code>fplot自动计算间隔，画出平滑的曲线</li>
+<li><p><code>t = [0:0.02:4];f = exp(-2*t)*sin(t);
+ ??? Error using ==&gt; mtimes
+ Inner matrix dimensions must agree.</code></p>
+<p> 当一个函数是由二个或更多个函数相乘构成,别忘记在相乘时加上“.”以便告诉 MATLAB 我们是对两个矩阵进行相乘。应改为<code>t = [0:0.02:4];f = exp(-2*t).*sin(t);</code></p>
+</li>
+<li><p>同时画两条曲线，<code>plot(t,f,&#39;-&#39;,t,g,&#39;--&#39;)</code> </p>
+</li>
+<li>实线&#39;-&#39;虚线&#39;--&#39;虚点线&#39;-.&#39;点线 &#39;:&#39;`</li>
 <li></li>
 </ul>
 ]]></content>
