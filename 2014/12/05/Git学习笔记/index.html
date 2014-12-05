@@ -12,6 +12,7 @@
 <meta property="og:site_name" content="语亮">
 <meta property="og:description" content="程序员必备技能——Git（分布式版本控制系统）。">
 <meta property="og:image" content="http://xiublog.qiniudn.com/github&git.jpg">
+<meta property="og:image" content="http://xiublog.qiniudn.com/屏幕截图 2014-12-06 00.47.09.png">
 <meta property="og:image" content="http://xiublog.qiniudn.com/屏幕截图 2014-12-05 18.00.15.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git学习笔记">
@@ -120,7 +121,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#基本概念"><span class="article-toc-text">基本概念</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#基本的-git-工作流程如下所示:"><span class="article-toc-text">基本的 Git 工作流程如下所示:</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#初次运行-git-前的配置"><span class="article-toc-text">初次运行 Git 前的配置</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#具体-git-操作"><span class="article-toc-text">具体 Git 操作</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#建立版本库的基础操作"><span class="article-toc-text">建立版本库的基础操作</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#<em>文件-.gitignore-的格式规范如下</em>:"><span class="article-toc-text">文件 .gitignore 的格式规范如下:</span></a></li></ol></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#查看版本差异"><span class="article-toc-text">查看版本差异</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#commit提交"><span class="article-toc-text">commit提交</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#移除和重命名"><span class="article-toc-text">移除和重命名</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#查看操作历史"><span class="article-toc-text">查看操作历史</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#远程push和pull"><span class="article-toc-text">远程push和pull</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#标签"><span class="article-toc-text">标签</span></a></li></ol></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#输出格式参数"><span class="article-toc-text">输出格式参数</span></a></li></ol></div><p><img src="http://xiublog.qiniudn.com/github&amp;git.jpg" alt="github&amp;git"></p>
+        <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#基本概念"><span class="article-toc-text">基本概念</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#基本的-git-工作流程如下所示:"><span class="article-toc-text">基本的 Git 工作流程如下所示:</span></a></li></ol></li></ol></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#<strong>add负责将单个文件一次加入暂存区，commit负责将暂存区的文件“一股脑”全都存进仓库之中。</strong>"><span class="article-toc-text">add负责将单个文件一次加入暂存区，commit负责将暂存区的文件“一股脑”全都存进仓库之中。</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#初次运行-git-前的配置"><span class="article-toc-text">初次运行 Git 前的配置</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#具体-git-操作"><span class="article-toc-text">具体 Git 操作</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#建立版本库的基础操作"><span class="article-toc-text">建立版本库的基础操作</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#<em>文件-.gitignore-的格式规范如下</em>:"><span class="article-toc-text">文件 .gitignore 的格式规范如下:</span></a></li></ol></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#查看版本差异"><span class="article-toc-text">查看版本差异</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#commit提交"><span class="article-toc-text">commit提交</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#移除和重命名"><span class="article-toc-text">移除和重命名</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#查看操作历史"><span class="article-toc-text">查看操作历史</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#远程push和pull"><span class="article-toc-text">远程push和pull</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#github使用"><span class="article-toc-text">Github使用</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#标签"><span class="article-toc-text">标签</span></a></li></ol></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#输出格式参数"><span class="article-toc-text">输出格式参数</span></a></li></ol></div><p><img src="http://xiublog.qiniudn.com/github&amp;git.jpg" alt="github&amp;git"></p>
 <blockquote>
 <p>程序员必备技能——Git（分布式版本控制系统）。</p>
 </blockquote>
@@ -140,6 +141,9 @@
 <li>对这些修改了的文件作快照,并保存到暂存区域。</li>
 <li>提交更新,将保存在暂存区域的文件快照转储到 git 目录中。</li>
 </ol>
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-06 00.47.09.png" alt="image"></p>
+<blockquote>
+<h1 id="<strong>add负责将单个文件一次加入暂存区，commit负责将暂存区的文件“一股脑”全都存进仓库之中。</strong>"><strong>add负责将单个文件一次加入暂存区，commit负责将暂存区的文件“一股脑”全都存进仓库之中。</strong></h1></blockquote>
 <p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-05 18.00.15.png" alt="git流程"></p>
 <h3 id="初次运行-git-前的配置">初次运行 Git 前的配置</h3><p>Git 提供了一个叫做 git config 的工具(译注:实际是 git-config 命令,只不过可以通过 git 加一个 名字来呼叫此命令。),专门用来配置或读取相应的工作环境变量。而正是由这些环境变量,决定了 Git 在 各个环节的具体工作方式和行为。这些变量可以存放在以下三个不同的地方:</p>
 <ul>
@@ -154,16 +158,24 @@
 <p><code>$ git add *.c</code>：开始跟踪新文件,或者把已跟踪的文件放到暂存区,还能用于合并时 把有冲突的文件标记为已解决状态等</p>
 <p><code>￼$ git clone git://github.com/schacon/grit.git mygrit</code>克隆仓库，并命名为mygrit</p>
 <p>￼<code>$ git status</code>：查看文件状态</p>
+<p><code>git cat readme.txt</code>抓取当前的文件，打开查看内容</p>
 <p><code>$ cat .gitignore</code>：忽略某些文件</p>
 <h5 id="<em>文件-.gitignore-的格式规范如下</em>:"><em>文件 .gitignore 的格式规范如下</em>:</h5><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">• 所有空行或者以注释符号 <span class="comment"># 开头的行都会被 Git 忽略。</span></div><div class="line">• 可以使用标准的 glob 模式匹配。</div><div class="line">• 匹配模式最后跟􏰄斜杠(/)说明要忽略的是目录。</div><div class="line">• 要忽略指定模式以外的文件或目录,可以在模式前加上惊叹号(!)取􏰄。</div><div class="line">所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。星号(<span class="keyword">*</span>)匹配零个或多个任意字符;[abc] 匹配 任何一个列在方括号中的字符(这个例子要么匹配一个 a,要么匹配一个 b,要么匹配一个 c);问号(?) 只匹配一个任意字符;如果在方括号中使用短划线分隔两个字符,表示所有在这两个字符范围内的都可以匹配 (比如 [0-9] 表示匹配所有 0 到 9 的数字)。</div><div class="line">我们再看一个 .gitignore 文件的例子:</div><div class="line"><span class="comment"># 此为注释 – 将被 Git 忽略</span></div><div class="line"><span class="keyword">*</span>.a <span class="comment"># 忽略所有 .a 结尾的文件</span></div><div class="line">!lib.a <span class="comment"># 但 lib.a 除外</span></div><div class="line">/TODO <span class="comment"># 仅仅忽略项目根目录下的 TODO 文件,不包括 subdir/TODO build/ # 忽略 build/ 目录下的所有文件</span></div><div class="line">doc/<span class="keyword">*</span>.txt <span class="comment"># 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span></div></pre></td></tr></table></figure>
 
 <h4 id="查看版本差异">查看版本差异</h4><p><code>git diff</code>: 比较的是工作目录中当前文件和暂存区域快照之间的差异</p>
 <p><code>git diff --cached</code>: 已经暂存起来的文件和上次提交时的快照之间的差异</p>
+<p><code>git diff HEAD -- readme.txt</code>: 工作目录中文件与仓库中文件的比对</p>
 <h4 id="commit提交">commit提交</h4><p><code>￼$ git commit</code>:提交命令</p>
 <p><code>$ git commit -m &quot;Story 182: Fix benchmarks for speed&quot;</code>也可以使用 -m 参数后跟提交说明的方式</p>
 <p><code>git commit -a -m &#39;added new benchmarks&#39;</code>给 git commit 加上 -a 选项,Git 就会自动把所有已经跟踪过的文件暂 存起来一并提交,从而跳过 git add</p>
+<p><code>git reset --hard HEAD^</code>回溯到上一个版本，上上个版本用HEAD^^</p>
+<p><code>git reset --hard id</code>回溯到id号指示的那一个版本</p>
+<p><code>git reflog</code>展示你对仓库的所有操作轨迹，这样即使你删除了某一个版本（git log无法显示此删除版本的id号码），也可以荣国reflog重新找到你的那次操作，从而查到id号码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">samusakaisuketekiMacBook-Pro:learngit Personals$ git reflog</div><div class="line">869f440 HEAD@{0}: <span class="operator"><span class="keyword">reset</span>: moving <span class="keyword">to</span> <span class="number">869</span>f44020</span></div><div class="line"><span class="number">1818601</span> HEAD@{<span class="number">1</span>}: <span class="keyword">reset</span>: moving <span class="keyword">to</span> HEAD^</div><div class="line"><span class="number">869</span>f440 HEAD@{<span class="number">2</span>}: <span class="keyword">commit</span>: git <span class="keyword">commit</span> -m <span class="string">"append the GPL"</span></div><div class="line"><span class="number">1818601</span> HEAD@{<span class="number">3</span>}: <span class="keyword">commit</span>: <span class="keyword">second</span> <span class="keyword">commit</span></div><div class="line">a8e553a HEAD@{<span class="number">4</span>}: <span class="keyword">commit</span> (initial): wrote a readme file</div></pre></td></tr></table></figure>
+
 <h4 id="移除和重命名">移除和重命名</h4><p><code>rm test</code>:简单的移除工作文件操作</p>
-<p><code>git rm test</code>:移除该文件的版本管理</p>
+<p><code>git rm test</code> <code>git commit -m &quot;remove the test&quot;</code>:移除该文件的版本库中的文件</p>
+<p><code>git checkout -- test</code>如果只是删除了工作区中的文件，可以从版本库中还原删除的文件</p>
 <p><code>git rm -f test</code>:当文件已经存在于暂存区的时候，删除工作文件</p>
 <p><code>git rm --cached test</code>:当文件已经存在于暂存区的时候，删除暂存文件</p>
 <p><code>git mv README.txt README</code>：文件重命名，并同时自动设定跟踪新文件</p>
@@ -173,8 +185,8 @@
 <p><code>$ git log --pretty=&quot;%h:%s&quot; --author=gitster --since=&quot;2008-10-01&quot; \ --before=&quot;2008-11-01&quot; --no-merges -- t/</code>加上时间段和确定作者的输出</p>
 <p><code>￼$ git commit --amend</code>重新提交（比如刚才提交后发现修改有错误或者忘记add一些文件）</p>
 <p><code>gitk</code>图形界面</p>
-<p><code>git reset HEAD benchmarks.rb</code>将该文件从暂存区剔除</p>
-<p><code>git checkout -- benchmarks.rb</code>取消文件修改(还没有上传到暂存区的文件)</p>
+<p><code>git checkout -- benchmarks.rb</code>取消文件修改(工作区的文件)，回退到上一次add或者commit之后的状态，用版本库里面的版本替换工作区/缓冲区的版本</p>
+<p><code>git reset HEAD readme.txt</code>取消文件修改（提交到暂存区文件），将文件放回工作区，HEAD表示最新版本</p>
 <h4 id="远程push和pull">远程push和pull</h4><p><code>$ git remote -v</code>查看远程库(包含远程库的地址)</p>
 <p><code>$ git remote add pb git://github.com/paulboone/ticgit.git</code>要添加一个新的远程仓库,可以指定一个简单的名字,以便将来引用</p>
 <p><code>$ git fetch pd</code>此命令会到远程仓库中拉取所有你本地仓库中还没有的数据,fetch 命令只是将远端的数据拉到本地仓库,并不自动合并到当前工作分支,只有当你确实准备好 了,才能手工合并</p>
@@ -193,6 +205,14 @@
 <p>以及运行 git pull 时将自动合并哪些分支(译注:前四行中列出的 issues 和 master 分支)。</p>
 <p><code>$ git remote rename pb paul</code>远程仓库的重命名</p>
 <p><code>$ git remote rm paul</code>移除远端的某一个仓库</p>
+<h4 id="github使用">Github使用</h4><ol>
+<li><code>cd 当前git目录</code>首先定位到当前的目录</li>
+<li>在Github上创建相应的respositoriies <code>learngit</code></li>
+<li><code>git remote add origin git@github.com:xiucode/learngit.git</code></li>
+<li><code>git push -u origin master</code>-u的意思是不近将本地的master推送到远程github上的master，并且进行分支的合并关联</li>
+<li><code>git push origin master</code>之后，只要本地提交到仓库，直接用这段命令就可以实现同步</li>
+<li><code>git clone git@github.com:xiuocde/gitskills.git</code>直接把远程仓库克隆到本地</li>
+</ol>
 <h4 id="标签">标签</h4><p><code>$ git tag</code>列出现有的标签</p>
 <p><code>$ git tag -l &#39;v1.4.2.*&#39;</code>列出v.1.4.2的系列版本</p>
 <p><code>$ git tag v1.4-lw</code>给对象加一个轻量级标签，直接写标签名字就好，不需要加前缀</p>
