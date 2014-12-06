@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="www.xiuyuliang.com/"/>
-  <updated>2014-12-05T18:02:29.892Z</updated>
+  <updated>2014-12-06T05:23:42.124Z</updated>
   <id>www.xiuyuliang.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="www.xiuyuliang.com/2014/12/05/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>www.xiuyuliang.com/2014/12/05/Git学习笔记/</id>
     <published>2014-12-04T17:21:26.000Z</published>
-    <updated>2014-12-05T18:00:02.000Z</updated>
+    <updated>2014-12-06T05:22:59.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://xiublog.qiniudn.com/github&amp;git.jpg" alt="github&amp;git"></p>
 <blockquote>
 <p>程序员必备技能——Git（分布式版本控制系统）。</p>
@@ -78,21 +78,29 @@
 <p><code>git rm -f test</code>:当文件已经存在于暂存区的时候，删除工作文件</p>
 <p><code>git rm --cached test</code>:当文件已经存在于暂存区的时候，删除暂存文件</p>
 <p><code>git mv README.txt README</code>：文件重命名，并同时自动设定跟踪新文件</p>
+<p><code>git checkout -- benchmarks.rb</code>取消文件修改(工作区的文件)，回退到上一次add或者commit之后的状态，用版本库/暂存区里面的版本替换工作区的版本，如果文件在暂存区和版本库都有，则用暂存区的版本来替换掉</p>
+<p><code>git reset HEAD readme.txt</code>取消文件修改（提交到暂存区文件），将文件放回工作区，HEAD表示最新版本</p>
 <h4 id="查看操作历史">查看操作历史</h4><p><code>git log -p -2 --stat</code>查看操作历史,我们常用 -p 选项展开显示每次提交的内容差异,用 -2 则仅显示最近的两次更新,--stat仅仅显示简要的增改行数变化</p>
 <p><code>git log --pretty=oneline</code>单行显示</p>
 <p><code>$ git log --pretty=format:&quot;%h - %an, %ar : %s&quot;</code>定制要显示的记录格式,这样的输出便于后期编程提取分析</p>
 <p><code>$ git log --pretty=&quot;%h:%s&quot; --author=gitster --since=&quot;2008-10-01&quot; \ --before=&quot;2008-11-01&quot; --no-merges -- t/</code>加上时间段和确定作者的输出</p>
 <p><code>￼$ git commit --amend</code>重新提交（比如刚才提交后发现修改有错误或者忘记add一些文件）</p>
 <p><code>gitk</code>图形界面</p>
-<p><code>git checkout -- benchmarks.rb</code>取消文件修改(工作区的文件)，回退到上一次add或者commit之后的状态，用版本库里面的版本替换工作区/缓冲区的版本</p>
-<p><code>git reset HEAD readme.txt</code>取消文件修改（提交到暂存区文件），将文件放回工作区，HEAD表示最新版本</p>
-<h4 id="远程push和pull">远程push和pull</h4><p><code>$ git remote -v</code>查看远程库(包含远程库的地址)</p>
+<p><code>git lg</code>自己编辑的五彩斑斓log</p>
+<h4 id="远程push和pull">远程push和pull</h4><p><code>$ git remote -v</code>查看远程库(包含远程库的地址)，显示抓取和推送的origin地址</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">osamusakaisuketekiMacBook-<span class="constant">Pro</span><span class="symbol">:learngit</span> <span class="constant">Personals</span><span class="variable">$ </span>git remote -v</div><div class="line">origin	git<span class="variable">@github</span>.<span class="symbol">com:</span>xiucode/learngit.git (fetch)</div><div class="line">origin	git<span class="variable">@github</span>.<span class="symbol">com:</span>xiucode/learngit.git (push)</div></pre></td></tr></table></figure>
+
 <p><code>$ git remote add pb git://github.com/paulboone/ticgit.git</code>要添加一个新的远程仓库,可以指定一个简单的名字,以便将来引用</p>
 <p><code>$ git fetch pd</code>此命令会到远程仓库中拉取所有你本地仓库中还没有的数据,fetch 命令只是将远端的数据拉到本地仓库,并不自动合并到当前工作分支,只有当你确实准备好 了,才能手工合并</p>
 <p><code>git pull</code>从原始克隆的远 端仓库中抓取数据后,合并到工作目录中当前分支</p>
 <p><code>￼$ git push origin master</code>将本地仓库中的数据推送到远程仓库,如果
 在你推数据前,已经有其他人推送了若干更新,那你的推送操作就会被驳回。你必须先把他们的更新抓取到本
 地,并到自己的项目中,然后才可以再次推送。</p>
+<p><code>￼$ git push origin dev</code>推送其他的分支</p>
+<p><code>git checkout -b dev origin/dev</code>创建本地分支并且对接云端已有的dev分支，方便push</p>
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-06 13.01.07.png" alt="团队协作push和pull的步骤"></p>
+<p>不同的推送需求</p>
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-06 12.32.18.png" alt="推送需求"></p>
 <p><code>$ git remote show origin</code>查案远程仓库详细信息</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git remote</div><div class="line">origin</div><div class="line">$ git remote <span class="built_in">add</span> pb gi<span class="variable">t:</span>//github.<span class="keyword">com</span>/paulboone/ticgit.git $ git remote -<span class="keyword">v</span></div><div class="line">origin gi<span class="variable">t:</span>//github.<span class="keyword">com</span>/schacon/ticgit.git</div><div class="line">pb gi<span class="variable">t:</span>//github.<span class="keyword">com</span>/paulboone/ticgit.git</div></pre></td></tr></table></figure>
 
@@ -111,17 +119,35 @@
 <li><code>git push -u origin master</code>-u的意思是不近将本地的master推送到远程github上的master，并且进行分支的合并关联</li>
 <li><code>git push origin master</code>之后，只要本地提交到仓库，直接用这段命令就可以实现同步</li>
 <li><code>git clone git@github.com:xiuocde/gitskills.git</code>直接把远程仓库克隆到本地</li>
+<li>github上可以fork他人的仓库，fork后他人的仓库就放到了自己云端，然后git clone自己的仓库到本地，进行修改后commit，然后push，如果你想汇入他人的仓库，可以抛出一个pull request，如果对方很喜欢你添加的功能，就有可能接受，如果接受你的代码就会merge到源代码</li>
 </ol>
 <h4 id="标签">标签</h4><p><code>$ git tag</code>列出现有的标签</p>
 <p><code>$ git tag -l &#39;v1.4.2.*&#39;</code>列出v.1.4.2的系列版本</p>
-<p><code>$ git tag v1.4-lw</code>给对象加一个轻量级标签，直接写标签名字就好，不需要加前缀</p>
-<p><code>$ git tag -a v1.4 -m &#39;my version 1.4&#39;</code>给对象加一个重量级标签</p>
+<p><code>$ git tag v1.4</code>给对象加一个轻量级标签（无说明文字）</p>
+<p><code>$ git tag -a v1.4 -m &#39;my version 1.4&#39;</code>给对象加一个重量级标签（带说明文字）</p>
+<p><code>$ git tag v1.4 fa89asf9</code>给非当前commit的旧分支打标签只需要制定他的id</p>
+<p><code>$ git tag -d v1.4</code>删除某一个标签</p>
 <p><code>$ git show v1.4</code>查看该标签对应对象的版本信息（和直接show + name用法一样，都是show）</p>
 <p>在后期对早先的某次提交加注标签(只需要提供校验的前几位字符即可)</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span> <span class="comment">--pretty=oneline</span></div><div class="line"><span class="number">9</span>fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile</div><div class="line">￼$ git tag -<span class="operator">a</span> v1<span class="number">.2</span> <span class="number">9</span>fceb02</div></pre></td></tr></table></figure>
 
 <p><code>$ git push origin v1.5</code>把标签传到服务器上</p>
 <p><code>$ git push origin --tags</code>一次把所有标签一起传到服务器上</p>
+<p><code>$ git push origin:refs/tags/v1.4</code>把推送的标签从云端删除</p>
+<h4 id="创建分支">创建分支</h4><p><code>git branch</code>查看当前的分支</p>
+<p><code>git checkout -b branch1</code>创建并且切换到分支branch1</p>
+<p><code>git branch branch1</code>创建分支，但不切换到该分支</p>
+<p><code>git checkout master</code>切换分支</p>
+<p><code>git merge</code>合并分支</p>
+<p><code>git branch -d branch1</code>删除branch1分支</p>
+<p><code>git branch -D branch1</code>强行删除没有合并过的分支</p>
+<p>当出现merge conflict冲突的时候，conflict出现的部分会相应的显示到当前分支文件中，我们只需要修改当前分支文件，使其符合自己原本期望的更改状态，然后重新提交，再删除合并分支即可</p>
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-06 11.32.00.png" alt="branch"></p>
+<p><a href="https://sandofsky.com/images/fast_forward.pdf" target="_blank" rel="external">Fast-Forward模式与--No-ff模式的区别</a></p>
+<p><code>git merge --no-ff -m &quot;merge with no ff&quot; dev</code></p>
+<p><code>git stash</code>可以暂存当前的编辑状态，比如你突然接到一个调bug的任务，但又不想提交现在的dev，就可以用stash暂存当前的编辑状态，等bug调完再回来搞dev分支</p>
+<p><code>git stash pop</code>恢复现场并且删除刚才保存的stash</p>
+<p><code>git stash apply stash@{0}</code>恢复一种一个现场但不删除刚才的stash</p>
 <h3 id="输出格式参数">输出格式参数</h3><table>
 <thead>
 <tr>
