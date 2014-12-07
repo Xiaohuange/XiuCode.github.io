@@ -5,12 +5,26 @@
   
   <title>Git学习笔记 | 语亮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="程序员必备技能——Git（分布式版本控制系统）。">
+  <meta name="description" content="程序员必备技能——Git（分布式版本控制系统）。
+Git 与 Github对接：
+
+cd 到当前文档
+git init 初始化git
+git add -A 将所有文件提交到暂存区
+git commit -m &quot;xxx&quot;将所有暂存区文件提交仓库
+git remote add origin git@github.com:xiucode/font-end-beginner.git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git学习笔记">
 <meta property="og:url" content="www.xiuyuliang.com/2014/12/05/Git学习笔记/">
 <meta property="og:site_name" content="语亮">
-<meta property="og:description" content="程序员必备技能——Git（分布式版本控制系统）。">
+<meta property="og:description" content="程序员必备技能——Git（分布式版本控制系统）。
+Git 与 Github对接：
+
+cd 到当前文档
+git init 初始化git
+git add -A 将所有文件提交到暂存区
+git commit -m &quot;xxx&quot;将所有暂存区文件提交仓库
+git remote add origin git@github.com:xiucode/font-end-beginner.git">
 <meta property="og:image" content="http://xiublog.qiniudn.com/github&git.jpg">
 <meta property="og:image" content="http://xiublog.qiniudn.com/屏幕截图 2014-12-06 00.47.09.png">
 <meta property="og:image" content="http://xiublog.qiniudn.com/屏幕截图 2014-12-05 18.00.15.png">
@@ -19,7 +33,14 @@
 <meta property="og:image" content="http://xiublog.qiniudn.com/屏幕截图 2014-12-06 11.32.00.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git学习笔记">
-<meta name="twitter:description" content="程序员必备技能——Git（分布式版本控制系统）。">
+<meta name="twitter:description" content="程序员必备技能——Git（分布式版本控制系统）。
+Git 与 Github对接：
+
+cd 到当前文档
+git init 初始化git
+git add -A 将所有文件提交到暂存区
+git commit -m &quot;xxx&quot;将所有暂存区文件提交仓库
+git remote add origin git@github.com:xiucode/font-end-beginner.git">
 
   
     <link rel="alternative" href="/atom.xml" title="语亮" type="application/atom+xml">
@@ -127,6 +148,18 @@
         <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#基本概念"><span class="article-toc-text">基本概念</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#基本的-git-工作流程如下所示:"><span class="article-toc-text">基本的 Git 工作流程如下所示:</span></a></li></ol></li></ol></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#<strong>add负责将单个文件一次加入暂存区，commit负责将暂存区的文件“一股脑”全都存进仓库之中。</strong>"><span class="article-toc-text">add负责将单个文件一次加入暂存区，commit负责将暂存区的文件“一股脑”全都存进仓库之中。</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#初次运行-git-前的配置"><span class="article-toc-text">初次运行 Git 前的配置</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#具体-git-操作"><span class="article-toc-text">具体 Git 操作</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#建立版本库的基础操作"><span class="article-toc-text">建立版本库的基础操作</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#<em>文件-.gitignore-的格式规范如下</em>:"><span class="article-toc-text">文件 .gitignore 的格式规范如下:</span></a></li></ol></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#查看版本差异"><span class="article-toc-text">查看版本差异</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#commit提交"><span class="article-toc-text">commit提交</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#移除和重命名"><span class="article-toc-text">移除和重命名</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#查看操作历史"><span class="article-toc-text">查看操作历史</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#远程push和pull"><span class="article-toc-text">远程push和pull</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#github使用"><span class="article-toc-text">Github使用</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#标签"><span class="article-toc-text">标签</span></a></li><li class="article-toc-item article-toc-level-4"><a class="article-toc-link" href="#创建分支"><span class="article-toc-text">创建分支</span></a></li></ol></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#输出格式参数"><span class="article-toc-text">输出格式参数</span></a></li></ol></div><p><img src="http://xiublog.qiniudn.com/github&amp;git.jpg" alt="github&amp;git"></p>
 <blockquote>
 <p>程序员必备技能——Git（分布式版本控制系统）。</p>
+<p>Git 与 Github对接：</p>
+<ol>
+<li>cd 到当前文档</li>
+<li>git init 初始化git</li>
+<li>git add -A 将所有文件提交到暂存区</li>
+<li>git commit -m &quot;xxx&quot;将所有暂存区文件提交仓库</li>
+<li>git remote add origin git@github.com:xiucode/font-end-beginner.git对接远程库</li>
+<li>git fetch origin从远程库拉取内容到本地，不合并</li>
+<li>git pull从远程库拉取内容到本地，并且合并 </li>
+<li>git push origin master将本地仓库推送到远程仓库</li>
+<li>git pull根据远程仓库更新本地仓库</li>
+</ol>
 </blockquote>
 <a id="more"></a>
 
@@ -224,6 +257,18 @@
 <li><code>git push origin master</code>之后，只要本地提交到仓库，直接用这段命令就可以实现同步</li>
 <li><code>git clone git@github.com:xiuocde/gitskills.git</code>直接把远程仓库克隆到本地</li>
 <li>github上可以fork他人的仓库，fork后他人的仓库就放到了自己云端，然后git clone自己的仓库到本地，进行修改后commit，然后push，如果你想汇入他人的仓库，可以抛出一个pull request，如果对方很喜欢你添加的功能，就有可能接受，如果接受你的代码就会merge到源代码</li>
+</ol>
+<p>Git 与 Github对接：</p>
+<ol>
+<li>cd 到当前文档</li>
+<li>git init 初始化git</li>
+<li>git add -A 将所有文件提交到暂存区</li>
+<li>git commit -m &quot;xxx&quot;将所有暂存区文件提交仓库</li>
+<li>git remote add origin git@github.com:xiucode/font-end-beginner.git对接远程库</li>
+<li>git fetch origin从远程库拉取内容到本地，不合并</li>
+<li>git pull从远程库拉取内容到本地，并且合并 </li>
+<li>git push origin master将本地仓库推送到远程仓库</li>
+<li>git pull根据远程仓库更新本地仓库</li>
 </ol>
 <h4 id="标签">标签</h4><p><code>$ git tag</code>列出现有的标签</p>
 <p><code>$ git tag -l &#39;v1.4.2.*&#39;</code>列出v.1.4.2的系列版本</p>
@@ -419,11 +464,12 @@
         data_summary="
 
 程序员必备技能——Git（分布式版本控制系统）。
+Git 与 Github对接：
 
-
-
-基本概念对于任何一个文件,在 Git 内都只有三种状态:已提交 (committed),已修改(modified)和已暂存(staged)。
-已提交..." class="article-share-link">Share</a>
+cd 到当前文档
+git init 初始化git
+git add -A 将所有文件提交到暂存区
+git commit -m &quot;xxx&..." class="article-share-link">Share</a>
     </li>
     <li>
       

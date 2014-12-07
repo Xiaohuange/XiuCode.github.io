@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="www.xiuyuliang.com/"/>
-  <updated>2014-12-06T05:23:42.124Z</updated>
+  <updated>2014-12-07T15:54:47.234Z</updated>
   <id>www.xiuyuliang.com/</id>
   
   <author>
@@ -19,10 +19,22 @@
     <link href="www.xiuyuliang.com/2014/12/05/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>www.xiuyuliang.com/2014/12/05/Git学习笔记/</id>
     <published>2014-12-04T17:21:26.000Z</published>
-    <updated>2014-12-06T05:22:59.000Z</updated>
+    <updated>2014-12-07T15:54:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://xiublog.qiniudn.com/github&amp;git.jpg" alt="github&amp;git"></p>
 <blockquote>
 <p>程序员必备技能——Git（分布式版本控制系统）。</p>
+<p>Git 与 Github对接：</p>
+<ol>
+<li>cd 到当前文档</li>
+<li>git init 初始化git</li>
+<li>git add -A 将所有文件提交到暂存区</li>
+<li>git commit -m &quot;xxx&quot;将所有暂存区文件提交仓库</li>
+<li>git remote add origin git@github.com:xiucode/font-end-beginner.git对接远程库</li>
+<li>git fetch origin从远程库拉取内容到本地，不合并</li>
+<li>git pull从远程库拉取内容到本地，并且合并 </li>
+<li>git push origin master将本地仓库推送到远程仓库</li>
+<li>git pull根据远程仓库更新本地仓库</li>
+</ol>
 </blockquote>
 <a id="more"></a>
 
@@ -120,6 +132,18 @@
 <li><code>git push origin master</code>之后，只要本地提交到仓库，直接用这段命令就可以实现同步</li>
 <li><code>git clone git@github.com:xiuocde/gitskills.git</code>直接把远程仓库克隆到本地</li>
 <li>github上可以fork他人的仓库，fork后他人的仓库就放到了自己云端，然后git clone自己的仓库到本地，进行修改后commit，然后push，如果你想汇入他人的仓库，可以抛出一个pull request，如果对方很喜欢你添加的功能，就有可能接受，如果接受你的代码就会merge到源代码</li>
+</ol>
+<p>Git 与 Github对接：</p>
+<ol>
+<li>cd 到当前文档</li>
+<li>git init 初始化git</li>
+<li>git add -A 将所有文件提交到暂存区</li>
+<li>git commit -m &quot;xxx&quot;将所有暂存区文件提交仓库</li>
+<li>git remote add origin git@github.com:xiucode/font-end-beginner.git对接远程库</li>
+<li>git fetch origin从远程库拉取内容到本地，不合并</li>
+<li>git pull从远程库拉取内容到本地，并且合并 </li>
+<li>git push origin master将本地仓库推送到远程仓库</li>
+<li>git pull根据远程仓库更新本地仓库</li>
 </ol>
 <h4 id="标签">标签</h4><p><code>$ git tag</code>列出现有的标签</p>
 <p><code>$ git tag -l &#39;v1.4.2.*&#39;</code>列出v.1.4.2的系列版本</p>
@@ -275,6 +299,18 @@
     <![CDATA[<p><img src="http://xiublog.qiniudn.com/github&amp;git.jpg" alt="github&amp;git"></p>
 <blockquote>
 <p>程序员必备技能——Git（分布式版本控制系统）。</p>
+<p>Git 与 Github对接：</p>
+<ol>
+<li>cd 到当前文档</li>
+<li>git init 初始化git</li>
+<li>git add -A 将所有文件提交到暂存区</li>
+<li>git commit -m &quot;xxx&quot;将所有暂存区文件提交仓库</li>
+<li>git remote add origin git@github.com:xiucode/font-end-beginner.git对接远程库</li>
+<li>git fetch origin从远程库拉取内容到本地，不合并</li>
+<li>git pull从远程库拉取内容到本地，并且合并 </li>
+<li>git push origin master将本地仓库推送到远程仓库</li>
+<li>git pull根据远程仓库更新本地仓库</li>
+</ol>
 </blockquote>
 ]]>
     
