@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="www.xiuyuliang.com/"/>
-  <updated>2014-12-08T13:11:38.017Z</updated>
+  <updated>2014-12-08T13:13:23.984Z</updated>
   <id>www.xiuyuliang.com/</id>
   
   <author>
@@ -13,36 +13,6 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[CSS学习笔记]]></title>
-    <link href="www.xiuyuliang.com/2014/12/08/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>www.xiuyuliang.com/2014/12/08/css学习笔记/</id>
-    <published>2014-12-07T18:21:26.000Z</published>
-    <updated>2014-12-08T04:10:54.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://techcabal.com/wp-content/uploads/2014/10/css3.jpg" alt="CSS"></p>
-<blockquote>
-<p>简介</p>
-</blockquote>
-<a id="more"></a>]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="http://techcabal.com/wp-content/uploads/2014/10/css3.jpg" alt="CSS"></p>
-<blockquote>
-<p>简介</p>
-</blockquote>
-]]>
-    
-    </summary>
-    
-      <category term="CSS" scheme="www.xiuyuliang.com/tags/CSS/"/>
-    
-      <category term="WEB" scheme="www.xiuyuliang.com/tags/WEB/"/>
-    
-      <category term="web前端" scheme="www.xiuyuliang.com/tags/web%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="编程学习" scheme="www.xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[前端开发易错点汇总]]></title>
