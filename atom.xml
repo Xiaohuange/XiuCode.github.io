@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="www.xiuyuliang.com/"/>
-  <updated>2014-12-07T15:56:34.333Z</updated>
+  <updated>2014-12-08T13:11:38.017Z</updated>
   <id>www.xiuyuliang.com/</id>
   
   <author>
@@ -15,25 +15,105 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[CSS学习笔记]]></title>
+    <link href="www.xiuyuliang.com/2014/12/08/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>www.xiuyuliang.com/2014/12/08/css学习笔记/</id>
+    <published>2014-12-07T18:21:26.000Z</published>
+    <updated>2014-12-08T04:10:54.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://techcabal.com/wp-content/uploads/2014/10/css3.jpg" alt="CSS"></p>
+<blockquote>
+<p>简介</p>
+</blockquote>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://techcabal.com/wp-content/uploads/2014/10/css3.jpg" alt="CSS"></p>
+<blockquote>
+<p>简介</p>
+</blockquote>
+]]>
+    
+    </summary>
+    
+      <category term="CSS" scheme="www.xiuyuliang.com/tags/CSS/"/>
+    
+      <category term="WEB" scheme="www.xiuyuliang.com/tags/WEB/"/>
+    
+      <category term="web前端" scheme="www.xiuyuliang.com/tags/web%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="编程学习" scheme="www.xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[前端开发易错点汇总]]></title>
+    <link href="www.xiuyuliang.com/2014/12/08/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>www.xiuyuliang.com/2014/12/08/html学习笔记/</id>
+    <published>2014-12-07T17:21:26.000Z</published>
+    <updated>2014-12-08T13:10:59.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://www.frontdojo.com/content/images/2014/May/html5-css-javascript.png" alt="前端开发"></p>
+<blockquote>
+<p>HTML负责搭建网站框架,CSS负责修饰html元素的样式，Javascript负责将html元素关联方法和响应事件，jQuery是用javascript写的一个拥有众多优秀交互方法接口的包。</p>
+</blockquote>
+<a id="more"></a>
+
+<h4 id="html需要注意的细节：">HTML需要注意的细节：</h4><ol>
+<li>使用空的段落标记<code>&lt;p&gt;&lt;/p&gt;</code>去插入一个空行是个坏习惯。用 <code>&lt;br /&gt;</code> 标签代替它，除此之外它还有换行的作用，<code>&lt;p&gt;This is&lt;br /&gt;a para&lt;br /&gt;graph with line breaks&lt;/p&gt;</code>。</li>
+<li><code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线，用于分割内容。</li>
+<li>空元素要及时关闭，在开始标签中添加斜杠，比如 <code>&lt;br /&gt;</code>，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。</li>
+<li>属性值应该始终被包括在引号内。双引号是最常用的，不过使用单引号也没有问题。在某些个别的情况下，比如属性值本身就含有双引号，那么您必须使用单引号，例如：
+<code>name=&#39;Bill &quot;HelloWorld&quot; Gates&#39;</code></li>
+<li>默认情况下，HTML 会自动地在块级元素前后添加一个额外的空行，比如段落、标题元素前后。</li>
+<li>请确保将 HTML heading 标签只用于标题。不要仅仅是为了产生粗体或大号的文本而使用标题。搜索引擎使用标题为您的网页的结构和内容编制索引。</li>
+<li>class 用于元素组（类似的元素，或者可以理解为某一类元素），而 id 用于标识单独的唯一的元素。</li>
+<li>下面的这行会在新窗口打开文档,target的作用：
+<code>&lt;a href=&quot;http://www.w3school.com.cn/&quot; target=&quot;_blank&quot;&gt;Visit W3School!&lt;/a&gt;</code></li>
+<li><code>&lt;img src=&quot;boat.gif&quot; alt=&quot;Big Boat&quot;&gt;</code>在浏览器无法载入图像时，替换文本属性告诉读者她们失去的信息。此时，浏览器将显示这个替代性的文本而不是图像。为页面上的图像都加上替换文本属性是个好习惯，这样有助于更好的显示信息，并且对于那些使用纯文本浏览器的人来说是非常有用的。</li>
+<li>HTML <code>&lt;div&gt;</code>元素是块级元素，它是可用于组合其他 HTML 元素的容器。</li>
+<li>HTML <code>&lt;span&gt;</code> 元素是内联元素，可用作文本的容器。</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://www.frontdojo.com/content/images/2014/May/html5-css-javascript.png" alt="前端开发"></p>
+<blockquote>
+<p>HTML负责搭建网站框架,CSS负责修饰html元素的样式，Javascript负责将html元素关联方法和响应事件，jQuery是用javascript写的一个拥有众多优秀交互方法接口的包。</p>
+</blockquote>
+]]>
+    
+    </summary>
+    
+      <category term="HTML" scheme="www.xiuyuliang.com/tags/HTML/"/>
+    
+      <category term="CSS" scheme="www.xiuyuliang.com/tags/CSS/"/>
+    
+      <category term="web前端" scheme="www.xiuyuliang.com/tags/web%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Javascript" scheme="www.xiuyuliang.com/tags/Javascript/"/>
+    
+      <category term="jQuery" scheme="www.xiuyuliang.com/tags/jQuery/"/>
+    
+      <category term="错题本" scheme="www.xiuyuliang.com/categories/%E9%94%99%E9%A2%98%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Git学习笔记]]></title>
     <link href="www.xiuyuliang.com/2014/12/05/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>www.xiuyuliang.com/2014/12/05/Git学习笔记/</id>
     <published>2014-12-04T17:21:26.000Z</published>
-    <updated>2014-12-07T15:54:11.000Z</updated>
+    <updated>2014-12-08T06:03:40.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://xiublog.qiniudn.com/github&amp;git.jpg" alt="github&amp;git"></p>
-<blockquote>
-<p>程序员必备技能——Git（分布式版本控制系统）。</p>
-<p>Git 与 Github对接：</p>
+<h3 id="git-与-github对接:">Git 与 Github对接:</h3><blockquote>
 <ol>
-<li>cd 到当前文档</li>
-<li>git init 初始化git</li>
-<li>git add -A 将所有文件提交到暂存区</li>
-<li>git commit -m &quot;xxx&quot;将所有暂存区文件提交仓库</li>
-<li>git remote add origin git@github.com:xiucode/font-end-beginner.git对接远程库</li>
-<li>git fetch origin从远程库拉取内容到本地，不合并</li>
-<li>git pull从远程库拉取内容到本地，并且合并 </li>
-<li>git push origin master将本地仓库推送到远程仓库</li>
-<li>git pull根据远程仓库更新本地仓库</li>
+<li><code>cd</code> 到当前文档</li>
+<li><code>git init</code>初始化git</li>
+<li><code>git add -A</code> 将所有文件提交到暂存区</li>
+<li><code>git commit -m &quot;xxx&quot;</code>将所有暂存区文件提交仓库</li>
+<li><code>git remote add origin git@github.com:xiucode/font-end-beginner.git</code>对接远程库</li>
+<li><code>git clone git@github.com:xiuocde/gitskills.git</code>直接把远程仓库克隆到本地</li>
+<li><code>git fetch origin</code>从远程库拉取内容到本地，不合并</li>
+<li><code>git pull</code>从远程库拉取内容到本地，并且合并 </li>
+<li><code>git push origin master</code>将本地仓库推送到远程仓库</li>
+<li><code>git pull</code>根据远程仓库更新本地仓库</li>
 </ol>
 </blockquote>
 <a id="more"></a>
@@ -297,19 +377,18 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p><img src="http://xiublog.qiniudn.com/github&amp;git.jpg" alt="github&amp;git"></p>
-<blockquote>
-<p>程序员必备技能——Git（分布式版本控制系统）。</p>
-<p>Git 与 Github对接：</p>
+<h3 id="git-与-github对接:">Git 与 Github对接:</h3><blockquote>
 <ol>
-<li>cd 到当前文档</li>
-<li>git init 初始化git</li>
-<li>git add -A 将所有文件提交到暂存区</li>
-<li>git commit -m &quot;xxx&quot;将所有暂存区文件提交仓库</li>
-<li>git remote add origin git@github.com:xiucode/font-end-beginner.git对接远程库</li>
-<li>git fetch origin从远程库拉取内容到本地，不合并</li>
-<li>git pull从远程库拉取内容到本地，并且合并 </li>
-<li>git push origin master将本地仓库推送到远程仓库</li>
-<li>git pull根据远程仓库更新本地仓库</li>
+<li><code>cd</code> 到当前文档</li>
+<li><code>git init</code>初始化git</li>
+<li><code>git add -A</code> 将所有文件提交到暂存区</li>
+<li><code>git commit -m &quot;xxx&quot;</code>将所有暂存区文件提交仓库</li>
+<li><code>git remote add origin git@github.com:xiucode/font-end-beginner.git</code>对接远程库</li>
+<li><code>git clone git@github.com:xiuocde/gitskills.git</code>直接把远程仓库克隆到本地</li>
+<li><code>git fetch origin</code>从远程库拉取内容到本地，不合并</li>
+<li><code>git pull</code>从远程库拉取内容到本地，并且合并 </li>
+<li><code>git push origin master</code>将本地仓库推送到远程仓库</li>
+<li><code>git pull</code>根据远程仓库更新本地仓库</li>
 </ol>
 </blockquote>
 ]]>
