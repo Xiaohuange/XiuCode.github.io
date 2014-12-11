@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="xiuyuliang.com/"/>
-  <updated>2014-12-11T10:34:06.471Z</updated>
+  <updated>2014-12-11T18:47:30.710Z</updated>
   <id>xiuyuliang.com/</id>
   
   <author>
@@ -378,7 +378,7 @@
     <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
     <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（四）/</id>
     <published>2014-11-25T17:30:26.000Z</published>
-    <updated>2014-12-11T10:26:31.000Z</updated>
+    <updated>2014-12-11T18:47:17.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>matlab与统计相关知识整理。</p>
 </blockquote>
@@ -386,12 +386,42 @@
 
 <ul>
 <li><code>mean(a)</code>行向量可以求得每一个行元素的平均值，<code>mean(A)</code>矩阵可以求得每一列的平均值</li>
+<li><code>median(raw)</code>中位数</li>
+<li><code>std(raw)</code>标准差</li>
 <li><code>size(A)</code>判断矩阵的大小</li>
 <li><code>~=</code>是不等于</li>
 <li><code>disp(&#39;错误:数据必须具有相同的维数。&#39;)</code>自定义错误出现时，屏幕上显示的语句</li>
 </ul>
-<h1 id="建立matlab的方法文件">建立matlab的方法文件</h1><p>myaverage.m文件的内容（文件名与函数名务必相同，否则无法调用）</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ave</span> = <span class="title">myaverage</span><span class="params">(x,N)</span></span></div><div class="line">   sizex = <span class="built_in">size</span>(x);</div><div class="line">   sizeN = <span class="built_in">size</span>(N);</div><div class="line">   <span class="keyword">if</span> sizex(<span class="number">2</span>) ~= sizeN(<span class="number">2</span>)</div><div class="line"><span class="built_in">disp</span>(<span class="string">'错误:数据必须具有相同的维数。'</span>) <span class="keyword">else</span></div><div class="line">       total = <span class="built_in">sum</span>(N);</div><div class="line">       s = <span class="transposed_variable">x.</span>*N;</div><div class="line">       ave = <span class="built_in">sum</span>(s)/total;</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h1 id="if_else判断">if_else判断</h1><p>myaverage.m文件的内容（文件名与函数名务必相同，否则无法调用）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ave</span> = <span class="title">myaverage</span><span class="params">(x,N)</span></span></div><div class="line">   sizex = <span class="built_in">size</span>(x);</div><div class="line">   sizeN = <span class="built_in">size</span>(N);</div><div class="line">   <span class="keyword">if</span> sizex(<span class="number">2</span>) ~= sizeN(<span class="number">2</span>)</div><div class="line"><span class="built_in">disp</span>(<span class="string">'错误:数据必须具有相同的维数。'</span>)</div><div class="line"><span class="keyword">else</span></div><div class="line">       total = <span class="built_in">sum</span>(N);</div><div class="line">       s = <span class="transposed_variable">x.</span>*N;</div><div class="line">       ave = <span class="built_in">sum</span>(s)/total;</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+
+<h1 id="for循环">for循环</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> index = start : increment : finish</div><div class="line">     statements</div><div class="line"><span class="function"><span class="keyword">end</span></span></div></pre></td></tr></table></figure>
+
+<h1 id="input输入">input输入</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">r</span> = <span class="built_in">input</span>(<span class="string">'输入半径:'</span>)</div></pre></td></tr></table></figure>
+
+<h1 id="while循环">while循环</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> condition</div><div class="line">      statements</div><div class="line"><span class="function"><span class="keyword">end</span></span></div></pre></td></tr></table></figure>
+
+<h1 id="switch_case语句">switch_case语句</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span> expression</div><div class="line">      <span class="keyword">case</span> <span class="number">1</span></div><div class="line">        <span class="built_in">do</span> these statements</div><div class="line">      <span class="keyword">case</span> <span class="number">2</span></div><div class="line">        <span class="built_in">do</span> these statements</div><div class="line">      <span class="keyword">case</span> n</div><div class="line">        <span class="built_in">do</span> these statements</div><div class="line">   <span class="function"><span class="keyword">end</span></span></div></pre></td></tr></table></figure>
+
+<h1 id="解方程">解方程</h1><h2 id="一元一次方程">一元一次方程</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//'a'的意义是标定未知量，这样剩下的一个字母被认为是常量</span></div><div class="line">solve(<span class="string">'a*x + 5'</span>,<span class="string">'a'</span>)</div><div class="line">MATLAB 响应输出为: ans =</div><div class="line">-<span class="number">5</span>/x</div></pre></td></tr></table></figure>
+
+<h2 id="一元二次方程">一元二次方程</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">s = solve(<span class="string">'x^2 - 6*x - 12 = 0'</span>)</div><div class="line">s=</div><div class="line"><span class="number">3</span> + <span class="number">21</span>^(<span class="number">1</span>/<span class="number">2</span>) </div><div class="line"><span class="number">3</span> - <span class="number">21</span>^(<span class="number">1</span>/<span class="number">2</span>)</div><div class="line"><span class="comment">//这两个值可以用s(1),s(2)取到</span></div><div class="line"></div><div class="line">d = <span class="string">'x^2 + 9*x -7 = 0'</span>;</div><div class="line">solve(d);</div><div class="line"><span class="comment">//强制转换格式，可以将多项式转化为小数</span></div><div class="line">x = <span class="keyword">double</span>(s(<span class="number">1</span>))</div></pre></td></tr></table></figure>
+
+<h2 id="二元一次方程组">二元一次方程组</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s = solve(<span class="string">'5*x + 4*y = 3'</span>,<span class="string">'x - 6*y = 2'</span>);</div><div class="line"><span class="comment">//使用点句号“.” 我们就可以取得相应的 x 和 y 值</span></div></pre></td></tr></table></figure>
+
+<h2 id="方程的展开(多个多项式相乘)">方程的展开(多个多项式相乘)</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//定义变量x</div><div class="line">syms x</div><div class="line"><span class="function"><span class="title">expand</span><span class="params">((x - <span class="number">1</span>)</span>*<span class="params">(x + <span class="number">4</span>)</span>)</span></div></pre></td></tr></table></figure>
+
+<h2 id="方程的合并和化简（分配多项式）">方程的合并和化简（分配多项式）</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">collect</span><span class="params">(x*(x^<span class="number">2</span> - <span class="number">2</span>)</span>)</span></div><div class="line">经测试，可以被<span class="title">expand</span>代替</div></pre></td></tr></table></figure>
+
+<h2 id="因式分解">因式分解</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function">factor</span>(112)<span class="comment">//分解数字</span></div><div class="line"><span class="function">factor</span>(x^2 - y^2)</div><div class="line"><span class="function">factor</span>(<span class="attr_selector">[x^2-y^2, x^3+y^3]</span>)<span class="comment">//多个因式同时分解</span></div></pre></td></tr></table></figure>
+
+<h2 id="多项式相除">多项式相除</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//多项式相除</div><div class="line">syms <span class="keyword">x</span>;</div><div class="line"><span class="built_in">simplify</span>((<span class="keyword">x</span>^<span class="number">4</span>-<span class="number">81</span>)/(<span class="keyword">x</span>^<span class="number">2</span>-<span class="number">9</span>))</div><div class="line">ans =</div><div class="line">   <span class="keyword">x</span>^<span class="number">2</span>+<span class="number">9</span></div><div class="line"></div><div class="line">//<span class="built_in">log</span>函数化简</div><div class="line">syms <span class="keyword">x</span>;</div><div class="line"><span class="built_in">simplify</span>(<span class="built_in">exp</span>(<span class="number">2</span>*<span class="built_in">log</span>(<span class="number">3</span>*<span class="keyword">x</span>)))</div><div class="line">ans =</div><div class="line">   <span class="number">9</span>*<span class="keyword">x</span>^<span class="number">2</span></div><div class="line"></div><div class="line">//三角恒等式</div><div class="line">syms <span class="keyword">x</span>;</div><div class="line"><span class="built_in">simplify</span>(<span class="built_in">cos</span>(<span class="keyword">x</span>)^<span class="number">2</span>-<span class="built_in">sin</span>(<span class="keyword">x</span>)^<span class="number">2</span>)</div><div class="line">ans =</div><div class="line">   <span class="number">2</span>*<span class="built_in">cos</span>(<span class="keyword">x</span>)^<span class="number">2</span>-<span class="number">1</span></div><div class="line"><span class="built_in">simplify</span>(<span class="built_in">cos</span>(<span class="keyword">x</span>)^<span class="number">2</span>+<span class="built_in">sin</span>(<span class="keyword">x</span>)^<span class="number">2</span>)</div><div class="line">   ans =</div><div class="line">   <span class="number">1</span></div></pre></td></tr></table></figure>
+
+<h2 id="使用指数和对数函数求解方程">使用指数和对数函数求解方程</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">eq</span> = <span class="string">'log10(x) - log10(x - 3) = 1'</span>;</div><div class="line"><span class="title">s</span> = solve(eq);</div></pre></td></tr></table></figure>
+
+<h2 id="泰勒级数展开式">泰勒级数展开式</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">taylor(<span class="built_in">sin</span>(x),<span class="string">'order'</span>,<span class="number">20</span>)<span class="comment">//20为展开的项数</span></div></pre></td></tr></table></figure>
+
+<h1 id="对方程画图">对方程画图</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ezplot里面的参数需要加''</span></div><div class="line">ezplot(<span class="string">'x^2 - 6*x - 12'</span>)</div><div class="line"></div><div class="line">d = <span class="string">'x^2 - 6*x - 12'</span>;</div><div class="line">ezplot(d);</div><div class="line"></div><div class="line"><span class="comment">//限定图像定义域</span></div><div class="line">ezplot(d,[x1,x2]);</div><div class="line"><span class="comment">//限定图像的定义域和值域</span></div><div class="line">ezplot(<span class="string">'x+3'</span>, [-<span class="number">4</span>, <span class="number">4</span>, -<span class="number">2</span>, <span class="number">2</span>])</div><div class="line"></div><div class="line"><span class="comment">//错误，ezplot里面没有等号</span></div><div class="line">ezplot(<span class="string">'x+3=0'</span>)</div><div class="line"><span class="comment">//正确</span></div><div class="line">ezplot(<span class="string">'x+3'</span>)</div></pre></td></tr></table></figure>
 
 ]]></content>
     <summary type="html">
@@ -417,7 +447,7 @@
     <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/"/>
     <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（三）/</id>
     <published>2014-11-25T17:25:26.000Z</published>
-    <updated>2014-12-11T10:33:59.000Z</updated>
+    <updated>2014-12-11T11:26:56.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>matlab与绘制图像。</p>
 </blockquote>
@@ -547,7 +577,9 @@ h：图形对象；</p>
     
       <category term="Matlab" scheme="xiuyuliang.com/tags/Matlab/"/>
     
-      <category term="数学建模，图像" scheme="xiuyuliang.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BC%8C%E5%9B%BE%E5%83%8F/"/>
+      <category term="数学建模" scheme="xiuyuliang.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+      <category term="图像" scheme="xiuyuliang.com/tags/%E5%9B%BE%E5%83%8F/"/>
     
       <category term="编程学习" scheme="xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
     
@@ -625,7 +657,7 @@ h：图形对象；</p>
     <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（一）/</id>
     <published>2014-11-25T17:21:26.000Z</published>
-    <updated>2014-12-11T09:04:50.000Z</updated>
+    <updated>2014-12-11T14:03:24.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>由于考虑在数学建模上有所精进，再加上大三课程需要通过Matlab进行数字图像处理，所以决定认真的熟悉一遍Matlab的基本操作，本文主要记录一些学习Matlab过程中的一些琐碎的易忘的知识点，以待日后翻阅查看。</p>
 </blockquote>
