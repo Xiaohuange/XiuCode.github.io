@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Matlab学习笔记(三)——绘制图像 | 语亮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="matlab与绘制图像。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matlab学习笔记(三)——绘制图像">
+<meta property="og:url" content="xiuyuliang.com/2014/11/26/Matlab学习笔记（三）/">
+<meta property="og:site_name" content="语亮">
+<meta property="og:description" content="matlab与绘制图像。">
+<meta property="og:image" content="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 17.58.21.png">
+<meta property="og:image" content="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 17.58.29.png">
+<meta property="og:image" content="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 15.58.49.png">
+<meta property="og:image" content="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 15.58.58.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Matlab学习笔记(三)——绘制图像">
+<meta name="twitter:description" content="matlab与绘制图像。">
+
+  
+    <link rel="alternative" href="/atom.xml" title="语亮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="favicon.ico">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../../../../css/font-awesome.min.css" type="text/css">
+
+  <link rel="stylesheet" href="../../../../css/bootstrap.min.css" type="text/css">
+
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">语亮</a>
+    <div class="collapse navbar-collapse nav-menu">
+      <ul class="nav navbar-nav">
+      
+        <li>
+          <a href="/archives">
+            <i class="fa fa-archive"></i>
+            归档
+          </a>
+        </li>
+      
+        <li>
+          <a href="/categories">
+            <i class="fa fa-folder"></i>
+            分类
+          </a>
+        </li>
+      
+        <li>
+          <a href="/tags">
+            <i class="fa fa-tags"></i>
+            标签
+          </a>
+        </li>
+      
+        <li>
+          <a href="/wiki">
+            <i class="fa fa-book"></i>
+            维基
+          </a>
+        </li>
+      
+        <li>
+          <a href="/about">
+            <i class="fa fa-user"></i>
+            关于
+          </a>
+        </li>
+      
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a id="rss-link" href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+          <li> <a href="/atom.xml">RSS</a> </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="clearfix"></div>
+
+      <div id='content' class="container">
+
+        <div class="page-header-wrapper">
+          <!--[if lt IE 9]><div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>提示:</strong>您的浏览器版本太低了,建议升级到 <strong><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" title="IE9">IE9</a></strong> 以上,本站使用<a href="https://www.google.com/intl/zh-CN/chrome/">Chrome浏览器</a>可以获得最好的显示效果.</div><![endif]-->
+          <div class="page-header">
+            <h1 class="title">
+          
+            Matlab学习笔记(三)——绘制图像
+          
+            </h1>
+        </div>
+      </div>
+      
+      <section id="main"
+        
+      ><article id="post-4wkbesc1hpta6ic7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#绘制图像"><span class="article-toc-text">绘制图像</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制极坐标曲线："><span class="article-toc-text">绘制极坐标曲线：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制双log曲线："><span class="article-toc-text">绘制双log曲线：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制离散图（折线图）"><span class="article-toc-text">绘制离散图（折线图）</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制离散图（柱状图）"><span class="article-toc-text">绘制离散图（柱状图）</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制离散图（针头图）"><span class="article-toc-text">绘制离散图（针头图）</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#等高线图(二维+三维)"><span class="article-toc-text">等高线图(二维+三维)</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#三维图像"><span class="article-toc-text">三维图像</span></a></li></ol></li></ol></li></ol></div><blockquote>
+<p>matlab与绘制图像。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="绘制图像">绘制图像</h1><ul>
+<li><code>x=[0:0.1:10]; y=cos(x); plot(x,y),xlabel(&#39;x&#39;),ylabel(&#39;cos(x)&#39;),gird on,axis equal,legend(&#39;cos(x)&#39;);</code>绘制图像+加坐标轴标签+网格+坐标轴间隔相同+图例，当更新x的区间或者间隔的时候，需要重新调用y=cosx来更新y值，否则会报错</li>
+<li><code>fplot(&#39;exp(-2*t)*sin(t)&#39;,[0, 4]), xlabel(&#39;t&#39;), ylabel(&#39;f(t)&#39;), title(&#39;阻尼弹力&#39;)</code>fplot自动计算间隔，画出平滑的曲线</li>
+<li><code>axis ( [xmin xmax ymin ymax] )</code>确定绘图的x轴和y轴的绘图范围，<code>axis auto</code>让matlab自动确定x轴和y轴的间距</li>
+<li>输入图例或者坐标轴名称的时候务必注意输入<code>&#39;&#39;</code>，不要输入变量作为参数</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">t = [<span class="number">0</span>:<span class="number">0.02</span>:<span class="number">4</span>];</div><div class="line">f = <span class="built_in">exp</span>(-<span class="number">2</span>*t)*<span class="built_in">sin</span>(t);</div><div class="line">??? Error using ==&gt; mtimes</div><div class="line">Inner <span class="keyword">matrix</span> dimensions must agree.</div></pre></td></tr></table></figure>
+
+<ul>
+<li><p>当一个函数是由二个或更多个函数相乘构成,别忘记在相乘时加上“.”以便告诉 MATLAB 我们是对两个矩阵进行相乘。应改为<code>t = [0:0.02:4];f = exp(-2*t).*sin(t);</code></p>
+</li>
+<li><p>同时画两条曲线，<code>plot(t,f,&#39;-&#39;,t,g,&#39;--&#39;)</code> </p>
+</li>
+<li>实线&#39;-&#39;虚线&#39;--&#39;虚点线&#39;-.&#39;点线 &#39;:&#39;`</li>
+<li>同时画两条实线，并且确定两条实现的颜色和虚实<code>plot(x,y,&#39;r&#39;,x,z,&#39;b--&#39;)</code></li>
+</ul>
+<p>MATLAB 颜色说明符</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">颜色</th>
+<th style="text-align:left">key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">黑色</td>
+<td style="text-align:left">k</td>
+</tr>
+<tr>
+<td style="text-align:left">白色</td>
+<td style="text-align:left">w</td>
+</tr>
+<tr>
+<td style="text-align:left">红色</td>
+<td style="text-align:left">r</td>
+</tr>
+<tr>
+<td style="text-align:left">黄色</td>
+<td style="text-align:left">y</td>
+</tr>
+<tr>
+<td style="text-align:left">绿色</td>
+<td style="text-align:left">g</td>
+</tr>
+<tr>
+<td style="text-align:left">蓝色</td>
+<td style="text-align:left">b</td>
+</tr>
+<tr>
+<td style="text-align:left">青色</td>
+<td style="text-align:left">c</td>
+</tr>
+<tr>
+<td style="text-align:left">洋红</td>
+<td style="text-align:left">m</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>绘制子图使用命令 subplot(m, n, p),这里 m 和 n 告诉 MATLAB 产生的产生的子图有 m 行和 n 列,p 用来告诉 MATLAB 我们所要贴上去的 某个已经绘制的图形窗口在第几个块中，记住，要先subplot开辟空白表，再在plot画上图像</li>
+<li>产生x数集的命令：</li>
+</ul>
+<p><code>x = linspace(a,b)</code>:MATLAB 会在 a 到 b 间取出均匀分布的 100 个点(或行向量),如果写成</p>
+<p><code>x = linspace(a,b,n)</code>:那么 MATLAB 会在 a、b 之间取出均匀分布的 n 个点。</p>
+<ul>
+<li>在两条plot命令之间加<code>hold on</code>可以使得两个图像重叠，而不必清除原有重新绘制</li>
+<li><h3 id="绘制极坐标曲线：">绘制极坐标曲线：</h3></li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">theta = [<span class="number">0</span><span class="symbol">:pi/</span><span class="number">90</span><span class="symbol">:</span><span class="number">2</span>*pi];</div><div class="line">r = a*theta;</div><div class="line">polar(theta,r), title(<span class="string">'阿基米德螺线'</span>)</div></pre></td></tr></table></figure>
+
+<h3 id="绘制双log曲线：">绘制双log曲线：</h3><p><code>loglog(x,y),它产生的图像x，y轴均使用对数值，semilogx(x, y),它产生的图象 x 轴使用对数值, y 轴仍然用直接值;相应地,semilogy(x, y)产生的图象 y 轴使用对数值,x 使用直接值。</code></p>
+<h3 id="绘制离散图（折线图）">绘制离散图（折线图）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x=[<span class="number">1</span>:<span class="number">5</span>];</div><div class="line">y=[<span class="number">23</span>,<span class="number">45</span>,<span class="number">67</span>,<span class="number">23</span>,<span class="number">45</span>];</div><div class="line">[<span class="string">'Adrian'</span>; <span class="string">'Jim'</span>;<span class="string">'Joe'</span>;<span class="string">'Sally'</span>;<span class="string">'Sue'</span>] = [<span class="string">'001'</span>;<span class="string">'002'</span>;<span class="string">'003'</span>;<span class="string">'004'</span>;<span class="string">'005'</span>]//用字母会报错，需要用代号</div><div class="line">plot(x,y,<span class="string">'o'</span>,x,y),set(gca,<span class="string">'XTicklabel'</span>,[<span class="string">'001'</span>; <span class="string">'002'</span>;<span class="string">'003'</span>;<span class="string">'004'</span>;<span class="string">'005'</span>]), <span class="keyword">...</span> </div><div class="line">set(gca,<span class="string">'XTick'</span>,[<span class="number">1</span>:<span class="number">5</span>]),axis([<span class="number">1</span> <span class="number">5</span> <span class="number">0</span> <span class="number">100</span>]),xlabel(<span class="string">'学生'</span>),ylabel(<span class="string">'期末成绩'</span>),title(<span class="string">'2005 年 12 月期末考试'</span>)</div></pre></td></tr></table></figure>
+
+<h3 id="绘制离散图（柱状图）">绘制离散图（柱状图）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">1</span>:<span class="number">5</span>];</div><div class="line">y = [<span class="number">50</span>,<span class="number">98</span>,<span class="number">75</span>,<span class="number">80</span>,<span class="number">98</span>];</div><div class="line">bar(x,y), xlabel(<span class="string">'学生'</span>),ylabel(<span class="string">'分数'</span>), title(<span class="string">'期末测试'</span>)</div><div class="line"><span class="comment">//水平的柱状图</span></div><div class="line">barh(a,b),xlabel(<span class="string">'学生人数'</span>),ylabel(<span class="string">'考试分数'</span>)</div><div class="line"><span class="comment">//三维柱状图</span></div><div class="line">bar3(a,b),xlabel(<span class="string">'考试分数'</span>),ylabel(<span class="string">'学生人数'</span>)</div></pre></td></tr></table></figure>
+
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 17.58.21.png" alt="image"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//默认是非分组的柱状图</div><div class="line">bar(x, y, <span class="string">'grouped'</span>)</div><div class="line">//设置分组柱状图</div><div class="line">bar(x, y, <span class="string">'stacked'</span>)</div><div class="line">x = [<span class="number">54.5</span>,<span class="number">64.5</span>,<span class="number">74.5</span>,<span class="number">84.5</span>,<span class="number">94.5</span>];</div><div class="line">garcia= [<span class="number">0</span>; <span class="number">3</span>; <span class="number">18</span>; <span class="number">13</span>; <span class="number">10</span>];<span class="keyword">...</span></div><div class="line">simpson= [<span class="number">3</span>; <span class="number">5</span>; <span class="number">20</span>; <span class="number">10</span>; <span class="number">5</span>];<span class="keyword">...</span></div><div class="line">smith= [<span class="number">1</span>; <span class="number">2</span>; <span class="number">15</span>; <span class="number">17</span>; <span class="number">8</span>];</div><div class="line">y = [garcia simpson smith];</div><div class="line">bar(x,y),xlabel(<span class="string">'考试分数'</span>),ylabel(<span class="string">'学生人数'</span>),legend(<span class="string">'加西亚'</span>,<span class="string">'辛普森'</span>,<span class="string">'史密斯'</span>)</div></pre></td></tr></table></figure>
+
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 17.58.29.png" alt="image"></p>
+<h3 id="绘制离散图（针头图）">绘制离散图（针头图）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">plot(t,f),xlabel(<span class="string">'时间(秒)'</span>),ylabel(<span class="string">'弹簧响应'</span>)</div><div class="line"></div><div class="line"><span class="comment">//替换为：</span></div><div class="line">stem(t,f),xlabel(<span class="string">'时间(秒)'</span>),ylabel(<span class="string">'弹簧响应'</span>)</div><div class="line"><span class="comment">//填充绿色菱形标记：</span></div><div class="line">stem(t,f,<span class="string">'--dg'</span>,<span class="string">'fill'</span>),xlabel(<span class="string">'时间(秒)'</span>),ylabel(<span class="string">'弹簧响应'</span>)</div></pre></td></tr></table></figure>
+
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 15.58.49.png" alt="image"></p>
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 15.58.58.png" alt="image"></p>
+<h3 id="等高线图(二维+三维)">等高线图(二维+三维)</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[x,y] = meshgrid(-<span class="number">5</span>:<span class="number">0.1</span>:<span class="number">5</span>, -<span class="number">3</span>:<span class="number">0.1</span>:<span class="number">3</span>);</div><div class="line"><span class="comment">//[x,y] = meshgrid(-2:0.1:2);如果两个变量的取值范围相同，可以只写一次</span></div><div class="line">z = x.^<span class="number">2</span> + y.^<span class="number">2</span>;</div><div class="line">[C,h] = contour(x,y,z);<span class="comment">//c是等高线矩阵，h是等高线句柄</span></div><div class="line"></div><div class="line"><span class="comment">//给等高线加上图例</span></div><div class="line"><span class="keyword">set</span>(h,<span class="string">'ShowText'</span>,<span class="string">'on'</span>,<span class="string">'TextStep'</span>,<span class="keyword">get</span>(h,<span class="string">'LevelStep'</span>)*<span class="number">2</span>)</div><div class="line"><span class="comment">//变成三维图像,30指的是等高线的密度</span></div><div class="line">contour3(x, y, z, <span class="number">30</span>)；</div><div class="line"></div><div class="line"><span class="comment">//装扮图像</span></div><div class="line">surface(x,y,z,<span class="string">'EdgeColor'</span>,[<span class="number">.8</span> <span class="number">.8</span> <span class="number">.8</span>],<span class="string">'FaceColor'</span>,<span class="string">'none'</span>)</div><div class="line">grid off；</div><div class="line">view(-<span class="number">15</span>,<span class="number">20</span>)；<span class="comment">//摄像机沿着x，y轴移动</span></div></pre></td></tr></table></figure>
+
+<p>解释set指令的参数：</p>
+<p>contour(x,y.z)：（x，y）是平面z=0上点的坐标矩阵，z为相应点的高度值矩阵。</p>
+<p>[C,h]=contour(x,y,z)：C 为返回等值线矩阵，h为图形对象的句柄向量，也就是代表所绘制图形；</p>
+<p>set(h,&#39;ShowText&#39;,&#39;on&#39;,&#39;TextStep&#39;,get(h,&#39;LevelStep&#39;)*2)
+h：图形对象；</p>
+<p>&#39;ShowText&#39;：显示等高值标签命令，后面设置&#39;on&#39;，就是打开显示标签；</p>
+<p>&#39;TextStep&#39;：标签的步长；</p>
+<p>&#39;LevelStep&#39;：等高线步长；</p>
+<p>get(h,&#39;LevelStep&#39;)：得到等高线步长的值。</p>
+<p>这个命令就是从第一个等高线开始，<em>每隔一个</em>给等高线贴上标签。</p>
+<h3 id="三维图像">三维图像</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//绘制圆柱体</span></div><div class="line">t = <span class="number">0</span>:pi/<span class="number">10</span>:<span class="number">2</span><span class="variable">*pi</span>;</div><div class="line">[X,Y,Z] = <span class="keyword">cylinder</span>(<span class="number">1</span>+<span class="keyword">sin</span>(t));</div><div class="line">surf(X,Y,Z);</div><div class="line">axis square;</div><div class="line"></div><div class="line">   </div><div class="line"><span class="comment">//普通三维图像</span></div><div class="line">mesh(x,y,z),xlabel(<span class="string">'x'</span>),ylabel(<span class="string">'y'</span>),zlabel(<span class="string">'z'</span>)</div><div class="line"><span class="comment">//表面颜色过渡的图像</span></div><div class="line">surf(x,y,z),xlabel(<span class="string">'x'</span>),ylabel(<span class="string">'y'</span>),zlabel(<span class="string">'z'</span>)</div><div class="line"><span class="comment">//底部有等高线映射的图像</span></div><div class="line">surc(x,y,z),xlabel(<span class="string">'x'</span>),ylabel(<span class="string">'y'</span>),zlabel(<span class="string">'z'</span>)</div><div class="line"></div><div class="line"><span class="comment">//图象中的阴影可以设置为flat、interp和faceted。</span></div><div class="line"> </div><div class="line">flat 是用同一颜色为每个网格进行着色并隐藏网格线</div><div class="line">而 facted 则显示网格</div><div class="line">使用 interp 是 告诉 MATLAB 使用颜色插值的办法进行着色,因此显得非常平滑</div><div class="line"></div><div class="line">surfl(x,y,z),xlabel(<span class="string">'x'</span>),ylabel(<span class="string">'y'</span>),zlabel(<span class="string">'z'</span>);</div><div class="line">shading interp;</div><div class="line"><span class="comment">//将图像着色为灰色</span></div><div class="line">colormap(gray);</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+  </div>
+</article>
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-Matlab学习笔记（三）" data-title="Matlab学习笔记(三)——绘制图像" data-url="xiuyuliang.com/2014/11/26/Matlab学习笔记（三）/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'yuliang'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+  
+</section>
+        
+          
+<aside id="sidebar">
+  
+    
+      
+<div class="widget-wrap center">
+  <ul class="pagination">
+    <li>
+      
+        <a href="/2014/11/26/Matlab学习笔记（四）/" class="nav-prev">Prev</a>
+      
+    </li>
+    <li>
+      <a data-url="xiuyuliang.com/2014/11/26/Matlab学习笔记（三）/" data-id="4wkbesc1hpta6ic7" data_title="Matlab学习笔记(三)——绘制图像"
+        data_summary="
+matlab与绘制图像。
+
+
+
+绘制图像
+x=[0:0.1:10]; y=cos(x); plot(x,y),xlabel(&#39;x&#39;),ylabel(&#39;cos(x)&#39;),gird on,axis equal,legend(&#39;cos(x)&#39;);绘制图..." class="article-share-link">Share</a>
+    </li>
+    <li>
+      
+        <a href="/2014/11/26/Matlab学习笔记（二）/" class="nav-next">Next</a>
+      
+    </li>
+  </ul>
+</div>
+
+
+    
+      <div class="widget-wrap">
+  <div class="post-widget">
+    <i class="fa fa-clock-o"></i>
+    <time datetime="2014-11-25T17:25:26.000Z" itemprop="datePublished">11月 26 2014</time>
+  </div>
+</div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="post-widget">
+      <i class="fa fa-folder"></i>
+      <a class="category-link" href="../../../../categories/编程学习">编程学习<span class="category-count">8</span></a>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="post-widget">
+      <i class="fa fa-tags"></i>
+      <a class="tag-link" href="../../../../tags/Matlab">Matlab<span class="tag-count">4</span></a><a class="tag-link" href="../../../../tags/数学建模，图像">数学建模，图像<span class="tag-count">1</span></a>
+    </div>
+  </div>
+
+
+    
+  
+</aside>
+
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer container">
+    <div id="footer-info" class="inner">
+      <a href="/">语亮</a> &copy; 2014 Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/seff/nut" target="_blank">Nut</a>
+    </div>
+  </div>
+  
+</footer>
+<a id="gotop" href="#">
+  <i class="fa fa-chevron-up"></i>
+</a>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="[object Object]" class="mobile-nav-link">0</a>
+  
+    <a href="[object Object]" class="mobile-nav-link">1</a>
+  
+    <a href="[object Object]" class="mobile-nav-link">2</a>
+  
+    <a href="[object Object]" class="mobile-nav-link">3</a>
+  
+    <a href="[object Object]" class="mobile-nav-link">4</a>
+  
+</nav>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="../../../../js/jquery.fitvids.js" type="text/javascript"></script>
+
+<script src="../../../../js/bootstrap.min.js" type="text/javascript"></script>
+
+<script src="../../../../js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+<a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+</html>

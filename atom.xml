@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="xiuyuliang.com/"/>
-  <updated>2014-12-09T17:46:57.333Z</updated>
+  <updated>2014-12-11T10:27:23.317Z</updated>
   <id>xiuyuliang.com/</id>
   
   <author>
@@ -374,78 +374,60 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Matlab学习笔记]]></title>
-    <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>xiuyuliang.com/2014/11/26/Matlab学习笔记/</id>
-    <published>2014-11-25T17:21:26.000Z</published>
-    <updated>2014-12-09T17:46:22.000Z</updated>
+    <title><![CDATA[Matlab学习笔记(四)——统计和matlab编程]]></title>
+    <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
+    <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（四）/</id>
+    <published>2014-11-25T17:30:26.000Z</published>
+    <updated>2014-12-11T10:26:31.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
-<p>由于考虑在数学建模上有所精进，再加上大三课程需要通过Matlab进行数字图像处理，所以决定认真的熟悉一遍Matlab的基本操作，本文主要记录一些学习Matlab过程中的一些琐碎的易忘的知识点，以待日后翻阅查看。</p>
+<p>matlab与统计相关知识整理。</p>
 </blockquote>
 <a id="more"></a>
 
-
-<h1 id="快捷键">快捷键</h1><ul>
-<li><code>cmd+k</code> 清除指令界面</li>
-<li><code>quit</code> 退出matlab</li>
-</ul>
-<h1 id="指令集合">指令集合</h1><ul>
-<li><code>whos</code> 可以查询迄今为止所有定义的变量的类型、内存空间、是否复数,<code>who</code>只查看变量名称</li>
-<li><code>clear</code> 清除全部变量，<code>clear x y z</code>清除制定变量</li>
-<li><code>...</code> 用来续行</li>
-<li><code>format short/long</code> 结果精确到4位小数或者16位小数，<code>format short e</code>用科学计数法计数，<code>format rat</code> 查找最近结果的比例式</li>
-<li><code>%</code> 注释标记</li>
-</ul>
-<h1 id="数学运算符">数学运算符</h1><ul>
-<li><code>pi</code> 相当于派</li>
-<li><code>abs</code>求绝对值</li>
-<li><code>exp(a)</code> 求解e的a次方</li>
-<li><code>sqrt(a)</code> 对a开根号</li>
-<li><code>log(a)</code> 求a的自然对数ln(a)，<code>log10(a)</code> 求10为底的a的对数</li>
-<li><code>sin</code> <code>cos</code> <code>tan</code> <code>atan</code> 三角函数随便用</li>
-<li><code>a/b</code>是右除，意思是a➗b</li>
-<li><code>a\b</code>是左除，意思是b➗a</li>
-<li>运算顺序：幂运算优于乘除，右除优于左除</li>
-<li>在赋值语句后面加 <code>;</code> 可以只起到赋值的效果，不输出 <code>x=20</code> 的赋值结果（不显示在命令窗口）</li>
-<li><code>2 +3i</code> 表示复数就可以用i</li>
-<li><code>.^</code>幂次方运算需要在<code>^</code>之前加<code>.</code></li>
-</ul>
-<h1 id="线性代数">线性代数</h1><p>补充一点线性代数的基础知识：</p>
-<h5 id="向量：<code>u=(u1,u2,u3)-v=(v1,v2,v3)</code>">向量：<code>u=(u1,u2,u3) v=(v1,v2,v3)</code></h5><h5 id="单纯行乘列的矩阵乘法公式:-<code>u-*-v&#39;={u1v1+u2v2+u3v3}</code>">单纯行乘列的矩阵乘法公式: <code>u * v&#39;={u1v1+u2v2+u3v3}</code></h5><h5 id="叉积公式：<code>cross(u,v)=u-x-v-=-{-u2v3-v2u3-,-u3v1-v3u1-,-u1v2-u2v1-}</code>">叉积公式：<code>cross(u,v)=u x v = { u2v3-v2u3 , u3v1-v3u1 , u1v2-u2v1 }</code></h5><h5 id="点积公式：<code>sum(dot(u,v))=sum(u-.*-v)-=-u1v1+u2v2+u3v33=|u|*|v|*cos(u,v)</code>">点积公式：<code>sum(dot(u,v))=sum(u .* v) = u1v1+u2v2+u3v33=|u|*|v|*COS(U,V)</code></h5><p><strong>叉乘（向量积）</strong>的意义就是通过两个向量来确定一个新的向量，该向量与前两个向量都垂直</p>
-<p><strong>点乘（数量积）</strong>的结果就是两个向量的模相乘，然后再与这两个向量的夹角的余弦值相乘。或者说是两个向量的各个分量分别相乘的结果的和。很明显，点乘的结果就是一个数，这个数对我们分析这两个向量的特点很有帮助。如果点乘的结果为0，那么这两个向量互相垂直；如果结果大于0，那么这两个向量的夹角小于90度；如果结果小于0，那么这两个向量的夹角大于90度。</p>
 <ul>
-<li>行向量 a=[1,2,3] a=[1 2 3], 列向量 b=[1;2;3]</li>
-<li>引用向量的个别“单行单列”元素<code>a(1),a(4:6),a(:)</code>第三个是显示a向量所有的元素</li>
-<li>引用向量的个别“多行多列”元素<code>a(2,3) a(:,2) a(:,2:3) a(1:2,2:3)</code>第二行第三列，第二列，第二列和第三列，一二行二三列，<code>a(1,:)=[]</code>,删除第一行</li>
-<li>复制行创建新矩阵<code>a([1,2,1],:)</code>，复制一行放在一行，复制二行放在二行，复制一行放在三行</li>
-<li>转置运算用 <code>&#39;</code> ，加减乘除直接算</li>
-<li>向量合并，行向量用<code>,</code>合并，列向量用<code>;</code>合并</li>
-<li><code>a=[0:2:10]</code>创建从0到10间隔2的等差行向量</li>
-<li><code>a=logspace(0,1,5)</code>创建从10^0到10^1之间含有5个等差元素的点，注意是圆括号（）</li>
-<li><code>length(a),max(a),min(a)</code>分别求解出- 矩阵的个数，最大值，最小值</li>
-<li>求模（繁琐版）对于实数 <code>sqrt(sum(a.*a))</code> 对于复数<code>sqrt(sum(a.*conj(a)))</code> ，<code>conj(a)</code>是求复数的共轭复数</li>
-<li><code>dot(a,b) cross(a,b)</code>点乘（对应元素相乘并求和）和叉乘</li>
-<li>当a是带有复数的矩阵，<code>&#39;</code>是转置加共轭，而<code>.&#39;</code>是单纯的转置</li>
-<li><code>.*</code>是对应位置元素相乘（行乘行），<code>*</code>是矩阵相乘（行乘列）</li>
-<li><code>./``.\``.^</code>分别是右除，左除和幂次方，换句话说只要是加<code>.</code>基本都是对应位置元素互相运算</li>
-<li><code>zeros(m),zeros(m,n) eye(m),eye(m,n)</code>分别是零矩阵和单位矩阵</li>
-<li><code>det(a)</code>求矩阵a的行列式，助力求解多元一次方程的解</li>
-<li><code>rank(a)</code>求矩阵a的秩</li>
-<li><code>inv(a)</code>求矩阵a的逆矩阵，<code>det(a) != 0</code>的矩阵a才有逆矩阵</li>
-<li><code>rref(A)</code>求A降行后的梯形矩阵</li>
-<li><code>magic(n)</code> 魔方矩阵(幻方)是一个 n×n 矩阵。矩阵的元素从 1 到 n^2 之间,并且行元素的和等于列元素的和。</li>
-<li><code>[L, U] = lu(A)</code> 对矩阵 A 进行 LU 分解，<code>x = U\(L\b)</code>用来求方程组的解</li>
+<li><code>mean(a)</code>行向量可以求得每一个行元素的平均值，<code>mean(A)</code>矩阵可以求得每一列的平均值</li>
+<li><code>size(A)</code>判断矩阵的大小</li>
+<li><code>~=</code>是不等于</li>
+<li><code>disp(&#39;错误:数据必须具有相同的维数。&#39;)</code>自定义错误出现时，屏幕上显示的语句</li>
 </ul>
-<h3 id="线性代数<em>普通方法</em>求方程组的解：">线性代数<em>普通方法</em>求方程组的解：</h3><p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.15.49.png" alt="image"></p>
-<h3 id="线性代数<em>增广矩阵</em>求方程组的解：">线性代数<em>增广矩阵</em>求方程组的解：</h3><p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.23.47.png" alt="image">
-<img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.23.58.png" alt="image"></p>
-<h3 id="线性代数<em>逆矩阵</em>求方程组的解">线性代数<em>逆矩阵</em>求方程组的解</h3><p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.30.38.png" alt="image"></p>
-<h3 id="线性代数<em>伪逆矩阵</em>求无限解det(a)=0：">线性代数<em>伪逆矩阵</em>求无限解det(a)=0：</h3><p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.34.22.png" alt="image"></p>
-<h3 id="线性代数<em>lu分解</em>求方程组的解：">线性代数<em>LU分解</em>求方程组的解：</h3><p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.44.34.png" alt="image"></p>
+<h1 id="建立matlab的方法文件">建立matlab的方法文件</h1><p>myaverage.m文件的内容（文件名与函数名务必相同，否则无法调用）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ave</span> = <span class="title">myaverage</span><span class="params">(x,N)</span></span></div><div class="line">   sizex = <span class="built_in">size</span>(x);</div><div class="line">   sizeN = <span class="built_in">size</span>(N);</div><div class="line">   <span class="keyword">if</span> sizex(<span class="number">2</span>) ~= sizeN(<span class="number">2</span>)</div><div class="line"><span class="built_in">disp</span>(<span class="string">'错误:数据必须具有相同的维数。'</span>) <span class="keyword">else</span></div><div class="line">       total = <span class="built_in">sum</span>(N);</div><div class="line">       s = <span class="transposed_variable">x.</span>*N;</div><div class="line">       ave = <span class="built_in">sum</span>(s)/total;</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>matlab与统计相关知识整理。</p>
+</blockquote>
+]]>
+    
+    </summary>
+    
+      <category term="Matlab" scheme="xiuyuliang.com/tags/Matlab/"/>
+    
+      <category term="数学建模" scheme="xiuyuliang.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+      <category term="统计" scheme="xiuyuliang.com/tags/%E7%BB%9F%E8%AE%A1/"/>
+    
+      <category term="编程学习" scheme="xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Matlab学习笔记(三)——绘制图像]]></title>
+    <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（三）/</id>
+    <published>2014-11-25T17:25:26.000Z</published>
+    <updated>2014-12-11T10:02:22.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>matlab与绘制图像。</p>
+</blockquote>
+<a id="more"></a>
+
 <h1 id="绘制图像">绘制图像</h1><ul>
 <li><code>x=[0:0.1:10]; y=cos(x); plot(x,y),xlabel(&#39;x&#39;),ylabel(&#39;cos(x)&#39;),gird on,axis equal,legend(&#39;cos(x)&#39;);</code>绘制图像+加坐标轴标签+网格+坐标轴间隔相同+图例，当更新x的区间或者间隔的时候，需要重新调用y=cosx来更新y值，否则会报错</li>
 <li><code>fplot(&#39;exp(-2*t)*sin(t)&#39;,[0, 4]), xlabel(&#39;t&#39;), ylabel(&#39;f(t)&#39;), title(&#39;阻尼弹力&#39;)</code>fplot自动计算间隔，画出平滑的曲线</li>
-<li><code>axis ( [xmin xmax ymin ymax] )</code>确定绘图的x轴和y轴的绘图范围</li>
+<li><code>axis ( [xmin xmax ymin ymax] )</code>确定绘图的x轴和y轴的绘图范围，<code>axis auto</code>让matlab自动确定x轴和y轴的间距</li>
+<li>输入图例或者坐标轴名称的时候务必注意输入<code>&#39;&#39;</code>，不要输入变量作为参数</li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">t = [<span class="number">0</span>:<span class="number">0.02</span>:<span class="number">4</span>];</div><div class="line">f = <span class="built_in">exp</span>(-<span class="number">2</span>*t)*<span class="built_in">sin</span>(t);</div><div class="line">??? Error using ==&gt; mtimes</div><div class="line">Inner <span class="keyword">matrix</span> dimensions must agree.</div></pre></td></tr></table></figure>
 
@@ -501,13 +483,160 @@
 </tbody>
 </table>
 <ul>
-<li>绘制子图使用命令 subplot(m, n, p),这里 m 和 n 告诉 MATLAB 产生的产生的子图有 m 行和 n 列,p 用来告诉 MATLAB 我们所要贴上去的 某个已经绘制的图形窗口在第几个块中，记住，要先subplot开辟空白表，在plot画上图像</li>
-<li><code>x = linspace(a,b)</code>
-MATLAB 会在 a 到 b 间取出均匀分布的 100 个点(或行向量),如果写成
- <code>x = linspace(a,b,n)</code>
-那么 MATLAB 会在 a、b 之间取出均匀分布的 n 个点。</li>
-<li>加<code>hold on</code>可以使得两个图像重叠，而不必清除原有重新绘制</li>
-<li></li>
+<li>绘制子图使用命令 subplot(m, n, p),这里 m 和 n 告诉 MATLAB 产生的产生的子图有 m 行和 n 列,p 用来告诉 MATLAB 我们所要贴上去的 某个已经绘制的图形窗口在第几个块中，记住，要先subplot开辟空白表，再在plot画上图像</li>
+<li>产生x数集的命令：</li>
+</ul>
+<p><code>x = linspace(a,b)</code>:MATLAB 会在 a 到 b 间取出均匀分布的 100 个点(或行向量),如果写成</p>
+<p><code>x = linspace(a,b,n)</code>:那么 MATLAB 会在 a、b 之间取出均匀分布的 n 个点。</p>
+<ul>
+<li>在两条plot命令之间加<code>hold on</code>可以使得两个图像重叠，而不必清除原有重新绘制</li>
+<li><h3 id="绘制极坐标曲线：">绘制极坐标曲线：</h3></li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">theta = [<span class="number">0</span><span class="symbol">:pi/</span><span class="number">90</span><span class="symbol">:</span><span class="number">2</span>*pi];</div><div class="line">r = a*theta;</div><div class="line">polar(theta,r), title(<span class="string">'阿基米德螺线'</span>)</div></pre></td></tr></table></figure>
+
+<h3 id="绘制双log曲线：">绘制双log曲线：</h3><p><code>loglog(x,y),它产生的图像x，y轴均使用对数值，semilogx(x, y),它产生的图象 x 轴使用对数值, y 轴仍然用直接值;相应地,semilogy(x, y)产生的图象 y 轴使用对数值,x 使用直接值。</code></p>
+<h3 id="绘制离散图（折线图）">绘制离散图（折线图）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x=[<span class="number">1</span>:<span class="number">5</span>];</div><div class="line">y=[<span class="number">23</span>,<span class="number">45</span>,<span class="number">67</span>,<span class="number">23</span>,<span class="number">45</span>];</div><div class="line">[<span class="string">'Adrian'</span>; <span class="string">'Jim'</span>;<span class="string">'Joe'</span>;<span class="string">'Sally'</span>;<span class="string">'Sue'</span>] = [<span class="string">'001'</span>;<span class="string">'002'</span>;<span class="string">'003'</span>;<span class="string">'004'</span>;<span class="string">'005'</span>]//用字母会报错，需要用代号</div><div class="line">plot(x,y,<span class="string">'o'</span>,x,y),set(gca,<span class="string">'XTicklabel'</span>,[<span class="string">'001'</span>; <span class="string">'002'</span>;<span class="string">'003'</span>;<span class="string">'004'</span>;<span class="string">'005'</span>]), <span class="keyword">...</span> </div><div class="line">set(gca,<span class="string">'XTick'</span>,[<span class="number">1</span>:<span class="number">5</span>]),axis([<span class="number">1</span> <span class="number">5</span> <span class="number">0</span> <span class="number">100</span>]),xlabel(<span class="string">'学生'</span>),ylabel(<span class="string">'期末成绩'</span>),title(<span class="string">'2005 年 12 月期末考试'</span>)</div></pre></td></tr></table></figure>
+
+<h3 id="绘制离散图（柱状图）">绘制离散图（柱状图）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">1</span>:<span class="number">5</span>];</div><div class="line">y = [<span class="number">50</span>,<span class="number">98</span>,<span class="number">75</span>,<span class="number">80</span>,<span class="number">98</span>];</div><div class="line">bar(x,y), xlabel(<span class="string">'学生'</span>),ylabel(<span class="string">'分数'</span>), title(<span class="string">'期末测试'</span>)</div><div class="line"><span class="comment">//水平的柱状图</span></div><div class="line">barh(a,b),xlabel(<span class="string">'学生人数'</span>),ylabel(<span class="string">'考试分数'</span>)</div><div class="line"><span class="comment">//三维柱状图</span></div><div class="line">bar3(a,b),xlabel(<span class="string">'考试分数'</span>),ylabel(<span class="string">'学生人数'</span>)</div></pre></td></tr></table></figure>
+
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 17.58.21.png" alt="image"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//默认是非分组的柱状图</div><div class="line">bar(x, y, <span class="string">'grouped'</span>)</div><div class="line">//设置分组柱状图</div><div class="line">bar(x, y, <span class="string">'stacked'</span>)</div><div class="line">x = [<span class="number">54.5</span>,<span class="number">64.5</span>,<span class="number">74.5</span>,<span class="number">84.5</span>,<span class="number">94.5</span>];</div><div class="line">garcia= [<span class="number">0</span>; <span class="number">3</span>; <span class="number">18</span>; <span class="number">13</span>; <span class="number">10</span>];<span class="keyword">...</span></div><div class="line">simpson= [<span class="number">3</span>; <span class="number">5</span>; <span class="number">20</span>; <span class="number">10</span>; <span class="number">5</span>];<span class="keyword">...</span></div><div class="line">smith= [<span class="number">1</span>; <span class="number">2</span>; <span class="number">15</span>; <span class="number">17</span>; <span class="number">8</span>];</div><div class="line">y = [garcia simpson smith];</div><div class="line">bar(x,y),xlabel(<span class="string">'考试分数'</span>),ylabel(<span class="string">'学生人数'</span>),legend(<span class="string">'加西亚'</span>,<span class="string">'辛普森'</span>,<span class="string">'史密斯'</span>)</div></pre></td></tr></table></figure>
+
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 17.58.29.png" alt="image"></p>
+<h3 id="绘制离散图（针头图）">绘制离散图（针头图）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">plot(t,f),xlabel(<span class="string">'时间(秒)'</span>),ylabel(<span class="string">'弹簧响应'</span>)</div><div class="line"></div><div class="line"><span class="comment">//替换为：</span></div><div class="line">stem(t,f),xlabel(<span class="string">'时间(秒)'</span>),ylabel(<span class="string">'弹簧响应'</span>)</div><div class="line"><span class="comment">//填充绿色菱形标记：</span></div><div class="line">stem(t,f,<span class="string">'--dg'</span>,<span class="string">'fill'</span>),xlabel(<span class="string">'时间(秒)'</span>),ylabel(<span class="string">'弹簧响应'</span>)</div></pre></td></tr></table></figure>
+
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 15.58.49.png" alt="image"></p>
+<p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 15.58.58.png" alt="image"></p>
+<h3 id="等高线图(二维+三维)">等高线图(二维+三维)</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[x,y] = meshgrid(-<span class="number">5</span>:<span class="number">0.1</span>:<span class="number">5</span>, -<span class="number">3</span>:<span class="number">0.1</span>:<span class="number">3</span>);</div><div class="line"><span class="comment">//[x,y] = meshgrid(-2:0.1:2);如果两个变量的取值范围相同，可以只写一次</span></div><div class="line">z = x.^<span class="number">2</span> + y.^<span class="number">2</span>;</div><div class="line">[C,h] = contour(x,y,z);<span class="comment">//c是等高线矩阵，h是等高线句柄</span></div><div class="line"></div><div class="line"><span class="comment">//给等高线加上图例</span></div><div class="line"><span class="keyword">set</span>(h,<span class="string">'ShowText'</span>,<span class="string">'on'</span>,<span class="string">'TextStep'</span>,<span class="keyword">get</span>(h,<span class="string">'LevelStep'</span>)*<span class="number">2</span>)</div><div class="line"><span class="comment">//变成三维图像,30指的是等高线的密度</span></div><div class="line">contour3(x, y, z, <span class="number">30</span>)；</div><div class="line"></div><div class="line"><span class="comment">//装扮图像</span></div><div class="line">surface(x,y,z,<span class="string">'EdgeColor'</span>,[<span class="number">.8</span> <span class="number">.8</span> <span class="number">.8</span>],<span class="string">'FaceColor'</span>,<span class="string">'none'</span>)</div><div class="line">grid off；</div><div class="line">view(-<span class="number">15</span>,<span class="number">20</span>)；<span class="comment">//摄像机沿着x，y轴移动</span></div></pre></td></tr></table></figure>
+
+<p>解释set指令的参数：</p>
+<p>contour(x,y.z)：（x，y）是平面z=0上点的坐标矩阵，z为相应点的高度值矩阵。</p>
+<p>[C,h]=contour(x,y,z)：C 为返回等值线矩阵，h为图形对象的句柄向量，也就是代表所绘制图形；</p>
+<p>set(h,&#39;ShowText&#39;,&#39;on&#39;,&#39;TextStep&#39;,get(h,&#39;LevelStep&#39;)*2)
+h：图形对象；</p>
+<p>&#39;ShowText&#39;：显示等高值标签命令，后面设置&#39;on&#39;，就是打开显示标签；</p>
+<p>&#39;TextStep&#39;：标签的步长；</p>
+<p>&#39;LevelStep&#39;：等高线步长；</p>
+<p>get(h,&#39;LevelStep&#39;)：得到等高线步长的值。</p>
+<p>这个命令就是从第一个等高线开始，<em>每隔一个</em>给等高线贴上标签。</p>
+<h3 id="三维图像">三维图像</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//绘制圆柱体</span></div><div class="line">t = <span class="number">0</span>:pi/<span class="number">10</span>:<span class="number">2</span><span class="variable">*pi</span>;</div><div class="line">[X,Y,Z] = <span class="keyword">cylinder</span>(<span class="number">1</span>+<span class="keyword">sin</span>(t));</div><div class="line">surf(X,Y,Z);</div><div class="line">axis square;</div><div class="line"></div><div class="line">   </div><div class="line"><span class="comment">//普通三维图像</span></div><div class="line">mesh(x,y,z),xlabel(<span class="string">'x'</span>),ylabel(<span class="string">'y'</span>),zlabel(<span class="string">'z'</span>)</div><div class="line"><span class="comment">//表面颜色过渡的图像</span></div><div class="line">surf(x,y,z),xlabel(<span class="string">'x'</span>),ylabel(<span class="string">'y'</span>),zlabel(<span class="string">'z'</span>)</div><div class="line"><span class="comment">//底部有等高线映射的图像</span></div><div class="line">surc(x,y,z),xlabel(<span class="string">'x'</span>),ylabel(<span class="string">'y'</span>),zlabel(<span class="string">'z'</span>)</div><div class="line"></div><div class="line"><span class="comment">//图象中的阴影可以设置为flat、interp和faceted。</span></div><div class="line"> </div><div class="line">flat 是用同一颜色为每个网格进行着色并隐藏网格线</div><div class="line">而 facted 则显示网格</div><div class="line">使用 interp 是 告诉 MATLAB 使用颜色插值的办法进行着色,因此显得非常平滑</div><div class="line"></div><div class="line">surfl(x,y,z),xlabel(<span class="string">'x'</span>),ylabel(<span class="string">'y'</span>),zlabel(<span class="string">'z'</span>);</div><div class="line">shading interp;</div><div class="line"><span class="comment">//将图像着色为灰色</span></div><div class="line">colormap(gray);</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>matlab与绘制图像。</p>
+</blockquote>
+]]>
+    
+    </summary>
+    
+      <category term="Matlab" scheme="xiuyuliang.com/tags/Matlab/"/>
+    
+      <category term="数学建模，图像" scheme="xiuyuliang.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%EF%BC%8C%E5%9B%BE%E5%83%8F/"/>
+    
+      <category term="编程学习" scheme="xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Matlab学习笔记(二)——线性代数]]></title>
+    <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（二）/</id>
+    <published>2014-11-25T17:22:26.000Z</published>
+    <updated>2014-12-11T09:08:18.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>matlab与线性代数相关知识整理。</p>
+</blockquote>
+<a id="more"></a>
+
+
+<h1 id="线性代数">线性代数</h1><p>补充一点线性代数的基础知识：</p>
+<h5 id="向量：<code>u=(u1,u2,u3)-v=(v1,v2,v3)</code>">向量：<code>u=(u1,u2,u3) v=(v1,v2,v3)</code></h5><h5 id="单纯行乘列的矩阵乘法公式:-<code>u-*-v&#39;={u1v1+u2v2+u3v3}</code>">单纯行乘列的矩阵乘法公式: <code>u * v&#39;={u1v1+u2v2+u3v3}</code></h5><h5 id="叉积公式：<code>cross(u,v)=u-x-v-=-{-u2v3-v2u3-,-u3v1-v3u1-,-u1v2-u2v1-}</code>">叉积公式：<code>cross(u,v)=u x v = { u2v3-v2u3 , u3v1-v3u1 , u1v2-u2v1 }</code></h5><h5 id="点积公式：<code>sum(dot(u,v))=sum(u-.*-v)-=-u1v1+u2v2+u3v33=|u|*|v|*cos(u,v)</code>">点积公式：<code>sum(dot(u,v))=sum(u .* v) = u1v1+u2v2+u3v33=|u|*|v|*COS(U,V)</code></h5><p><strong>叉乘（向量积）</strong>的意义就是通过两个向量来确定一个新的向量，该向量与前两个向量都垂直</p>
+<p><strong>点乘（数量积）</strong>的结果就是两个向量的模相乘，然后再与这两个向量的夹角的余弦值相乘。或者说是两个向量的各个分量分别相乘的结果的和。很明显，点乘的结果就是一个数，这个数对我们分析这两个向量的特点很有帮助。如果点乘的结果为0，那么这两个向量互相垂直；如果结果大于0，那么这两个向量的夹角小于90度；如果结果小于0，那么这两个向量的夹角大于90度。</p>
+<ul>
+<li>行向量 a=[1,2,3] a=[1 2 3], 列向量 b=[1;2;3]</li>
+<li>引用向量的个别“单行单列”元素<code>a(1),a(4:6),a(:)</code>第三个是显示a向量所有的元素</li>
+<li>引用向量的个别“多行多列”元素<code>a(2,3) a(:,2) a(:,2:3) a(1:2,2:3)</code>第二行第三列，第二列，第二列和第三列，一二行二三列，<code>a(1,:)=[]</code>,删除第一行</li>
+<li>复制行创建新矩阵<code>a([1,2,1],:)</code>，复制一行放在一行，复制二行放在二行，复制一行放在三行</li>
+<li>转置运算用 <code>&#39;</code> ，加减乘除直接算</li>
+<li>向量合并，行向量用<code>,</code>合并，列向量用<code>;</code>合并</li>
+<li><code>a=[0:2:10]</code>创建从0到10间隔2的等差行向量</li>
+<li><code>a=logspace(0,1,5)</code>创建从10^0到10^1之间含有5个等差元素的点，注意是圆括号（）</li>
+<li><code>length(a),max(a),min(a)</code>分别求解出- 矩阵的个数，最大值，最小值</li>
+<li>求模（繁琐版）对于实数 <code>sqrt(sum(a.*a))</code> 对于复数<code>sqrt(sum(a.*conj(a)))</code> ，<code>conj(a)</code>是求复数的共轭复数</li>
+<li><code>dot(a,b) cross(a,b)</code>点乘（对应元素相乘并求和）和叉乘</li>
+<li>当a是带有复数的矩阵，<code>&#39;</code>是转置加共轭，而<code>.&#39;</code>是单纯的转置</li>
+<li><code>.*</code>是对应位置元素相乘（行乘行），<code>*</code>是矩阵相乘（行乘列）</li>
+<li><code>./``.\``.^</code>分别是右除，左除和幂次方，换句话说只要是加<code>.</code>基本都是对应位置元素互相运算</li>
+<li><code>zeros(m),zeros(m,n) eye(m),eye(m,n)</code>分别是零矩阵和单位矩阵</li>
+<li><code>det(a)</code>求矩阵a的行列式，助力求解多元一次方程的解</li>
+<li><code>rank(a)</code>求矩阵a的秩</li>
+<li><code>inv(a)</code>求矩阵a的逆矩阵，<code>det(a) != 0</code>的矩阵a才有逆矩阵</li>
+<li><code>rref(A)</code>求A降行后的梯形矩阵</li>
+<li><code>magic(n)</code> 魔方矩阵(幻方)是一个 n×n 矩阵。矩阵的元素从 1 到 n^2 之间,并且行元素的和等于列元素的和。</li>
+<li><code>[L, U] = lu(A)</code> 对矩阵 A 进行 LU 分解，<code>x = U\(L\b)</code>用来求方程组的解</li>
+</ul>
+<h3 id="线性代数<em>普通方法</em>求方程组的解：">线性代数<em>普通方法</em>求方程组的解：</h3><p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.15.49.png" alt="image"></p>
+<h3 id="线性代数<em>增广矩阵</em>求方程组的解：">线性代数<em>增广矩阵</em>求方程组的解：</h3><p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.23.47.png" alt="image">
+<img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.23.58.png" alt="image"></p>
+<h3 id="线性代数<em>逆矩阵</em>求方程组的解">线性代数<em>逆矩阵</em>求方程组的解</h3><p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.30.38.png" alt="image"></p>
+<h3 id="线性代数<em>伪逆矩阵</em>求无限解det(a)=0：">线性代数<em>伪逆矩阵</em>求无限解det(a)=0：</h3><p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.34.22.png" alt="image"></p>
+<h3 id="线性代数<em>lu分解</em>求方程组的解：">线性代数<em>LU分解</em>求方程组的解：</h3><p><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.44.34.png" alt="image"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>matlab与线性代数相关知识整理。</p>
+</blockquote>
+]]>
+    
+    </summary>
+    
+      <category term="Matlab" scheme="xiuyuliang.com/tags/Matlab/"/>
+    
+      <category term="数学建模" scheme="xiuyuliang.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+      <category term="线性代数" scheme="xiuyuliang.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+      <category term="编程学习" scheme="xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Matlab学习笔记(一)——基本操作]]></title>
+    <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（一）/</id>
+    <published>2014-11-25T17:21:26.000Z</published>
+    <updated>2014-12-11T09:04:50.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>由于考虑在数学建模上有所精进，再加上大三课程需要通过Matlab进行数字图像处理，所以决定认真的熟悉一遍Matlab的基本操作，本文主要记录一些学习Matlab过程中的一些琐碎的易忘的知识点，以待日后翻阅查看。</p>
+</blockquote>
+<a id="more"></a>
+
+
+<h1 id="快捷键">快捷键</h1><ul>
+<li><code>cmd+k</code> 清除指令界面</li>
+<li><code>quit</code> 退出matlab</li>
+</ul>
+<h1 id="指令集合">指令集合</h1><ul>
+<li><code>whos</code> 可以查询迄今为止所有定义的变量的类型、内存空间、是否复数,<code>who</code>只查看变量名称</li>
+<li><code>clear</code> 清除全部变量，<code>clear x y z</code>清除制定变量</li>
+<li><code>...</code> 用来续行</li>
+<li><code>format short/long</code> 结果精确到4位小数或者16位小数，<code>format short e</code>用科学计数法计数，<code>format rat</code> 查找最近结果的比例式</li>
+<li><code>%</code> 注释标记</li>
+</ul>
+<h1 id="数学运算符">数学运算符</h1><ul>
+<li><code>pi</code> 相当于派</li>
+<li><code>abs</code>求绝对值</li>
+<li><code>exp(a)</code> 求解e的a次方</li>
+<li><code>sqrt(a)</code> 对a开根号</li>
+<li><code>log(a)</code> 求a的自然对数ln(a)，<code>log10(a)</code> 求10为底的a的对数</li>
+<li><code>sin</code> <code>cos</code> <code>tan</code> <code>atan</code> 三角函数随便用</li>
+<li><code>a/b</code>是右除，意思是a➗b</li>
+<li><code>a\b</code>是左除，意思是b➗a</li>
+<li>运算顺序：幂运算优于乘除，右除优于左除</li>
+<li>在赋值语句后面加 <code>;</code> 可以只起到赋值的效果，不输出 <code>x=20</code> 的赋值结果（不显示在命令窗口）</li>
+<li><code>2 +3i</code> 表示复数就可以用i</li>
+<li><code>.^</code>幂次方运算需要在<code>^</code>之前加<code>.</code></li>
 </ul>
 ]]></content>
     <summary type="html">
@@ -521,6 +650,8 @@ MATLAB 会在 a 到 b 间取出均匀分布的 100 个点(或行向量),如果�
       <category term="Matlab" scheme="xiuyuliang.com/tags/Matlab/"/>
     
       <category term="数学建模" scheme="xiuyuliang.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+      <category term="基本操作" scheme="xiuyuliang.com/tags/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
     
       <category term="编程学习" scheme="xiuyuliang.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
     
