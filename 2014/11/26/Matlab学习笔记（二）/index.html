@@ -124,14 +124,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#线性代数"><span class="article-toc-text">线性代数</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#向量：<code>u=(u1,u2,u3)-v=(v1,v2,v3)</code>"><span class="article-toc-text">向量：u=(u1,u2,u3) v=(v1,v2,v3)</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#单纯行乘列的矩阵乘法公式:-<code>u-*-v'={u1v1+u2v2+u3v3}</code>"><span class="article-toc-text">单纯行乘列的矩阵乘法公式: u * v'={u1v1+u2v2+u3v3}</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#叉积公式：<code>cross(u,v)=u-x-v-=-{-u2v3-v2u3-,-u3v1-v3u1-,-u1v2-u2v1-}</code>"><span class="article-toc-text">叉积公式：cross(u,v)=u x v = { u2v3-v2u3 , u3v1-v3u1 , u1v2-u2v1 }</span></a></li><li class="article-toc-item article-toc-level-5"><a class="article-toc-link" href="#点积公式：<code>sum(dot(u,v))=sum(u-.*-v)-=-u1v1+u2v2+u3v33=|u|*|v|*cos(u,v)</code>"><span class="article-toc-text">点积公式：sum(dot(u,v))=sum(u .* v) = u1v1+u2v2+u3v33=|u|*|v|*COS(U,V)</span></a></li></ol></li></ol></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#线性代数<em>普通方法</em>求方程组的解："><span class="article-toc-text">线性代数普通方法求方程组的解：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#线性代数<em>增广矩阵</em>求方程组的解："><span class="article-toc-text">线性代数增广矩阵求方程组的解：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#线性代数<em>逆矩阵</em>求方程组的解"><span class="article-toc-text">线性代数逆矩阵求方程组的解</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#线性代数<em>伪逆矩阵</em>求无限解det(a)=0："><span class="article-toc-text">线性代数伪逆矩阵求无限解det(a)=0：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#线性代数<em>lu分解</em>求方程组的解："><span class="article-toc-text">线性代数LU分解求方程组的解：</span></a></li></ol></li></ol></li></ol></div><blockquote>
+        <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#线性代数"><span class="article-toc-text">线性代数</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#线性代数<em>普通方法</em>求方程组的解："><span class="article-toc-text">线性代数普通方法求方程组的解：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#线性代数<em>增广矩阵</em>求方程组的解："><span class="article-toc-text">线性代数增广矩阵求方程组的解：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#线性代数<em>逆矩阵</em>求方程组的解"><span class="article-toc-text">线性代数逆矩阵求方程组的解</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#线性代数<em>伪逆矩阵</em>求无限解det(a)=0："><span class="article-toc-text">线性代数伪逆矩阵求无限解det(a)=0：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#线性代数<em>lu分解</em>求方程组的解："><span class="article-toc-text">线性代数LU分解求方程组的解：</span></a></li></ol></li></ol></li></ol></div><blockquote>
 <p>matlab与线性代数相关知识整理。</p>
 </blockquote>
 <a id="more"></a>
 
 
 <h1 id="线性代数">线性代数</h1><p>补充一点线性代数的基础知识：</p>
-<h5 id="向量：<code>u=(u1,u2,u3)-v=(v1,v2,v3)</code>">向量：<code>u=(u1,u2,u3) v=(v1,v2,v3)</code></h5><h5 id="单纯行乘列的矩阵乘法公式:-<code>u-*-v&#39;={u1v1+u2v2+u3v3}</code>">单纯行乘列的矩阵乘法公式: <code>u * v&#39;={u1v1+u2v2+u3v3}</code></h5><h5 id="叉积公式：<code>cross(u,v)=u-x-v-=-{-u2v3-v2u3-,-u3v1-v3u1-,-u1v2-u2v1-}</code>">叉积公式：<code>cross(u,v)=u x v = { u2v3-v2u3 , u3v1-v3u1 , u1v2-u2v1 }</code></h5><h5 id="点积公式：<code>sum(dot(u,v))=sum(u-.*-v)-=-u1v1+u2v2+u3v33=|u|*|v|*cos(u,v)</code>">点积公式：<code>sum(dot(u,v))=sum(u .* v) = u1v1+u2v2+u3v33=|u|*|v|*COS(U,V)</code></h5><p><strong>叉乘（向量积）</strong>的意义就是通过两个向量来确定一个新的向量，该向量与前两个向量都垂直</p>
+<p>向量：<code>u=(u1,u2,u3) v=(v1,v2,v3)</code></p>
+<p>单纯行乘列的矩阵乘法公式: <code>u * v&#39;={u1v1+u2v2+u3v3}</code></p>
+<p>叉积公式：<code>cross(u,v)=u x v = { u2v3-v2u3 , u3v1-v3u1 , u1v2-u2v1 }</code></p>
+<p>点积公式：<code>sum(dot(u,v))=sum(u .* v) = u1v1+u2v2+u3v33=|u|*|v|*COS(U,V)</code></p>
+<p><strong>叉乘（向量积）</strong>的意义就是通过两个向量来确定一个新的向量，该向量与前两个向量都垂直</p>
 <p><strong>点乘（数量积）</strong>的结果就是两个向量的模相乘，然后再与这两个向量的夹角的余弦值相乘。或者说是两个向量的各个分量分别相乘的结果的和。很明显，点乘的结果就是一个数，这个数对我们分析这两个向量的特点很有帮助。如果点乘的结果为0，那么这两个向量互相垂直；如果结果大于0，那么这两个向量的夹角小于90度；如果结果小于0，那么这两个向量的夹角大于90度。</p>
 <ul>
 <li>行向量 a=[1,2,3] a=[1 2 3], 列向量 b=[1;2;3]</li>
@@ -211,7 +215,9 @@ matlab与线性代数相关知识整理。
 
 
 线性代数补充一点线性代数的基础知识：
-u=(u1,u2,u3)-v=(v1,v2,v3)">向量：u=(u1,u2,u3) v=(v1,v2,v3)u-*-v&#39;={u1v1+u2v2+u3v3}">..." class="article-share-link">Share</a>
+向量：u=(u1,u2,u3) v=(v1,v2,v3)
+单纯行乘列的矩阵乘法公式: u * v&#39;={u1v1+u2v2+u3v3}
+叉..." class="article-share-link">Share</a>
     </li>
     <li>
       

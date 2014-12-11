@@ -127,19 +127,27 @@
 </blockquote>
 <a id="more"></a>
 
-<h1 id="绘制图像">绘制图像</h1><ul>
-<li><code>x=[0:0.1:10]; y=cos(x); plot(x,y),xlabel(&#39;x&#39;),ylabel(&#39;cos(x)&#39;),gird on,axis equal,legend(&#39;cos(x)&#39;);</code>绘制图像+加坐标轴标签+网格+坐标轴间隔相同+图例，当更新x的区间或者间隔的时候，需要重新调用y=cosx来更新y值，否则会报错</li>
-<li><code>fplot(&#39;exp(-2*t)*sin(t)&#39;,[0, 4]), xlabel(&#39;t&#39;), ylabel(&#39;f(t)&#39;), title(&#39;阻尼弹力&#39;)</code>fplot自动计算间隔，画出平滑的曲线</li>
-<li><code>axis ( [xmin xmax ymin ymax] )</code>确定绘图的x轴和y轴的绘图范围，<code>axis auto</code>让matlab自动确定x轴和y轴的间距</li>
+<h1 id="绘制图像">绘制图像</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x=[<span class="number">0</span>:<span class="number">0.1</span>:<span class="number">10</span>]; </div><div class="line">y=<span class="built_in">cos</span>(x); </div><div class="line">plot(x,y),xlabel(<span class="string">'x'</span>),ylabel(<span class="string">'cos(x)'</span>),gird <span class="command"><span class="keyword">on</span>,<span class="title">axis</span> <span class="title">equal</span>,<span class="title">legend</span>(<span class="string">'cos(x)'</span>);</span></div></pre></td></tr></table></figure>
+
+<p>绘制图像+加坐标轴标签+网格+坐标轴间隔相同+图例，当更新x的区间或者间隔的时候，需要重新调用y=cosx来更新y值，否则会报错</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fplot(<span class="string">'exp(-2*t)*sin(t)'</span>,[<span class="number">0</span>, <span class="number">4</span>]), xlabel(<span class="string">'t'</span>), ylabel(<span class="string">'f(t)'</span>), title(<span class="string">'阻尼弹力'</span>)</div></pre></td></tr></table></figure>
+
+<p>fplot自动计算间隔，画出平滑的曲线</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">axis</span> <span class="params">( [xmin xmax ymin ymax] )</span></span></div></pre></td></tr></table></figure>
+
+<p>确定绘图的x轴和y轴的绘图范围，<code>axis auto</code>让matlab自动确定x轴和y轴的间距</p>
+<ul>
 <li>输入图例或者坐标轴名称的时候务必注意输入<code>&#39;&#39;</code>，不要输入变量作为参数</li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">t = [<span class="number">0</span>:<span class="number">0.02</span>:<span class="number">4</span>];</div><div class="line">f = <span class="built_in">exp</span>(-<span class="number">2</span>*t)*<span class="built_in">sin</span>(t);</div><div class="line">??? Error using ==&gt; mtimes</div><div class="line">Inner <span class="keyword">matrix</span> dimensions must agree.</div></pre></td></tr></table></figure>
 
 <ul>
-<li><p>当一个函数是由二个或更多个函数相乘构成,别忘记在相乘时加上“.”以便告诉 MATLAB 我们是对两个矩阵进行相乘。应改为<code>t = [0:0.02:4];f = exp(-2*t).*sin(t);</code></p>
-</li>
-<li><p>同时画两条曲线，<code>plot(t,f,&#39;-&#39;,t,g,&#39;--&#39;)</code> </p>
-</li>
+<li>当一个函数是由二个或更多个函数相乘构成,别忘记在相乘时加上“.”以便告诉 MATLAB 我们是对两个矩阵进行相乘。应改为</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">t = [<span class="number">0</span>:<span class="number">0.02</span>:<span class="number">4</span>];f = <span class="built_in">exp</span>(-<span class="number">2</span>*t).*<span class="built_in">sin</span>(t);</div></pre></td></tr></table></figure>
+
+<ul>
+<li>同时画两条曲线，<code>plot(t,f,&#39;-&#39;,t,g,&#39;--&#39;)</code> </li>
 <li>实线&#39;-&#39;虚线&#39;--&#39;虚点线&#39;-.&#39;点线 &#39;:&#39;`</li>
 <li>同时画两条实线，并且确定两条实现的颜色和虚实<code>plot(x,y,&#39;r&#39;,x,z,&#39;b--&#39;)</code></li>
 </ul>
@@ -198,7 +206,14 @@
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">theta = [<span class="number">0</span><span class="symbol">:pi/</span><span class="number">90</span><span class="symbol">:</span><span class="number">2</span>*pi];</div><div class="line">r = a*theta;</div><div class="line">polar(theta,r), title(<span class="string">'阿基米德螺线'</span>)</div></pre></td></tr></table></figure>
 
-<h3 id="绘制双log曲线：">绘制双log曲线：</h3><p><code>loglog(x,y),它产生的图像x，y轴均使用对数值，semilogx(x, y),它产生的图象 x 轴使用对数值, y 轴仍然用直接值;相应地,semilogy(x, y)产生的图象 y 轴使用对数值,x 使用直接值。</code></p>
+<h3 id="绘制双log曲线：">绘制双log曲线：</h3><ul>
+<li><p><code>loglog(x,y)</code>,它产生的图像x，y轴均使用对数值</p>
+</li>
+<li><p><code>semilogx(x, y)</code>,它产生的图象 x 轴使用对数值, y 轴仍然用直接值;</p>
+</li>
+<li><p>相应地,<code>semilogy(x, y)</code>产生的图象 y 轴使用对数值,x 使用直接值。</p>
+</li>
+</ul>
 <h3 id="绘制离散图（折线图）">绘制离散图（折线图）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x=[<span class="number">1</span>:<span class="number">5</span>];</div><div class="line">y=[<span class="number">23</span>,<span class="number">45</span>,<span class="number">67</span>,<span class="number">23</span>,<span class="number">45</span>];</div><div class="line">[<span class="string">'Adrian'</span>; <span class="string">'Jim'</span>;<span class="string">'Joe'</span>;<span class="string">'Sally'</span>;<span class="string">'Sue'</span>] = [<span class="string">'001'</span>;<span class="string">'002'</span>;<span class="string">'003'</span>;<span class="string">'004'</span>;<span class="string">'005'</span>]//用字母会报错，需要用代号</div><div class="line">plot(x,y,<span class="string">'o'</span>,x,y),set(gca,<span class="string">'XTicklabel'</span>,[<span class="string">'001'</span>; <span class="string">'002'</span>;<span class="string">'003'</span>;<span class="string">'004'</span>;<span class="string">'005'</span>]), <span class="keyword">...</span> </div><div class="line">set(gca,<span class="string">'XTick'</span>,[<span class="number">1</span>:<span class="number">5</span>]),axis([<span class="number">1</span> <span class="number">5</span> <span class="number">0</span> <span class="number">100</span>]),xlabel(<span class="string">'学生'</span>),ylabel(<span class="string">'期末成绩'</span>),title(<span class="string">'2005 年 12 月期末考试'</span>)</div></pre></td></tr></table></figure>
 
 <h3 id="绘制离散图（柱状图）">绘制离散图（柱状图）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">1</span>:<span class="number">5</span>];</div><div class="line">y = [<span class="number">50</span>,<span class="number">98</span>,<span class="number">75</span>,<span class="number">80</span>,<span class="number">98</span>];</div><div class="line">bar(x,y), xlabel(<span class="string">'学生'</span>),ylabel(<span class="string">'分数'</span>), title(<span class="string">'期末测试'</span>)</div><div class="line"><span class="comment">//水平的柱状图</span></div><div class="line">barh(a,b),xlabel(<span class="string">'学生人数'</span>),ylabel(<span class="string">'考试分数'</span>)</div><div class="line"><span class="comment">//三维柱状图</span></div><div class="line">bar3(a,b),xlabel(<span class="string">'考试分数'</span>),ylabel(<span class="string">'学生人数'</span>)</div></pre></td></tr></table></figure>
@@ -272,8 +287,9 @@ matlab与绘制图像。
 
 
 
-绘制图像
-x=[0:0.1:10]; y=cos(x); plot(x,y),xlabel(&#39;x&#39;),ylabel(&#39;cos(x)&#39;),gird on,axis equal,legend(&#39;cos(x)&#39;);绘制图..." class="article-share-link">Share</a>
+绘制图像123x=[0:0.1:10]; y=cos(x); plot(x,y),xlabel('x'),ylabel('cos(x)'),gird on,axis equal,legend('cos(x)');
+
+绘制图像+加坐标轴标签+网格..." class="article-share-link">Share</a>
     </li>
     <li>
       
