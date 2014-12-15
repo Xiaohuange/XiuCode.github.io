@@ -5,24 +5,18 @@
   
   <title>Matlab学习笔记(七)——曲线拟合 | 语亮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MATLAB 可以用来求与一组数据最吻合的函数。
-
-数据拟合12345678910//n 是我们要 MATLAB 求出的多项式的次数//对于 y = mx + b 形式的方程,我们把 n 设为等于 1,//因此调用的语句将是 polyfit(x, y, 1)//n次多项式有n+1个常数系数polyfit(x, y, n)如果我们使用 p = polyfit(x, y, n)调用 polyfit,">
+  <meta name="description" content="MATLAB 可以用来求与一组数据最吻合的函数。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Matlab学习笔记(七)——曲线拟合">
 <meta property="og:url" content="xiuyuliang.com/2014/12/16/Matlab学习笔记（七）/">
 <meta property="og:site_name" content="语亮">
-<meta property="og:description" content="MATLAB 可以用来求与一组数据最吻合的函数。
-
-数据拟合12345678910//n 是我们要 MATLAB 求出的多项式的次数//对于 y = mx + b 形式的方程,我们把 n 设为等于 1,//因此调用的语句将是 polyfit(x, y, 1)//n次多项式有n+1个常数系数polyfit(x, y, n)如果我们使用 p = polyfit(x, y, n)调用 polyfit,">
+<meta property="og:description" content="MATLAB 可以用来求与一组数据最吻合的函数。">
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 01.20.44.png">
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.39.31.png">
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.54.14.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab学习笔记(七)——曲线拟合">
-<meta name="twitter:description" content="MATLAB 可以用来求与一组数据最吻合的函数。
-
-数据拟合12345678910//n 是我们要 MATLAB 求出的多项式的次数//对于 y = mx + b 形式的方程,我们把 n 设为等于 1,//因此调用的语句将是 polyfit(x, y, 1)//n次多项式有n+1个常数系数polyfit(x, y, n)如果我们使用 p = polyfit(x, y, n)调用 polyfit,">
+<meta name="twitter:description" content="MATLAB 可以用来求与一组数据最吻合的函数。">
 
   
     <link rel="alternative" href="/atom.xml" title="语亮" type="application/atom+xml">
@@ -127,7 +121,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#数据拟合"><span class="article-toc-text">数据拟合</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#指数函数的拟合"><span class="article-toc-text">指数函数的拟合</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#拟合程度"><span class="article-toc-text">拟合程度</span></a></li></ol></div><blockquote>
-<p>MATLAB 可以用来求与一组数据最吻合的函数。</p>
+<p>MATLAB 可以用来求与一组数据最吻合的函数。
+<a id="more"></a></p>
 </blockquote>
 <h1 id="数据拟合">数据拟合</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//n 是我们要 <span class="variable">MATLAB</span> 求出的多项式的次数</div><div class="line">//对于 y = mx + b 形式的方程,我们把 n 设为等于 <span class="number">1</span>,</div><div class="line">//因此调用的语句将是 polyfit(x, y, <span class="number">1</span>)</div><div class="line">//n次多项式有n+<span class="number">1</span>个常数系数</div><div class="line"></div><div class="line"><span class="function"><span class="title">polyfit</span><span class="params">(x, y, n)</span></span></div><div class="line"></div><div class="line">如果我们使用 <span class="title">p</span> = <span class="title">polyfit</span><span class="params">(x, y, n)</span>调用 <span class="title">polyfit</span>,第 <span class="title">j</span> 个系数的引用写成 <span class="title">p</span><span class="params">(j)</span></div><div class="line"><span class="title">m</span> = <span class="title">p</span><span class="params">(<span class="number">1</span>)</span></div><div class="line"><span class="title">b</span> = <span class="title">p</span><span class="params">(<span class="number">2</span>)</span></div></pre></td></tr></table></figure>
 
@@ -189,6 +184,7 @@
       <a data-url="xiuyuliang.com/2014/12/16/Matlab学习笔记（七）/" data-id="k8v7yjsqpn1mcu80" data_title="Matlab学习笔记(七)——曲线拟合"
         data_summary="
 MATLAB 可以用来求与一组数据最吻合的函数。
+
 
 数据拟合12345678910//n 是我们要 MATLAB 求出的多项式的次数//对于 y = mx + b 形式的方程,我们把 n 设为等于 1,//因此调用..." class="article-share-link">Share</a>
     </li>

@@ -5,37 +5,19 @@
   
   <title>Matlab学习笔记(六)——积分 | 语亮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。
-
-INT命令12345//int(f)//int(f, v) 语法来调用 int,其中 f 就是要积分的函数,而 v 是积分 变量syms x;int(x)
-
-对于计算积分的读者来说,不要忘记在你的答案后面带上积分常量
-定积分
-123456int('x',2,3)orF = int(x);subs(F,x,3)-sub">
+  <meta name="description" content="本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Matlab学习笔记(六)——积分">
 <meta property="og:url" content="xiuyuliang.com/2014/12/15/Matlab学习笔记（六）/">
 <meta property="og:site_name" content="语亮">
-<meta property="og:description" content="本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。
-
-INT命令12345//int(f)//int(f, v) 语法来调用 int,其中 f 就是要积分的函数,而 v 是积分 变量syms x;int(x)
-
-对于计算积分的读者来说,不要忘记在你的答案后面带上积分常量
-定积分
-123456int('x',2,3)orF = int(x);subs(F,x,3)-sub">
+<meta property="og:description" content="本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。">
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 23.47.45.png">
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 23.57.59.png">
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.00.10.png">
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.05.46.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab学习笔记(六)——积分">
-<meta name="twitter:description" content="本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。
-
-INT命令12345//int(f)//int(f, v) 语法来调用 int,其中 f 就是要积分的函数,而 v 是积分 变量syms x;int(x)
-
-对于计算积分的读者来说,不要忘记在你的答案后面带上积分常量
-定积分
-123456int('x',2,3)orF = int(x);subs(F,x,3)-sub">
+<meta name="twitter:description" content="本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。">
 
   
     <link rel="alternative" href="/atom.xml" title="语亮" type="application/atom+xml">
@@ -142,6 +124,8 @@ INT命令12345//int(f)//int(f, v) 语法来调用 int,其中 f 就是要积分�
         <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#int命令"><span class="article-toc-text">INT命令</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#定积分"><span class="article-toc-text">定积分</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#多重积分"><span class="article-toc-text">多重积分</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#数值积分"><span class="article-toc-text">数值积分</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#正交积分"><span class="article-toc-text">正交积分</span></a></li></ol></div><blockquote>
 <p>本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。</p>
 </blockquote>
+<a id="more"></a>
+
 <h1 id="int命令">INT命令</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//<span class="keyword">int</span>(<span class="keyword">f</span>)</div><div class="line">//<span class="keyword">int</span>(<span class="keyword">f</span>, <span class="keyword">v</span>) 语法来调用 <span class="keyword">int</span>,其中 <span class="keyword">f</span> 就是要积分的函数,而 <span class="keyword">v</span> 是积分 变量</div><div class="line"></div><div class="line">syms <span class="keyword">x</span>;</div><div class="line"><span class="keyword">int</span>(<span class="keyword">x</span>)</div></pre></td></tr></table></figure>
 
 <p><strong>对于计算积分的读者来说,不要忘记在你的答案后面带上积分常量</strong></p>
@@ -212,7 +196,9 @@ quad 和 quadl 函数的不利方面是无法对点集进行积分。</p>
         data_summary="
 本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。
 
-INT命令12345//int(f)//int(f, v) 语法来调用 int,其中 f 就是要积分的函数,而 v 是积分..." class="article-share-link">Share</a>
+
+
+INT命令12345//int(f)//int(f, v) 语法来调用 int,其中 f 就是要积分的函数,而 v 是积..." class="article-share-link">Share</a>
     </li>
     <li>
       

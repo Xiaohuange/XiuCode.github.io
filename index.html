@@ -136,31 +136,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         
+          <!--<div class="thumbnail"><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 01.20.44.png" alt="image"></div>-->
           <blockquote>
-<p>MATLAB 可以用来求与一组数据最吻合的函数。</p>
-</blockquote>
-<h1 id="数据拟合">数据拟合</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//n 是我们要 <span class="variable">MATLAB</span> 求出的多项式的次数</div><div class="line">//对于 y = mx + b 形式的方程,我们把 n 设为等于 <span class="number">1</span>,</div><div class="line">//因此调用的语句将是 polyfit(x, y, <span class="number">1</span>)</div><div class="line">//n次多项式有n+<span class="number">1</span>个常数系数</div><div class="line"></div><div class="line"><span class="function"><span class="title">polyfit</span><span class="params">(x, y, n)</span></span></div><div class="line"></div><div class="line">如果我们使用 <span class="title">p</span> = <span class="title">polyfit</span><span class="params">(x, y, n)</span>调用 <span class="title">polyfit</span>,第 <span class="title">j</span> 个系数的引用写成 <span class="title">p</span><span class="params">(j)</span></div><div class="line"><span class="title">m</span> = <span class="title">p</span><span class="params">(<span class="number">1</span>)</span></div><div class="line"><span class="title">b</span> = <span class="title">p</span><span class="params">(<span class="number">2</span>)</span></div></pre></td></tr></table></figure>
+<p>MATLAB 可以用来求与一组数据最吻合的函数。
 
-<h1 id="指数函数的拟合">指数函数的拟合</h1><p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 01.20.44.png" alt="image"></p>
-<h1 id="拟合程度">拟合程度</h1><blockquote>
-<p>当r^2接近1，或者，RMS小于1，则说明拟合程度比较好。</p>
-</blockquote>
-<p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.39.31.png" alt="image"></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">S =</span> sum((Ave - MEAN).^<span class="number">2</span>)</div><div class="line"><span class="variable">A =</span> sum((w - Ave).^<span class="number">2</span>)</div><div class="line"><span class="variable">r2 =</span> <span class="number">1</span> - A/S</div></pre></td></tr></table></figure>
-
-<p>另一种我们可以用来体现拟合程度的方法是计算一个称为均方根(Root-Mean-Square,RMS)误差的数 值,要用过这种方法来评估多项式与实际数据的拟合程度,我们可以使用下面的命令:</p>
-<p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.54.14.png" alt="image"></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="variable">w =</span> m*sqft + b</div><div class="line"><span class="variable">d =</span> price - w;</div><div class="line"><span class="variable">N =</span> <span class="number">10</span>;</div><div class="line"><span class="variable">d2 =</span> d.^<span class="number">2</span>;</div><div class="line"><span class="variable">RMS =</span> sqrt((<span class="number">1</span>/N)*sum(d2))</div></pre></td></tr></table></figure>
-
-<p>可以使用 find 命令提问与数据有关的问题。例如,温度小于 80 度是在什么时候</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">find</span><span class="params">(y &lt; <span class="number">80</span>)</span></span></div></pre></td></tr></table></figure>
-
-
+          
+            <p class="article-more-link">
+              <a href="/2014/12/16/Matlab学习笔记（七）/#more">阅读全文</a>
+            </p>
+          
         
         <footer class="article-footer">
           <a data-url="xiuyuliang.com/2014/12/16/Matlab学习笔记（七）/" data-id="k8v7yjsqpn1mcu80" data_title="Matlab学习笔记(七)——曲线拟合"
           data_summary="
 MATLAB 可以用来求与一组数据最吻合的函数。
+
 
 数据拟合12345678910//n 是我们要 MATLAB 求出的多项式的次数//对于 y = mx + b 形式的方程,我们把 n 设为等于 1,//因此调用..." class="article-share-link">Share</a>
           
@@ -206,42 +196,25 @@ MATLAB 可以用来求与一组数据最吻合的函数。
     <div class="article-entry" itemprop="articleBody">
       
         
+          <!--<div class="thumbnail"><img width="200px" src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 23.47.45.png"></div>-->
           <blockquote>
 <p>本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。</p>
 </blockquote>
-<h1 id="int命令">INT命令</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//<span class="keyword">int</span>(<span class="keyword">f</span>)</div><div class="line">//<span class="keyword">int</span>(<span class="keyword">f</span>, <span class="keyword">v</span>) 语法来调用 <span class="keyword">int</span>,其中 <span class="keyword">f</span> 就是要积分的函数,而 <span class="keyword">v</span> 是积分 变量</div><div class="line"></div><div class="line">syms <span class="keyword">x</span>;</div><div class="line"><span class="keyword">int</span>(<span class="keyword">x</span>)</div></pre></td></tr></table></figure>
 
-<p><strong>对于计算积分的读者来说,不要忘记在你的答案后面带上积分常量</strong></p>
-<h1 id="定积分">定积分</h1><p><img width="200px" src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 23.47.45.png"></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>(<span class="string">'x'</span>,<span class="number">2</span>,<span class="number">3</span>)</div><div class="line"></div><div class="line"><span class="built_in">or</span></div><div class="line"></div><div class="line">F = <span class="keyword">int</span>(<span class="keyword">x</span>);</div><div class="line">subs(F,<span class="keyword">x</span>,<span class="number">3</span>)-subs(F,<span class="keyword">x</span>,<span class="number">2</span>)</div></pre></td></tr></table></figure>
-
-<h1 id="多重积分">多重积分</h1><p><img width="200px" src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 23.57.59.png"></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>(<span class="keyword">int</span>(<span class="keyword">int</span>(x*y^<span class="number">2</span>*z^<span class="number">5</span>,x),y),z)</div></pre></td></tr></table></figure>
-
-<p><img width="200px" src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.00.10.png"></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>(<span class="keyword">int</span>(f,x,<span class="number">2</span>,<span class="number">4</span>),y,<span class="number">1</span>,<span class="number">2</span>)</div></pre></td></tr></table></figure>
-
-<h1 id="数值积分">数值积分</h1><blockquote>
-<p>调用 trapz(x, y)函数 MATLAB 可以进行梯形积分
-<img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.05.46.png"></p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//等分次数越多，误差越小</div><div class="line"><span class="variable">x =</span> linspace(<span class="number">0</span>,<span class="number">2</span>,<span class="number">10</span>);</div><div class="line"><span class="variable">y =</span> x.^<span class="number">2</span>;</div><div class="line"><span class="variable">a =</span> trapz(x,y);</div><div class="line"><span class="variable">a=</span></div><div class="line"><span class="number">2.6831</span></div></pre></td></tr></table></figure>
-
-<h1 id="正交积分">正交积分</h1><blockquote>
-<p>MATLAB 有两个命令 quad 和 quad1 可以用来实现正交积分。这种类型的方法基于使用 二次函数代替矩形更能接近曲线下方面积的原理(使用高阶的多项式还能够得到更精确的结 果)。辛普森法则(Simpson’s rule)是把积分区间分成偶数段,相邻两段下面的面积用不同 的二次函数近似表示。quad 函数采用适应辛普森法则的逼近方法进行数值积分。要使用 quad,把被积的函数传递给它,后面跟着积分区间。
-quadl 函数采用洛巴托(Lobatto)积分法。这是一种适应正交积分更加灵活复杂的类型, 查阅 MATLAB 的帮助以便获得更多的信息。
-quad 和 quadl 函数的不利方面是无法对点集进行积分。</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">quad(<span class="string">'exp(-2*x)'</span>,<span class="number">0</span>,<span class="number">1</span>/<span class="number">8</span>)</div></pre></td></tr></table></figure>
-
-
+          
+            <p class="article-more-link">
+              <a href="/2014/12/15/Matlab学习笔记（六）/#more">阅读全文</a>
+            </p>
+          
         
         <footer class="article-footer">
           <a data-url="xiuyuliang.com/2014/12/15/Matlab学习笔记（六）/" data-id="90gd6woe6jrw6s45" data_title="Matlab学习笔记(六)——积分"
           data_summary="
 本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。
 
-INT命令12345//int(f)//int(f, v) 语法来调用 int,其中 f 就是要积分的函数,而 v 是积分..." class="article-share-link">Share</a>
+
+
+INT命令12345//int(f)//int(f, v) 语法来调用 int,其中 f 就是要积分的函数,而 v 是积..." class="article-share-link">Share</a>
           
           
   <div class="article-category">
