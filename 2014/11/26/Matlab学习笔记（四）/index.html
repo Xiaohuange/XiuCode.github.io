@@ -19,7 +19,7 @@
     <link rel="alternative" href="/atom.xml" title="语亮" type="application/atom+xml">
   
   
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="/favicon.ico">
   
   <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="../../../../css/font-awesome.min.css" type="text/css">
@@ -30,7 +30,6 @@
 
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-
 
 </head>
 
@@ -111,14 +110,14 @@
       
       <section id="main"
         
-      ><article id="post-55ikypbk961tbcb1" class="article article-type-post" itemscope itemprop="blogPost">
+      ><article id="post-t1fo2qwoaph9e0ze" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
 
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#if_else判断"><span class="article-toc-text">if_else判断</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#for循环"><span class="article-toc-text">for循环</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#input输入"><span class="article-toc-text">input输入</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#while循环"><span class="article-toc-text">while循环</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#switch_case语句"><span class="article-toc-text">switch_case语句</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#解方程"><span class="article-toc-text">解方程</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#一元一次方程"><span class="article-toc-text">一元一次方程</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#一元二次方程"><span class="article-toc-text">一元二次方程</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#二元一次方程组"><span class="article-toc-text">二元一次方程组</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#方程的展开(多个多项式相乘)"><span class="article-toc-text">方程的展开(多个多项式相乘)</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#方程的合并和化简（分配多项式）"><span class="article-toc-text">方程的合并和化简（分配多项式）</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#因式分解"><span class="article-toc-text">因式分解</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#多项式相除"><span class="article-toc-text">多项式相除</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#使用指数和对数函数求解方程"><span class="article-toc-text">使用指数和对数函数求解方程</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#泰勒级数展开式"><span class="article-toc-text">泰勒级数展开式</span></a></li></ol></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#对方程画图"><span class="article-toc-text">对方程画图</span></a></li></ol></div><blockquote>
+        <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#if_else判断"><span class="article-toc-text">if_else判断</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#for循环"><span class="article-toc-text">for循环</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#input输入"><span class="article-toc-text">input输入</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#while循环"><span class="article-toc-text">while循环</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#switch_case语句"><span class="article-toc-text">switch_case语句</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#解方程"><span class="article-toc-text">解方程</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#一元一次方程"><span class="article-toc-text">一元一次方程</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#一元二次方程"><span class="article-toc-text">一元二次方程</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#二元一次方程组"><span class="article-toc-text">二元一次方程组</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#方程的展开(多个多项式相乘)"><span class="article-toc-text">方程的展开(多个多项式相乘)</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#方程的合并和化简（分配多项式）"><span class="article-toc-text">方程的合并和化简（分配多项式）</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#因式分解"><span class="article-toc-text">因式分解</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#多项式相除"><span class="article-toc-text">多项式相除</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#使用指数和对数函数求解方程"><span class="article-toc-text">使用指数和对数函数求解方程</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#泰勒级数展开式"><span class="article-toc-text">泰勒级数展开式</span></a></li></ol></li></ol></div><blockquote>
 <p>matlab与统计相关知识整理。</p>
 </blockquote>
 <a id="more"></a>
@@ -159,8 +158,6 @@
 <h2 id="使用指数和对数函数求解方程">使用指数和对数函数求解方程</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">eq</span> = <span class="string">'log10(x) - log10(x - 3) = 1'</span>;</div><div class="line"><span class="title">s</span> = solve(eq);</div></pre></td></tr></table></figure>
 
 <h2 id="泰勒级数展开式">泰勒级数展开式</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">taylor(<span class="built_in">sin</span>(x),<span class="string">'order'</span>,<span class="number">20</span>)<span class="comment">//20为展开的项数</span></div></pre></td></tr></table></figure>
-
-<h1 id="对方程画图">对方程画图</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ezplot里面的参数需要加''</span></div><div class="line">ezplot(<span class="string">'x^2 - 6*x - 12'</span>)</div><div class="line"></div><div class="line">d = <span class="string">'x^2 - 6*x - 12'</span>;</div><div class="line">ezplot(d);</div><div class="line"></div><div class="line"><span class="comment">//限定图像定义域</span></div><div class="line">ezplot(d,[x1,x2]);</div><div class="line"><span class="comment">//限定图像的定义域和值域</span></div><div class="line">ezplot(<span class="string">'x+3'</span>, [-<span class="number">4</span>, <span class="number">4</span>, -<span class="number">2</span>, <span class="number">2</span>])</div><div class="line"></div><div class="line"><span class="comment">//错误，ezplot里面没有等号</span></div><div class="line">ezplot(<span class="string">'x+3=0'</span>)</div><div class="line"><span class="comment">//正确</span></div><div class="line">ezplot(<span class="string">'x+3'</span>)</div></pre></td></tr></table></figure>
 
 
       
@@ -203,7 +200,7 @@
       
     </li>
     <li>
-      <a data-url="xiuyuliang.com/2014/11/26/Matlab学习笔记（四）/" data-id="55ikypbk961tbcb1" data_title="Matlab学习笔记(四)——统计和matlab编程"
+      <a data-url="xiuyuliang.com/2014/11/26/Matlab学习笔记（四）/" data-id="t1fo2qwoaph9e0ze" data_title="Matlab学习笔记(四)——统计和matlab编程"
         data_summary="
 matlab与统计相关知识整理。
 
@@ -266,7 +263,6 @@ size(A)判断矩阵的大..." class="article-share-link">Share</a>
       <a href="/">语亮</a> &copy; 2014 Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/seff/nut" target="_blank">Nut</a>
     </div>
   </div>
-  
 </footer>
 <a id="gotop" href="#">
   <i class="fa fa-chevron-up"></i>
@@ -304,6 +300,4 @@ size(A)判断矩阵的大..." class="article-share-link">Share</a>
 
   </div>
 </body>
-<a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
-
 </html>

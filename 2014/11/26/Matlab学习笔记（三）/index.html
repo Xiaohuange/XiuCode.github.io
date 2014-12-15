@@ -23,7 +23,7 @@
     <link rel="alternative" href="/atom.xml" title="语亮" type="application/atom+xml">
   
   
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="/favicon.ico">
   
   <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="../../../../css/font-awesome.min.css" type="text/css">
@@ -34,7 +34,6 @@
 
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-
 
 </head>
 
@@ -115,14 +114,14 @@
       
       <section id="main"
         
-      ><article id="post-4wkbesc1hpta6ic7" class="article article-type-post" itemscope itemprop="blogPost">
+      ><article id="post-spaypd8pug5o780b" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
 
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#绘制图像"><span class="article-toc-text">绘制图像</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制极坐标曲线："><span class="article-toc-text">绘制极坐标曲线：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制双log曲线："><span class="article-toc-text">绘制双log曲线：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制离散图（折线图）"><span class="article-toc-text">绘制离散图（折线图）</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制离散图（柱状图）"><span class="article-toc-text">绘制离散图（柱状图）</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制离散图（针头图）"><span class="article-toc-text">绘制离散图（针头图）</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#等高线图(二维+三维)"><span class="article-toc-text">等高线图(二维+三维)</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#三维图像"><span class="article-toc-text">三维图像</span></a></li></ol></li></ol></li></ol></div><blockquote>
+        <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#绘制图像"><span class="article-toc-text">绘制图像</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#对方程画图"><span class="article-toc-text">对方程画图</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制极坐标曲线："><span class="article-toc-text">绘制极坐标曲线：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制双log曲线："><span class="article-toc-text">绘制双log曲线：</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制离散图（折线图）"><span class="article-toc-text">绘制离散图（折线图）</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制离散图（柱状图）"><span class="article-toc-text">绘制离散图（柱状图）</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#绘制离散图（针头图）"><span class="article-toc-text">绘制离散图（针头图）</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#等高线图(二维+三维)"><span class="article-toc-text">等高线图(二维+三维)</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#三维图像"><span class="article-toc-text">三维图像</span></a></li></ol></li></ol></li></ol></div><blockquote>
 <p>matlab与绘制图像。</p>
 </blockquote>
 <a id="more"></a>
@@ -150,7 +149,10 @@
 <li>同时画两条曲线，<code>plot(t,f,&#39;-&#39;,t,g,&#39;--&#39;)</code> </li>
 <li>实线&#39;-&#39;虚线&#39;--&#39;虚点线&#39;-.&#39;点线 &#39;:&#39;`</li>
 <li>同时画两条实线，并且确定两条实现的颜色和虚实<code>plot(x,y,&#39;r&#39;,x,z,&#39;b--&#39;)</code></li>
+<li>画平行于坐标轴的直线 <code>plot([0,0],[-1,2],&#39;--&#39;)</code>不可以用<code>plot(0,[-1,2],&#39;--&#39;)</code></li>
 </ul>
+<h3 id="对方程画图">对方程画图</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ezplot里面的参数需要加''</span></div><div class="line">ezplot(<span class="string">'x^2 - 6*x - 12'</span>)</div><div class="line"></div><div class="line">d = <span class="string">'x^2 - 6*x - 12'</span>;</div><div class="line">ezplot(d);</div><div class="line"></div><div class="line"><span class="comment">//限定图像定义域</span></div><div class="line">ezplot(d,[x1,x2]);</div><div class="line"><span class="comment">//限定图像的定义域和值域</span></div><div class="line">ezplot(<span class="string">'x+3'</span>, [-<span class="number">4</span>, <span class="number">4</span>, -<span class="number">2</span>, <span class="number">2</span>])</div><div class="line"></div><div class="line"><span class="comment">//错误，ezplot里面没有等号</span></div><div class="line">ezplot(<span class="string">'x+3=0'</span>)</div><div class="line"><span class="comment">//正确</span></div><div class="line">ezplot(<span class="string">'x+3'</span>)</div></pre></td></tr></table></figure>
+
 <p>MATLAB 颜色说明符</p>
 <table>
 <thead>
@@ -202,9 +204,9 @@
 <p><code>x = linspace(a,b,n)</code>:那么 MATLAB 会在 a、b 之间取出均匀分布的 n 个点。</p>
 <ul>
 <li>在两条plot命令之间加<code>hold on</code>可以使得两个图像重叠，而不必清除原有重新绘制</li>
-<li><h3 id="绘制极坐标曲线：">绘制极坐标曲线：</h3></li>
+<li>将图像上特定的点用红色圆圈圈起来<code>plot(double(s(1)),double(subs(f,s(1))),&#39;ro&#39;)</code></li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">theta = [<span class="number">0</span><span class="symbol">:pi/</span><span class="number">90</span><span class="symbol">:</span><span class="number">2</span>*pi];</div><div class="line">r = a*theta;</div><div class="line">polar(theta,r), title(<span class="string">'阿基米德螺线'</span>)</div></pre></td></tr></table></figure>
+<h3 id="绘制极坐标曲线：">绘制极坐标曲线：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">theta = [<span class="number">0</span><span class="symbol">:pi/</span><span class="number">90</span><span class="symbol">:</span><span class="number">2</span>*pi];</div><div class="line">r = a*theta;</div><div class="line">polar(theta,r), title(<span class="string">'阿基米德螺线'</span>)</div></pre></td></tr></table></figure>
 
 <h3 id="绘制双log曲线：">绘制双log曲线：</h3><ul>
 <li><p><code>loglog(x,y)</code>,它产生的图像x，y轴均使用对数值</p>
@@ -281,7 +283,7 @@ h：图形对象；</p>
       
     </li>
     <li>
-      <a data-url="xiuyuliang.com/2014/11/26/Matlab学习笔记（三）/" data-id="4wkbesc1hpta6ic7" data_title="Matlab学习笔记(三)——绘制图像"
+      <a data-url="xiuyuliang.com/2014/11/26/Matlab学习笔记（三）/" data-id="spaypd8pug5o780b" data_title="Matlab学习笔记(三)——绘制图像"
         data_summary="
 matlab与绘制图像。
 
@@ -342,7 +344,6 @@ matlab与绘制图像。
       <a href="/">语亮</a> &copy; 2014 Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/seff/nut" target="_blank">Nut</a>
     </div>
   </div>
-  
 </footer>
 <a id="gotop" href="#">
   <i class="fa fa-chevron-up"></i>
@@ -380,6 +381,4 @@ matlab与绘制图像。
 
   </div>
 </body>
-<a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
-
 </html>

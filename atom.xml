@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="xiuyuliang.com/"/>
-  <updated>2014-12-11T18:47:30.710Z</updated>
+  <updated>2014-12-15T11:15:06.845Z</updated>
   <id>xiuyuliang.com/</id>
   
   <author>
@@ -378,7 +378,7 @@
     <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
     <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（四）/</id>
     <published>2014-11-25T17:30:26.000Z</published>
-    <updated>2014-12-11T18:47:17.000Z</updated>
+    <updated>2014-12-15T06:59:06.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>matlab与统计相关知识整理。</p>
 </blockquote>
@@ -421,8 +421,6 @@
 
 <h2 id="泰勒级数展开式">泰勒级数展开式</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">taylor(<span class="built_in">sin</span>(x),<span class="string">'order'</span>,<span class="number">20</span>)<span class="comment">//20为展开的项数</span></div></pre></td></tr></table></figure>
 
-<h1 id="对方程画图">对方程画图</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ezplot里面的参数需要加''</span></div><div class="line">ezplot(<span class="string">'x^2 - 6*x - 12'</span>)</div><div class="line"></div><div class="line">d = <span class="string">'x^2 - 6*x - 12'</span>;</div><div class="line">ezplot(d);</div><div class="line"></div><div class="line"><span class="comment">//限定图像定义域</span></div><div class="line">ezplot(d,[x1,x2]);</div><div class="line"><span class="comment">//限定图像的定义域和值域</span></div><div class="line">ezplot(<span class="string">'x+3'</span>, [-<span class="number">4</span>, <span class="number">4</span>, -<span class="number">2</span>, <span class="number">2</span>])</div><div class="line"></div><div class="line"><span class="comment">//错误，ezplot里面没有等号</span></div><div class="line">ezplot(<span class="string">'x+3=0'</span>)</div><div class="line"><span class="comment">//正确</span></div><div class="line">ezplot(<span class="string">'x+3'</span>)</div></pre></td></tr></table></figure>
-
 ]]></content>
     <summary type="html">
     <![CDATA[<blockquote>
@@ -447,7 +445,7 @@
     <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/"/>
     <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（三）/</id>
     <published>2014-11-25T17:25:26.000Z</published>
-    <updated>2014-12-11T11:26:56.000Z</updated>
+    <updated>2014-12-15T09:55:41.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>matlab与绘制图像。</p>
 </blockquote>
@@ -476,7 +474,10 @@
 <li>同时画两条曲线，<code>plot(t,f,&#39;-&#39;,t,g,&#39;--&#39;)</code> </li>
 <li>实线&#39;-&#39;虚线&#39;--&#39;虚点线&#39;-.&#39;点线 &#39;:&#39;`</li>
 <li>同时画两条实线，并且确定两条实现的颜色和虚实<code>plot(x,y,&#39;r&#39;,x,z,&#39;b--&#39;)</code></li>
+<li>画平行于坐标轴的直线 <code>plot([0,0],[-1,2],&#39;--&#39;)</code>不可以用<code>plot(0,[-1,2],&#39;--&#39;)</code></li>
 </ul>
+<h3 id="对方程画图">对方程画图</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ezplot里面的参数需要加''</span></div><div class="line">ezplot(<span class="string">'x^2 - 6*x - 12'</span>)</div><div class="line"></div><div class="line">d = <span class="string">'x^2 - 6*x - 12'</span>;</div><div class="line">ezplot(d);</div><div class="line"></div><div class="line"><span class="comment">//限定图像定义域</span></div><div class="line">ezplot(d,[x1,x2]);</div><div class="line"><span class="comment">//限定图像的定义域和值域</span></div><div class="line">ezplot(<span class="string">'x+3'</span>, [-<span class="number">4</span>, <span class="number">4</span>, -<span class="number">2</span>, <span class="number">2</span>])</div><div class="line"></div><div class="line"><span class="comment">//错误，ezplot里面没有等号</span></div><div class="line">ezplot(<span class="string">'x+3=0'</span>)</div><div class="line"><span class="comment">//正确</span></div><div class="line">ezplot(<span class="string">'x+3'</span>)</div></pre></td></tr></table></figure>
+
 <p>MATLAB 颜色说明符</p>
 <table>
 <thead>
@@ -528,9 +529,9 @@
 <p><code>x = linspace(a,b,n)</code>:那么 MATLAB 会在 a、b 之间取出均匀分布的 n 个点。</p>
 <ul>
 <li>在两条plot命令之间加<code>hold on</code>可以使得两个图像重叠，而不必清除原有重新绘制</li>
-<li><h3 id="绘制极坐标曲线：">绘制极坐标曲线：</h3></li>
+<li>将图像上特定的点用红色圆圈圈起来<code>plot(double(s(1)),double(subs(f,s(1))),&#39;ro&#39;)</code></li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">theta = [<span class="number">0</span><span class="symbol">:pi/</span><span class="number">90</span><span class="symbol">:</span><span class="number">2</span>*pi];</div><div class="line">r = a*theta;</div><div class="line">polar(theta,r), title(<span class="string">'阿基米德螺线'</span>)</div></pre></td></tr></table></figure>
+<h3 id="绘制极坐标曲线：">绘制极坐标曲线：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">theta = [<span class="number">0</span><span class="symbol">:pi/</span><span class="number">90</span><span class="symbol">:</span><span class="number">2</span>*pi];</div><div class="line">r = a*theta;</div><div class="line">polar(theta,r), title(<span class="string">'阿基米德螺线'</span>)</div></pre></td></tr></table></figure>
 
 <h3 id="绘制双log曲线：">绘制双log曲线：</h3><ul>
 <li><p><code>loglog(x,y)</code>,它产生的图像x，y轴均使用对数值</p>
@@ -657,7 +658,7 @@ h：图形对象；</p>
     <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（一）/</id>
     <published>2014-11-25T17:21:26.000Z</published>
-    <updated>2014-12-11T14:03:24.000Z</updated>
+    <updated>2014-12-15T09:55:29.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>由于考虑在数学建模上有所精进，再加上大三课程需要通过Matlab进行数字图像处理，所以决定认真的熟悉一遍Matlab的基本操作，本文主要记录一些学习Matlab过程中的一些琐碎的易忘的知识点，以待日后翻阅查看。</p>
 </blockquote>
@@ -688,6 +689,7 @@ h：图形对象；</p>
 <li>在赋值语句后面加 <code>;</code> 可以只起到赋值的效果，不输出 <code>x=20</code> 的赋值结果（不显示在命令窗口）</li>
 <li><code>2 +3i</code> 表示复数就可以用i</li>
 <li><code>.^</code>幂次方运算需要在<code>^</code>之前加<code>.</code></li>
+<li><code>pretty(f)</code>用书面方式显示方程f</li>
 </ul>
 ]]></content>
     <summary type="html">
