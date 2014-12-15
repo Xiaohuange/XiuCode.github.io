@@ -5,12 +5,14 @@
   
   <title>Matlab学习笔记(五)——基本符号验算和微分方程 | 语亮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="matlab与基本符号演算和微分方程相关知识整理。">
+  <meta name="description" content="本章我们将学习如何使用 MATLAB 进行符号演算。特别地,我们从学习极限和导数开 始,然后解微分方程。下一章我们再学习积分。
+在上一章中我们学习了如何求解符号 ODE(常微分方程)。在这一章我们将学习如何使 用 MATLAB 求常微分方程的数值解。在后面的内容我们会看到,MATLAB 有几个用来解微 分方程的解算器。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Matlab学习笔记(五)——基本符号验算和微分方程">
-<meta property="og:url" content="xiuyuliang.com/2014/12/14/Matlab学习笔记(五)/">
+<meta property="og:url" content="xiuyuliang.com/2014/12/14/Matlab学习笔记（五）/">
 <meta property="og:site_name" content="语亮">
-<meta property="og:description" content="matlab与基本符号演算和微分方程相关知识整理。">
+<meta property="og:description" content="本章我们将学习如何使用 MATLAB 进行符号演算。特别地,我们从学习极限和导数开 始,然后解微分方程。下一章我们再学习积分。
+在上一章中我们学习了如何求解符号 ODE(常微分方程)。在这一章我们将学习如何使 用 MATLAB 求常微分方程的数值解。在后面的内容我们会看到,MATLAB 有几个用来解微 分方程的解算器。">
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 15.40.00.png">
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 16.19.39.png">
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 17.18.55.png">
@@ -20,7 +22,8 @@
 <meta property="og:image" content="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 17.50.30.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab学习笔记(五)——基本符号验算和微分方程">
-<meta name="twitter:description" content="matlab与基本符号演算和微分方程相关知识整理。">
+<meta name="twitter:description" content="本章我们将学习如何使用 MATLAB 进行符号演算。特别地,我们从学习极限和导数开 始,然后解微分方程。下一章我们再学习积分。
+在上一章中我们学习了如何求解符号 ODE(常微分方程)。在这一章我们将学习如何使 用 MATLAB 求常微分方程的数值解。在后面的内容我们会看到,MATLAB 有几个用来解微 分方程的解算器。">
 
   
     <link rel="alternative" href="/atom.xml" title="语亮" type="application/atom+xml">
@@ -117,7 +120,7 @@
       
       <section id="main"
         
-      ><article id="post-c3lmu7u4a4paj4a2" class="article article-type-post" itemscope itemprop="blogPost">
+      ><article id="post-9t9lj5n393haw8bs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
 
@@ -125,7 +128,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#极限计算"><span class="article-toc-text">极限计算</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#独立变量趋近于0"><span class="article-toc-text">独立变量趋近于0</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#独立变量趋近于非0"><span class="article-toc-text">独立变量趋近于非0</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#独立变量趋近于无穷大(小)"><span class="article-toc-text">独立变量趋近于无穷大(小)</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#左极限和右极限"><span class="article-toc-text">左极限和右极限</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#求导数"><span class="article-toc-text">求导数</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#检查等式两边的式子是否相等"><span class="article-toc-text">检查等式两边的式子是否相等</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#将常数代入方程得到结果"><span class="article-toc-text">将常数代入方程得到结果</span></a></li></ol></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#求解符号微分方程"><span class="article-toc-text">求解符号微分方程</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#常微分方程(ode)求解"><span class="article-toc-text">常微分方程(ODE)求解</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#方程组和相平面图"><span class="article-toc-text">方程组和相平面图</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#设置曲线图像细节"><span class="article-toc-text">设置曲线图像细节</span></a></li></ol></li></ol></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#常微分方程（ode）的数值解"><span class="article-toc-text">常微分方程（ODE）的数值解</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#使用ode23和ode45求解一阶方程"><span class="article-toc-text">使用ODE23和ODE45求解一阶方程</span></a></li><li class="article-toc-item article-toc-level-3"><a class="article-toc-link" href="#带有扰动的常微分方程"><span class="article-toc-text">带有扰动的常微分方程</span></a></li></ol></li></ol></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#二阶方程求解"><span class="article-toc-text">二阶方程求解</span></a></li></ol></div><blockquote>
-<p>matlab与基本符号演算和微分方程相关知识整理。</p>
+<p>本章我们将学习如何使用 MATLAB 进行符号演算。特别地,我们从学习极限和导数开 始,然后解微分方程。下一章我们再学习积分。</p>
+<p>在上一章中我们学习了如何求解符号 ODE(常微分方程)。在这一章我们将学习如何使 用 MATLAB 求常微分方程的数值解。在后面的内容我们会看到,MATLAB 有几个用来解微 分方程的解算器。</p>
 </blockquote>
 <a id="more"></a>
 
@@ -141,7 +145,7 @@
 
 <h2 id="检查等式两边的式子是否相等">检查等式两边的式子是否相等</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">isequal</span><span class="params">(a,f)</span></span></div></pre></td></tr></table></figure>
 
-<h2 id="将常数代入方程得到结果">将常数代入方程得到结果</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">subs</span><span class="params">(h,<span class="number">2</span>)</span></span></div></pre></td></tr></table></figure>
+<h2 id="将常数代入方程得到结果">将常数代入方程得到结果</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function">subs</span>(h,2)</div><div class="line"><span class="comment">//将多个常数代入求得方程的结果</span></div><div class="line"><span class="function">subs</span>(F,{<span class="tag">b</span>,x},{2,4})</div></pre></td></tr></table></figure>
 
 <h1 id="求解符号微分方程">求解符号微分方程</h1><p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 15.40.00.png" alt="image"></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//dsolve(<span class="string">'eqn'</span>, <span class="string">'cond1'</span>, <span class="string">'cond2'</span>, <span class="keyword">...</span>),cond1等是初始条件</div><div class="line">dsolve(<span class="string">'Dy = y*t/(t-5)'</span>,<span class="string">'y(0) = 2'</span>)</div><div class="line">dsolve(<span class="string">'D2y - y = 0'</span>,<span class="string">'y(0) = -1'</span>,<span class="string">'Dy(0) = 2'</span>)</div></pre></td></tr></table></figure>
@@ -196,7 +200,7 @@
 
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-Matlab学习笔记(五)" data-title="Matlab学习笔记(五)——基本符号验算和微分方程" data-url="xiuyuliang.com/2014/12/14/Matlab学习笔记(五)/"></div>
+    <div class="ds-thread" data-thread-key="post-Matlab学习笔记（五）" data-title="Matlab学习笔记(五)——基本符号验算和微分方程" data-url="xiuyuliang.com/2014/12/14/Matlab学习笔记（五）/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -225,21 +229,14 @@
   <ul class="pagination">
     <li>
       
-        <span class="nav-prev disabled">Prev</span>
+        <a href="/2014/12/15/Matlab学习笔记（六）/" class="nav-prev">Prev</a>
       
     </li>
     <li>
-      <a data-url="xiuyuliang.com/2014/12/14/Matlab学习笔记(五)/" data-id="c3lmu7u4a4paj4a2" data_title="Matlab学习笔记(五)——基本符号验算和微分方程"
+      <a data-url="xiuyuliang.com/2014/12/14/Matlab学习笔记（五）/" data-id="9t9lj5n393haw8bs" data_title="Matlab学习笔记(五)——基本符号验算和微分方程"
         data_summary="
-matlab与基本符号演算和微分方程相关知识整理。
-
-
-
-极限计算独立变量趋近于012//limit(f)limit((x^3 + 1)/(x^4 + 2))
-
-独立变量趋近于非012//limit(f, a)limit(x + 5,3)
-
-..." class="article-share-link">Share</a>
+本章我们将学习如何使用 MATLAB 进行符号演算。特别地,我们从学习极限和导数开 始,然后解微分方程。下一章我们再学习积分。
+在上一章中我们学习了如何求解符号 ODE(常微分..." class="article-share-link">Share</a>
     </li>
     <li>
       
@@ -263,7 +260,7 @@ matlab与基本符号演算和微分方程相关知识整理。
   <div class="widget-wrap">
     <div class="post-widget">
       <i class="fa fa-folder"></i>
-      <a class="category-link" href="../../../../categories/编程学习">编程学习<span class="category-count">9</span></a>
+      <a class="category-link" href="../../../../categories/编程学习">编程学习<span class="category-count">11</span></a>
     </div>
   </div>
 
@@ -273,7 +270,7 @@ matlab与基本符号演算和微分方程相关知识整理。
   <div class="widget-wrap">
     <div class="post-widget">
       <i class="fa fa-tags"></i>
-      <a class="tag-link" href="../../../../tags/Matlab">Matlab<span class="tag-count">5</span></a><a class="tag-link" href="../../../../tags/微积分">微积分<span class="tag-count">1</span></a><a class="tag-link" href="../../../../tags/数学建模">数学建模<span class="tag-count">5</span></a>
+      <a class="tag-link" href="../../../../tags/Matlab">Matlab<span class="tag-count">7</span></a><a class="tag-link" href="../../../../tags/微积分">微积分<span class="tag-count">2</span></a><a class="tag-link" href="../../../../tags/数学建模">数学建模<span class="tag-count">7</span></a>
     </div>
   </div>
 

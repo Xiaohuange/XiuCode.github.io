@@ -5,15 +5,18 @@
   
   <title>Matlab学习笔记(四)——统计和matlab编程 | 语亮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="matlab与统计相关知识整理。">
+  <meta name="description" content="MATLAB 使用起来很舒适,它能处理概率和统计学方面的问题。在本章中,我们会看 到如何使用 MATLAB 对数据进行基本的统计、计算概率然后显示结果。为了介绍 MATLAB 的编程工具,我们将通过编写代码解决问题逐渐介绍,同时与使用 MATLAB 内置函数来解 决问题进行比较。
+在本章中我们将学习使用 MATLAB 解方程。我们先看一个简单的只含一个变量的代数 方程及解,然后我们再看看如何使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Matlab学习笔记(四)——统计和matlab编程">
 <meta property="og:url" content="xiuyuliang.com/2014/11/26/Matlab学习笔记（四）/">
 <meta property="og:site_name" content="语亮">
-<meta property="og:description" content="matlab与统计相关知识整理。">
+<meta property="og:description" content="MATLAB 使用起来很舒适,它能处理概率和统计学方面的问题。在本章中,我们会看 到如何使用 MATLAB 对数据进行基本的统计、计算概率然后显示结果。为了介绍 MATLAB 的编程工具,我们将通过编写代码解决问题逐渐介绍,同时与使用 MATLAB 内置函数来解 决问题进行比较。
+在本章中我们将学习使用 MATLAB 解方程。我们先看一个简单的只含一个变量的代数 方程及解,然后我们再看看如何使用">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab学习笔记(四)——统计和matlab编程">
-<meta name="twitter:description" content="matlab与统计相关知识整理。">
+<meta name="twitter:description" content="MATLAB 使用起来很舒适,它能处理概率和统计学方面的问题。在本章中,我们会看 到如何使用 MATLAB 对数据进行基本的统计、计算概率然后显示结果。为了介绍 MATLAB 的编程工具,我们将通过编写代码解决问题逐渐介绍,同时与使用 MATLAB 内置函数来解 决问题进行比较。
+在本章中我们将学习使用 MATLAB 解方程。我们先看一个简单的只含一个变量的代数 方程及解,然后我们再看看如何使用">
 
   
     <link rel="alternative" href="/atom.xml" title="语亮" type="application/atom+xml">
@@ -118,7 +121,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <div id="toc"><span class="toc-header">Contents</span><ol class="article-toc"><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#if_else判断"><span class="article-toc-text">if_else判断</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#for循环"><span class="article-toc-text">for循环</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#input输入"><span class="article-toc-text">input输入</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#while循环"><span class="article-toc-text">while循环</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#switch_case语句"><span class="article-toc-text">switch_case语句</span></a></li><li class="article-toc-item article-toc-level-1"><a class="article-toc-link" href="#解方程"><span class="article-toc-text">解方程</span></a><ol class="article-toc-child"><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#一元一次方程"><span class="article-toc-text">一元一次方程</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#一元二次方程"><span class="article-toc-text">一元二次方程</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#二元一次方程组"><span class="article-toc-text">二元一次方程组</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#方程的展开(多个多项式相乘)"><span class="article-toc-text">方程的展开(多个多项式相乘)</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#方程的合并和化简（分配多项式）"><span class="article-toc-text">方程的合并和化简（分配多项式）</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#因式分解"><span class="article-toc-text">因式分解</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#多项式相除"><span class="article-toc-text">多项式相除</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#使用指数和对数函数求解方程"><span class="article-toc-text">使用指数和对数函数求解方程</span></a></li><li class="article-toc-item article-toc-level-2"><a class="article-toc-link" href="#泰勒级数展开式"><span class="article-toc-text">泰勒级数展开式</span></a></li></ol></li></ol></div><blockquote>
-<p>matlab与统计相关知识整理。</p>
+<p>MATLAB 使用起来很舒适,它能处理概率和统计学方面的问题。在本章中,我们会看 到如何使用 MATLAB 对数据进行基本的统计、计算概率然后显示结果。为了介绍 MATLAB 的编程工具,我们将通过编写代码解决问题逐渐介绍,同时与使用 MATLAB 内置函数来解 决问题进行比较。</p>
+<p>在本章中我们将学习使用 MATLAB 解方程。我们先看一个简单的只含一个变量的代数 方程及解,然后我们再看看如何使用处理超越函数、三角函数和双曲函数,最后,我们学习 使用 MATLAB 处理复数。下一章,我们再学习使用 MATLAB 解微分方程。</p>
 </blockquote>
 <a id="more"></a>
 
@@ -202,15 +206,7 @@
     <li>
       <a data-url="xiuyuliang.com/2014/11/26/Matlab学习笔记（四）/" data-id="6eboriedhmhw9jkw" data_title="Matlab学习笔记(四)——统计和matlab编程"
         data_summary="
-matlab与统计相关知识整理。
-
-
-
-
-mean(a)行向量可以求得每一个行元素的平均值，mean(A)矩阵可以求得每一列的平均值
-median(raw)中位数
-std(raw)标准差
-size(A)判断矩阵的大..." class="article-share-link">Share</a>
+MATLAB 使用起来很舒适,它能处理概率和统计学方面的问题。在本章中,我们会看 到如何使用 MATLAB 对数据进行基本的统计、计算概率然后显示结果。为了介绍 MATLAB 的编程工具..." class="article-share-link">Share</a>
     </li>
     <li>
       
@@ -234,7 +230,7 @@ size(A)判断矩阵的大..." class="article-share-link">Share</a>
   <div class="widget-wrap">
     <div class="post-widget">
       <i class="fa fa-folder"></i>
-      <a class="category-link" href="../../../../categories/编程学习">编程学习<span class="category-count">9</span></a>
+      <a class="category-link" href="../../../../categories/编程学习">编程学习<span class="category-count">11</span></a>
     </div>
   </div>
 
@@ -244,7 +240,7 @@ size(A)判断矩阵的大..." class="article-share-link">Share</a>
   <div class="widget-wrap">
     <div class="post-widget">
       <i class="fa fa-tags"></i>
-      <a class="tag-link" href="../../../../tags/Matlab">Matlab<span class="tag-count">5</span></a><a class="tag-link" href="../../../../tags/数学建模">数学建模<span class="tag-count">5</span></a><a class="tag-link" href="../../../../tags/统计">统计<span class="tag-count">1</span></a>
+      <a class="tag-link" href="../../../../tags/Matlab">Matlab<span class="tag-count">7</span></a><a class="tag-link" href="../../../../tags/数学建模">数学建模<span class="tag-count">7</span></a><a class="tag-link" href="../../../../tags/统计">统计<span class="tag-count">1</span></a>
     </div>
   </div>
 

@@ -112,7 +112,7 @@
         
       >
   
-    <article id="post-c3lmu7u4a4paj4a2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-k8v7yjsqpn1mcu80" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
 
@@ -122,7 +122,156 @@
         
   
     <h1 class="archive-title" itemprop="name">
-      <a class="article-title" href="/2014/12/14/Matlab学习笔记(五)/">Matlab学习笔记(五)——基本符号验算和微分方程</a>
+      <a class="article-title" href="/2014/12/16/Matlab学习笔记（七）/">Matlab学习笔记(七)——曲线拟合</a>
+    </h1>
+  
+
+
+        <div class="article-date">
+  <time datetime="2014-12-15T16:16:26.000Z" itemprop="datePublished">12月 16 2014</time>
+</div>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+          <blockquote>
+<p>MATLAB 可以用来求与一组数据最吻合的函数。</p>
+</blockquote>
+<h1 id="数据拟合">数据拟合</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//n 是我们要 <span class="variable">MATLAB</span> 求出的多项式的次数</div><div class="line">//对于 y = mx + b 形式的方程,我们把 n 设为等于 <span class="number">1</span>,</div><div class="line">//因此调用的语句将是 polyfit(x, y, <span class="number">1</span>)</div><div class="line">//n次多项式有n+<span class="number">1</span>个常数系数</div><div class="line"></div><div class="line"><span class="function"><span class="title">polyfit</span><span class="params">(x, y, n)</span></span></div><div class="line"></div><div class="line">如果我们使用 <span class="title">p</span> = <span class="title">polyfit</span><span class="params">(x, y, n)</span>调用 <span class="title">polyfit</span>,第 <span class="title">j</span> 个系数的引用写成 <span class="title">p</span><span class="params">(j)</span></div><div class="line"><span class="title">m</span> = <span class="title">p</span><span class="params">(<span class="number">1</span>)</span></div><div class="line"><span class="title">b</span> = <span class="title">p</span><span class="params">(<span class="number">2</span>)</span></div></pre></td></tr></table></figure>
+
+<h1 id="指数函数的拟合">指数函数的拟合</h1><p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 01.20.44.png" alt="image"></p>
+<h1 id="拟合程度">拟合程度</h1><blockquote>
+<p>当r^2接近1，或者，RMS小于1，则说明拟合程度比较好。</p>
+</blockquote>
+<p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.39.31.png" alt="image"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">S =</span> sum((Ave - MEAN).^<span class="number">2</span>)</div><div class="line"><span class="variable">A =</span> sum((w - Ave).^<span class="number">2</span>)</div><div class="line"><span class="variable">r2 =</span> <span class="number">1</span> - A/S</div></pre></td></tr></table></figure>
+
+<p>另一种我们可以用来体现拟合程度的方法是计算一个称为均方根(Root-Mean-Square,RMS)误差的数 值,要用过这种方法来评估多项式与实际数据的拟合程度,我们可以使用下面的命令:</p>
+<p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.54.14.png" alt="image"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="variable">w =</span> m*sqft + b</div><div class="line"><span class="variable">d =</span> price - w;</div><div class="line"><span class="variable">N =</span> <span class="number">10</span>;</div><div class="line"><span class="variable">d2 =</span> d.^<span class="number">2</span>;</div><div class="line"><span class="variable">RMS =</span> sqrt((<span class="number">1</span>/N)*sum(d2))</div></pre></td></tr></table></figure>
+
+<p>可以使用 find 命令提问与数据有关的问题。例如,温度小于 80 度是在什么时候</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">find</span><span class="params">(y &lt; <span class="number">80</span>)</span></span></div></pre></td></tr></table></figure>
+
+
+        
+        <footer class="article-footer">
+          <a data-url="xiuyuliang.com/2014/12/16/Matlab学习笔记（七）/" data-id="k8v7yjsqpn1mcu80" data_title="Matlab学习笔记(七)——曲线拟合"
+          data_summary="
+MATLAB 可以用来求与一组数据最吻合的函数。
+
+数据拟合12345678910//n 是我们要 MATLAB 求出的多项式的次数//对于 y = mx + b 形式的方程,我们把 n 设为等于 1,//因此调用..." class="article-share-link">Share</a>
+          
+          
+  <div class="article-category">
+    <a class="article-category-link" href="categories/编程学习">编程学习</a>
+  </div>
+
+
+          
+<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link label label-primary" href="/tags/Matlab/">Matlab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link label label-success" href="/tags/数学变换/">数学变换</a></li><li class="article-tag-list-item"><a class="article-tag-list-link label label-info" href="/tags/数学建模/">数学建模</a></li></ul>
+
+
+        </footer>
+      
+    </div>
+  </div>
+</article>
+
+  
+  
+    <article id="post-90gd6woe6jrw6s45" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        <i class="fa fa-file-text-o"></i>
+        
+  
+    <h1 class="archive-title" itemprop="name">
+      <a class="article-title" href="/2014/12/15/Matlab学习笔记（六）/">Matlab学习笔记(六)——积分</a>
+    </h1>
+  
+
+
+        <div class="article-date">
+  <time datetime="2014-12-15T15:01:26.000Z" itemprop="datePublished">12月 15 2014</time>
+</div>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+          <blockquote>
+<p>本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。</p>
+</blockquote>
+<h1 id="int命令">INT命令</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//<span class="keyword">int</span>(<span class="keyword">f</span>)</div><div class="line">//<span class="keyword">int</span>(<span class="keyword">f</span>, <span class="keyword">v</span>) 语法来调用 <span class="keyword">int</span>,其中 <span class="keyword">f</span> 就是要积分的函数,而 <span class="keyword">v</span> 是积分 变量</div><div class="line"></div><div class="line">syms <span class="keyword">x</span>;</div><div class="line"><span class="keyword">int</span>(<span class="keyword">x</span>)</div></pre></td></tr></table></figure>
+
+<p><strong>对于计算积分的读者来说,不要忘记在你的答案后面带上积分常量</strong></p>
+<h1 id="定积分">定积分</h1><p><img width="200px" src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 23.47.45.png"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>(<span class="string">'x'</span>,<span class="number">2</span>,<span class="number">3</span>)</div><div class="line"></div><div class="line"><span class="built_in">or</span></div><div class="line"></div><div class="line">F = <span class="keyword">int</span>(<span class="keyword">x</span>);</div><div class="line">subs(F,<span class="keyword">x</span>,<span class="number">3</span>)-subs(F,<span class="keyword">x</span>,<span class="number">2</span>)</div></pre></td></tr></table></figure>
+
+<h1 id="多重积分">多重积分</h1><p><img width="200px" src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 23.57.59.png"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>(<span class="keyword">int</span>(<span class="keyword">int</span>(x*y^<span class="number">2</span>*z^<span class="number">5</span>,x),y),z)</div></pre></td></tr></table></figure>
+
+<p><img width="200px" src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.00.10.png"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>(<span class="keyword">int</span>(f,x,<span class="number">2</span>,<span class="number">4</span>),y,<span class="number">1</span>,<span class="number">2</span>)</div></pre></td></tr></table></figure>
+
+<h1 id="数值积分">数值积分</h1><blockquote>
+<p>调用 trapz(x, y)函数 MATLAB 可以进行梯形积分
+<img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.05.46.png"></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//等分次数越多，误差越小</div><div class="line"><span class="variable">x =</span> linspace(<span class="number">0</span>,<span class="number">2</span>,<span class="number">10</span>);</div><div class="line"><span class="variable">y =</span> x.^<span class="number">2</span>;</div><div class="line"><span class="variable">a =</span> trapz(x,y);</div><div class="line"><span class="variable">a=</span></div><div class="line"><span class="number">2.6831</span></div></pre></td></tr></table></figure>
+
+<h1 id="正交积分">正交积分</h1><blockquote>
+<p>MATLAB 有两个命令 quad 和 quad1 可以用来实现正交积分。这种类型的方法基于使用 二次函数代替矩形更能接近曲线下方面积的原理(使用高阶的多项式还能够得到更精确的结 果)。辛普森法则(Simpson’s rule)是把积分区间分成偶数段,相邻两段下面的面积用不同 的二次函数近似表示。quad 函数采用适应辛普森法则的逼近方法进行数值积分。要使用 quad,把被积的函数传递给它,后面跟着积分区间。
+quadl 函数采用洛巴托(Lobatto)积分法。这是一种适应正交积分更加灵活复杂的类型, 查阅 MATLAB 的帮助以便获得更多的信息。
+quad 和 quadl 函数的不利方面是无法对点集进行积分。</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">quad(<span class="string">'exp(-2*x)'</span>,<span class="number">0</span>,<span class="number">1</span>/<span class="number">8</span>)</div></pre></td></tr></table></figure>
+
+
+        
+        <footer class="article-footer">
+          <a data-url="xiuyuliang.com/2014/12/15/Matlab学习笔记（六）/" data-id="90gd6woe6jrw6s45" data_title="Matlab学习笔记(六)——积分"
+          data_summary="
+本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。
+
+INT命令12345//int(f)//int(f, v) 语法来调用 int,其中 f 就是要积分的函数,而 v 是积分..." class="article-share-link">Share</a>
+          
+          
+  <div class="article-category">
+    <a class="article-category-link" href="categories/编程学习">编程学习</a>
+  </div>
+
+
+          
+<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link label label-primary" href="/tags/Matlab/">Matlab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link label label-success" href="/tags/微积分/">微积分</a></li><li class="article-tag-list-item"><a class="article-tag-list-link label label-info" href="/tags/数学建模/">数学建模</a></li></ul>
+
+
+        </footer>
+      
+    </div>
+  </div>
+</article>
+
+  
+  
+    <article id="post-9t9lj5n393haw8bs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        <i class="fa fa-file-text-o"></i>
+        
+  
+    <h1 class="archive-title" itemprop="name">
+      <a class="article-title" href="/2014/12/14/Matlab学习笔记（五）/">Matlab学习笔记(五)——基本符号验算和微分方程</a>
     </h1>
   
 
@@ -138,27 +287,21 @@
         
           <!--<div class="thumbnail"><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-15 15.40.00.png" alt="image"></div>-->
           <blockquote>
-<p>matlab与基本符号演算和微分方程相关知识整理。</p>
+<p>本章我们将学习如何使用 MATLAB 进行符号演算。特别地,我们从学习极限和导数开 始,然后解微分方程。下一章我们再学习积分。</p>
+<p>在上一章中我们学习了如何求解符号 ODE(常微分方程)。在这一章我们将学习如何使 用 MATLAB 求常微分方程的数值解。在后面的内容我们会看到,MATLAB 有几个用来解微 分方程的解算器。</p>
 </blockquote>
 
           
             <p class="article-more-link">
-              <a href="/2014/12/14/Matlab学习笔记(五)/#more">阅读全文</a>
+              <a href="/2014/12/14/Matlab学习笔记（五）/#more">阅读全文</a>
             </p>
           
         
         <footer class="article-footer">
-          <a data-url="xiuyuliang.com/2014/12/14/Matlab学习笔记(五)/" data-id="c3lmu7u4a4paj4a2" data_title="Matlab学习笔记(五)——基本符号验算和微分方程"
+          <a data-url="xiuyuliang.com/2014/12/14/Matlab学习笔记（五）/" data-id="9t9lj5n393haw8bs" data_title="Matlab学习笔记(五)——基本符号验算和微分方程"
           data_summary="
-matlab与基本符号演算和微分方程相关知识整理。
-
-
-
-极限计算独立变量趋近于012//limit(f)limit((x^3 + 1)/(x^4 + 2))
-
-独立变量趋近于非012//limit(f, a)limit(x + 5,3)
-
-..." class="article-share-link">Share</a>
+本章我们将学习如何使用 MATLAB 进行符号演算。特别地,我们从学习极限和导数开 始,然后解微分方程。下一章我们再学习积分。
+在上一章中我们学习了如何求解符号 ODE(常微分..." class="article-share-link">Share</a>
           
           
   <div class="article-category">
@@ -344,7 +487,8 @@ git remote add orig..." class="article-share-link">Share</a>
         
           <!---->
           <blockquote>
-<p>matlab与统计相关知识整理。</p>
+<p>MATLAB 使用起来很舒适,它能处理概率和统计学方面的问题。在本章中,我们会看 到如何使用 MATLAB 对数据进行基本的统计、计算概率然后显示结果。为了介绍 MATLAB 的编程工具,我们将通过编写代码解决问题逐渐介绍,同时与使用 MATLAB 内置函数来解 决问题进行比较。</p>
+<p>在本章中我们将学习使用 MATLAB 解方程。我们先看一个简单的只含一个变量的代数 方程及解,然后我们再看看如何使用处理超越函数、三角函数和双曲函数,最后,我们学习 使用 MATLAB 处理复数。下一章,我们再学习使用 MATLAB 解微分方程。</p>
 </blockquote>
 
           
@@ -356,15 +500,7 @@ git remote add orig..." class="article-share-link">Share</a>
         <footer class="article-footer">
           <a data-url="xiuyuliang.com/2014/11/26/Matlab学习笔记（四）/" data-id="6eboriedhmhw9jkw" data_title="Matlab学习笔记(四)——统计和matlab编程"
           data_summary="
-matlab与统计相关知识整理。
-
-
-
-
-mean(a)行向量可以求得每一个行元素的平均值，mean(A)矩阵可以求得每一列的平均值
-median(raw)中位数
-std(raw)标准差
-size(A)判断矩阵的大..." class="article-share-link">Share</a>
+MATLAB 使用起来很舒适,它能处理概率和统计学方面的问题。在本章中,我们会看 到如何使用 MATLAB 对数据进行基本的统计、计算概率然后显示结果。为了介绍 MATLAB 的编程工具..." class="article-share-link">Share</a>
           
           
   <div class="article-category">
@@ -410,7 +546,7 @@ size(A)判断矩阵的大..." class="article-share-link">Share</a>
         
           <!--<div class="thumbnail"><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-11 17.58.21.png" alt="image"></div>-->
           <blockquote>
-<p>matlab与绘制图像。</p>
+<p>绘图是数学应用程序在计算机上最有用的一种应用,MATLAB 当然也毫不例外。通常 我们需要使手工难以绘制的函数或实验数据的图形可视化。本章我们将介绍在 MATLAB 中 完成这些任务的命令和技术。</p>
 </blockquote>
 
           
@@ -422,13 +558,7 @@ size(A)判断矩阵的大..." class="article-share-link">Share</a>
         <footer class="article-footer">
           <a data-url="xiuyuliang.com/2014/11/26/Matlab学习笔记（三）/" data-id="7zpalwmvkqt88xd8" data_title="Matlab学习笔记(三)——绘制图像"
           data_summary="
-matlab与绘制图像。
-
-
-
-绘制图像123x=[0:0.1:10]; y=cos(x); plot(x,y),xlabel('x'),ylabel('cos(x)'),gird on,axis equal,legend('cos(x)');
-
-绘制图像+加坐标轴标签+网格..." class="article-share-link">Share</a>
+绘图是数学应用程序在计算机上最有用的一种应用,MATLAB 当然也毫不例外。通常 我们需要使手工难以绘制的函数或实验数据的图形可视化。本章我们将介绍在 MATLAB 中 完成这些..." class="article-share-link">Share</a>
           
           
   <div class="article-category">
@@ -474,8 +604,7 @@ matlab与绘制图像。
         
           <!--<div class="thumbnail"><img src="http://xiublog.qiniudn.com/屏幕截图 2014-12-10 01.15.49.png" alt="image"></div>-->
           <blockquote>
-<p>matlab与线性代数相关知识整理。</p>
-</blockquote>
+<p>MATLAB 相当有用的其中一个领域是解决线性代数问题。这是因为 MATLAB 对处理数 组有非凡能力,使得成为许多科学与工程应用中的一个有用的工具。
 
           
             <p class="article-more-link">
@@ -486,15 +615,10 @@ matlab与绘制图像。
         <footer class="article-footer">
           <a data-url="xiuyuliang.com/2014/11/26/Matlab学习笔记（二）/" data-id="fo22kuqs1oqzi7np" data_title="Matlab学习笔记(二)——线性代数"
           data_summary="
-matlab与线性代数相关知识整理。
+MATLAB 相当有用的其中一个领域是解决线性代数问题。这是因为 MATLAB 对处理数 组有非凡能力,使得成为许多科学与工程应用中的一个有用的工具。
 
 
-
-
-线性代数补充一点线性代数的基础知识：
-向量：u=(u1,u2,u3) v=(v1,v2,v3)
-单纯行乘列的矩阵乘法公式: u * v&#39;={u1v1+u2v2+u3v3}
-叉..." class="article-share-link">Share</a>
+线性代数补充一点线性代数..." class="article-share-link">Share</a>
           
           
   <div class="article-category">
@@ -690,63 +814,6 @@ matlab与线性代数相关知识整理。
 
   
   
-    <article id="post-of0zjou92gmv797p" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-        <i class="fa fa-file-text-o"></i>
-        
-  
-    <h1 class="archive-title" itemprop="name">
-      <a class="article-title" href="/2014/10/31/《objective-c程序设计》笔记——C语言相关篇/">《objective-c程序设计》笔记[C语言相关篇]</a>
-    </h1>
-  
-
-
-        <div class="article-date">
-  <time datetime="2014-10-30T17:21:26.000Z" itemprop="datePublished">10月 31 2014</time>
-</div>
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-          <!---->
-          <p>本文举例讲解了使用objective-c语言时，一些与C语言类似的特征。
-
-          
-            <p class="article-more-link">
-              <a href="/2014/10/31/《objective-c程序设计》笔记——C语言相关篇/#more">阅读全文</a>
-            </p>
-          
-        
-        <footer class="article-footer">
-          <a data-url="xiuyuliang.com/2014/10/31/《objective-c程序设计》笔记——C语言相关篇/" data-id="of0zjou92gmv797p" data_title="《objective-c程序设计》笔记[C语言相关篇]"
-          data_summary="本文举例讲解了使用objective-c语言时，一些与C语言类似的特征。
-
-数组的使用12345678910char letters[5] = {'a','b','c','d','e'};//如果将[]中的数字隐去，则按照{}中元素..." class="article-share-link">Share</a>
-          
-          
-  <div class="article-category">
-    <a class="article-category-link" href="categories/编程学习">编程学习</a>
-  </div>
-
-
-          
-<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link label label-primary" href="/tags/C语言/">C语言</a></li><li class="article-tag-list-item"><a class="article-tag-list-link label label-success" href="/tags/objective-c/">objective-c</a></li></ul>
-
-
-        </footer>
-      
-    </div>
-  </div>
-</article>
-
-  
-  
     <article id="post-3pmi30kzuvp1yn6y" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -785,6 +852,63 @@ matlab与线性代数相关知识整理。
           data_summary="本文举例讲解了objective-c语言的基本语法
 
 Terminal编译OC代码的指令：123456mkdir test01cd test01vi main.mclang -fobjc-arc -framework Foundation main.m -o test01./..." class="article-share-link">Share</a>
+          
+          
+  <div class="article-category">
+    <a class="article-category-link" href="categories/编程学习">编程学习</a>
+  </div>
+
+
+          
+<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link label label-primary" href="/tags/C语言/">C语言</a></li><li class="article-tag-list-item"><a class="article-tag-list-link label label-success" href="/tags/objective-c/">objective-c</a></li></ul>
+
+
+        </footer>
+      
+    </div>
+  </div>
+</article>
+
+  
+  
+    <article id="post-of0zjou92gmv797p" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        <i class="fa fa-file-text-o"></i>
+        
+  
+    <h1 class="archive-title" itemprop="name">
+      <a class="article-title" href="/2014/10/31/《objective-c程序设计》笔记——C语言相关篇/">《objective-c程序设计》笔记[C语言相关篇]</a>
+    </h1>
+  
+
+
+        <div class="article-date">
+  <time datetime="2014-10-30T17:21:26.000Z" itemprop="datePublished">10月 31 2014</time>
+</div>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+          <!---->
+          <p>本文举例讲解了使用objective-c语言时，一些与C语言类似的特征。
+
+          
+            <p class="article-more-link">
+              <a href="/2014/10/31/《objective-c程序设计》笔记——C语言相关篇/#more">阅读全文</a>
+            </p>
+          
+        
+        <footer class="article-footer">
+          <a data-url="xiuyuliang.com/2014/10/31/《objective-c程序设计》笔记——C语言相关篇/" data-id="of0zjou92gmv797p" data_title="《objective-c程序设计》笔记[C语言相关篇]"
+          data_summary="本文举例讲解了使用objective-c语言时，一些与C语言类似的特征。
+
+数组的使用12345678910char letters[5] = {'a','b','c','d','e'};//如果将[]中的数字隐去，则按照{}中元素..." class="article-share-link">Share</a>
           
           
   <div class="article-category">
@@ -994,7 +1118,7 @@ new LGY_calendar('g-calendar');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <a class="category-link" href="categories/多媒体制作">多媒体制作<span class="category-count">1</span></a><a class="category-link" href="categories/编程学习">编程学习<span class="category-count">9</span></a><a class="category-link" href="categories/错题本">错题本<span class="category-count">1</span></a>
+      <a class="category-link" href="categories/多媒体制作">多媒体制作<span class="category-count">1</span></a><a class="category-link" href="categories/编程学习">编程学习<span class="category-count">11</span></a><a class="category-link" href="categories/错题本">错题本<span class="category-count">1</span></a>
     </div>
   </div>
 
@@ -1004,7 +1128,7 @@ new LGY_calendar('g-calendar');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <a class="tag-link" href="tags/CSS">CSS<span class="tag-count">1</span></a><a class="tag-link" href="tags/C语言">C语言<span class="tag-count">2</span></a><a class="tag-link" href="tags/Foudation框架">Foudation框架<span class="tag-count">1</span></a><a class="tag-link" href="tags/Git">Git<span class="tag-count">1</span></a><a class="tag-link" href="tags/Github">Github<span class="tag-count">1</span></a><a class="tag-link" href="tags/HTML">HTML<span class="tag-count">1</span></a><a class="tag-link" href="tags/Javascript">Javascript<span class="tag-count">1</span></a><a class="tag-link" href="tags/Keynote">Keynote<span class="tag-count">1</span></a><a class="tag-link" href="tags/Matlab">Matlab<span class="tag-count">5</span></a><a class="tag-link" href="tags/jQuery">jQuery<span class="tag-count">1</span></a><a class="tag-link" href="tags/objective-c">objective-c<span class="tag-count">3</span></a><a class="tag-link" href="tags/web前端">web前端<span class="tag-count">1</span></a><a class="tag-link" href="tags/图像">图像<span class="tag-count">1</span></a><a class="tag-link" href="tags/基本操作">基本操作<span class="tag-count">1</span></a><a class="tag-link" href="tags/多媒体制作">多媒体制作<span class="tag-count">1</span></a><a class="tag-link" href="tags/微积分">微积分<span class="tag-count">1</span></a><a class="tag-link" href="tags/数学建模">数学建模<span class="tag-count">5</span></a><a class="tag-link" href="tags/知识梳理">知识梳理<span class="tag-count">1</span></a><a class="tag-link" href="tags/线性代数">线性代数<span class="tag-count">1</span></a><a class="tag-link" href="tags/统计">统计<span class="tag-count">1</span></a><a class="tag-link" href="tags/许岑">许岑<span class="tag-count">1</span></a>
+      <a class="tag-link" href="tags/CSS">CSS<span class="tag-count">1</span></a><a class="tag-link" href="tags/C语言">C语言<span class="tag-count">2</span></a><a class="tag-link" href="tags/Foudation框架">Foudation框架<span class="tag-count">1</span></a><a class="tag-link" href="tags/Git">Git<span class="tag-count">1</span></a><a class="tag-link" href="tags/Github">Github<span class="tag-count">1</span></a><a class="tag-link" href="tags/HTML">HTML<span class="tag-count">1</span></a><a class="tag-link" href="tags/Javascript">Javascript<span class="tag-count">1</span></a><a class="tag-link" href="tags/Keynote">Keynote<span class="tag-count">1</span></a><a class="tag-link" href="tags/Matlab">Matlab<span class="tag-count">7</span></a><a class="tag-link" href="tags/jQuery">jQuery<span class="tag-count">1</span></a><a class="tag-link" href="tags/objective-c">objective-c<span class="tag-count">3</span></a><a class="tag-link" href="tags/web前端">web前端<span class="tag-count">1</span></a><a class="tag-link" href="tags/图像">图像<span class="tag-count">1</span></a><a class="tag-link" href="tags/基本操作">基本操作<span class="tag-count">1</span></a><a class="tag-link" href="tags/多媒体制作">多媒体制作<span class="tag-count">1</span></a><a class="tag-link" href="tags/微积分">微积分<span class="tag-count">2</span></a><a class="tag-link" href="tags/数学变换">数学变换<span class="tag-count">1</span></a><a class="tag-link" href="tags/数学建模">数学建模<span class="tag-count">7</span></a><a class="tag-link" href="tags/知识梳理">知识梳理<span class="tag-count">1</span></a><a class="tag-link" href="tags/线性代数">线性代数<span class="tag-count">1</span></a><a class="tag-link" href="tags/统计">统计<span class="tag-count">1</span></a><a class="tag-link" href="tags/许岑">许岑<span class="tag-count">1</span></a>
     </div>
   </div>
 
@@ -1016,7 +1140,7 @@ new LGY_calendar('g-calendar');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="tags/CSS" style="font-size: 10.00px;">CSS</a><a href="tags/C语言" style="font-size: 13.33px;">C语言</a><a href="tags/Foudation框架" style="font-size: 10.00px;">Foudation框架</a><a href="tags/Git" style="font-size: 10.00px;">Git</a><a href="tags/Github" style="font-size: 10.00px;">Github</a><a href="tags/HTML" style="font-size: 10.00px;">HTML</a><a href="tags/Javascript" style="font-size: 10.00px;">Javascript</a><a href="tags/Keynote" style="font-size: 10.00px;">Keynote</a><a href="tags/Matlab" style="font-size: 20.00px;">Matlab</a><a href="tags/jQuery" style="font-size: 10.00px;">jQuery</a><a href="tags/objective-c" style="font-size: 16.67px;">objective-c</a><a href="tags/web前端" style="font-size: 10.00px;">web前端</a><a href="tags/图像" style="font-size: 10.00px;">图像</a><a href="tags/基本操作" style="font-size: 10.00px;">基本操作</a><a href="tags/多媒体制作" style="font-size: 10.00px;">多媒体制作</a><a href="tags/微积分" style="font-size: 10.00px;">微积分</a><a href="tags/数学建模" style="font-size: 20.00px;">数学建模</a><a href="tags/知识梳理" style="font-size: 10.00px;">知识梳理</a><a href="tags/线性代数" style="font-size: 10.00px;">线性代数</a><a href="tags/统计" style="font-size: 10.00px;">统计</a><a href="tags/许岑" style="font-size: 10.00px;">许岑</a>
+      <a href="tags/CSS" style="font-size: 10.00px;">CSS</a><a href="tags/C语言" style="font-size: 13.33px;">C语言</a><a href="tags/Foudation框架" style="font-size: 10.00px;">Foudation框架</a><a href="tags/Git" style="font-size: 10.00px;">Git</a><a href="tags/Github" style="font-size: 10.00px;">Github</a><a href="tags/HTML" style="font-size: 10.00px;">HTML</a><a href="tags/Javascript" style="font-size: 10.00px;">Javascript</a><a href="tags/Keynote" style="font-size: 10.00px;">Keynote</a><a href="tags/Matlab" style="font-size: 20.00px;">Matlab</a><a href="tags/jQuery" style="font-size: 10.00px;">jQuery</a><a href="tags/objective-c" style="font-size: 16.67px;">objective-c</a><a href="tags/web前端" style="font-size: 10.00px;">web前端</a><a href="tags/图像" style="font-size: 10.00px;">图像</a><a href="tags/基本操作" style="font-size: 10.00px;">基本操作</a><a href="tags/多媒体制作" style="font-size: 10.00px;">多媒体制作</a><a href="tags/微积分" style="font-size: 13.33px;">微积分</a><a href="tags/数学变换" style="font-size: 10.00px;">数学变换</a><a href="tags/数学建模" style="font-size: 20.00px;">数学建模</a><a href="tags/知识梳理" style="font-size: 10.00px;">知识梳理</a><a href="tags/线性代数" style="font-size: 10.00px;">线性代数</a><a href="tags/统计" style="font-size: 10.00px;">统计</a><a href="tags/许岑" style="font-size: 10.00px;">许岑</a>
     </div>
   </div>
 
@@ -1032,7 +1156,15 @@ new LGY_calendar('g-calendar');
       <ul>
         
           <li class="recent-list">
-            <a href="/2014/12/14/Matlab学习笔记(五)/">Matlab学习笔记(五)——基本符号验算和微分方程</a>
+            <a href="/2014/12/16/Matlab学习笔记（七）/">Matlab学习笔记(七)——曲线拟合</a>
+          </li>
+        
+          <li class="recent-list">
+            <a href="/2014/12/15/Matlab学习笔记（六）/">Matlab学习笔记(六)——积分</a>
+          </li>
+        
+          <li class="recent-list">
+            <a href="/2014/12/14/Matlab学习笔记（五）/">Matlab学习笔记(五)——基本符号验算和微分方程</a>
           </li>
         
           <li class="recent-list">
@@ -1041,14 +1173,6 @@ new LGY_calendar('g-calendar');
         
           <li class="recent-list">
             <a href="/2014/12/05/Git学习笔记/">Git学习笔记</a>
-          </li>
-        
-          <li class="recent-list">
-            <a href="/2014/11/26/Matlab学习笔记（四）/">Matlab学习笔记(四)——统计和matlab编程</a>
-          </li>
-        
-          <li class="recent-list">
-            <a href="/2014/11/26/Matlab学习笔记（三）/">Matlab学习笔记(三)——绘制图像</a>
           </li>
         
       </ul>
@@ -1061,7 +1185,7 @@ new LGY_calendar('g-calendar');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2014/12">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2014/11">November 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2014/10">October 2014</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2014/12">December 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2014/11">November 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2014/10">October 2014</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
