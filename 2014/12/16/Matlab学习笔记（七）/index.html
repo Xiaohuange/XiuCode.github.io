@@ -131,7 +131,7 @@
 <p>当r^2接近1，或者，RMS小于1，则说明拟合程度比较好。</p>
 </blockquote>
 <p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.39.31.png" alt="image"></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">S =</span> sum((Ave - MEAN).^<span class="number">2</span>)</div><div class="line"><span class="variable">A =</span> sum((w - Ave).^<span class="number">2</span>)</div><div class="line"><span class="variable">r2 =</span> <span class="number">1</span> - A/S</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//其中，AVE是原有的数据，MEAN是原有数据的平均值，w是拟合数据，S和A公用的数据是AVE，即原有数据</span></div><div class="line"><span class="constant">S</span> = sum((Ave - MEAN).^<span class="number">2</span>)</div><div class="line"><span class="constant">A</span> = sum((w - Ave).^<span class="number">2</span>)</div><div class="line">r2 = <span class="number">1</span> - A/S</div></pre></td></tr></table></figure>
 
 <p>另一种我们可以用来体现拟合程度的方法是计算一个称为均方根(Root-Mean-Square,RMS)误差的数 值,要用过这种方法来评估多项式与实际数据的拟合程度,我们可以使用下面的命令:</p>
 <p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.54.14.png" alt="image"></p>

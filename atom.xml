@@ -4,7 +4,7 @@
   <subtitle><![CDATA[他一直致力于成为一个颇有人文情怀的科技从业者]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="xiuyuliang.com/"/>
-  <updated>2014-12-18T14:36:21.827Z</updated>
+  <updated>2014-12-21T03:55:34.693Z</updated>
   <id>xiuyuliang.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="xiuyuliang.com/2014/12/16/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/"/>
     <id>xiuyuliang.com/2014/12/16/Matlab学习笔记（七）/</id>
     <published>2014-12-15T16:16:26.000Z</published>
-    <updated>2014-12-15T17:26:45.000Z</updated>
+    <updated>2014-12-21T03:50:55.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>MATLAB 可以用来求与一组数据最吻合的函数。
 <a id="more"></a></p>
@@ -31,7 +31,7 @@
 <p>当r^2接近1，或者，RMS小于1，则说明拟合程度比较好。</p>
 </blockquote>
 <p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.39.31.png" alt="image"></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">S =</span> sum((Ave - MEAN).^<span class="number">2</span>)</div><div class="line"><span class="variable">A =</span> sum((w - Ave).^<span class="number">2</span>)</div><div class="line"><span class="variable">r2 =</span> <span class="number">1</span> - A/S</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//其中，AVE是原有的数据，MEAN是原有数据的平均值，w是拟合数据，S和A公用的数据是AVE，即原有数据</span></div><div class="line"><span class="constant">S</span> = sum((Ave - MEAN).^<span class="number">2</span>)</div><div class="line"><span class="constant">A</span> = sum((w - Ave).^<span class="number">2</span>)</div><div class="line">r2 = <span class="number">1</span> - A/S</div></pre></td></tr></table></figure>
 
 <p>另一种我们可以用来体现拟合程度的方法是计算一个称为均方根(Root-Mean-Square,RMS)误差的数 值,要用过这种方法来评估多项式与实际数据的拟合程度,我们可以使用下面的命令:</p>
 <p><img src="http://7qn8uk.com1.z0.glb.clouddn.com/屏幕截图 2014-12-16 00.54.14.png" alt="image"></p>
@@ -63,7 +63,7 @@
     <link href="xiuyuliang.com/2014/12/15/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89/"/>
     <id>xiuyuliang.com/2014/12/15/Matlab学习笔记（六）/</id>
     <published>2014-12-15T15:01:26.000Z</published>
-    <updated>2014-12-15T17:26:54.000Z</updated>
+    <updated>2014-12-21T02:07:55.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>本章介绍了计算积分的各种方法。我们从符号积分开始,然后再进一步学习数值积分。</p>
 </blockquote>
@@ -847,7 +847,7 @@ h：图形对象；</p>
     <link href="xiuyuliang.com/2014/11/26/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>xiuyuliang.com/2014/11/26/Matlab学习笔记（一）/</id>
     <published>2014-11-25T17:21:26.000Z</published>
-    <updated>2014-12-18T14:03:56.000Z</updated>
+    <updated>2014-12-21T02:21:55.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>由于考虑在数学建模上有所精进，再加上大三课程需要通过Matlab进行数字图像处理，所以决定认真的熟悉一遍Matlab的基本操作，本文主要记录一些学习Matlab过程中的一些琐碎的易忘的知识点，以待日后翻阅查看。</p>
 </blockquote>
@@ -896,7 +896,8 @@ h：图形对象；</p>
 <li>syms定义多个变量的时候不需要加<code>，</code></li>
 <li>如果极限不存在,为NAN，那么再计算一下左右极限来进一步确定一下</li>
 <li>渐近线需要先求解出来，再用<code>plot([3,3],[-10 10],&#39;r--&#39;)</code>画出来，注意中间的定义域和值域的首尾之间没有<code>，</code></li>
-<li></li>
+<li>dsolve里面不能传入连等的条件,<code>Dx=x(0)=0</code>这种结果是错误的。</li>
+<li>积分的时候<code>int(f)</code>中的f不需要加引号</li>
 </ul>
 ]]></content>
     <summary type="html">
